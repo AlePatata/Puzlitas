@@ -1,0 +1,39 @@
+pcjor@PC MINGW64 ~/Documents/GitHub/Puzlitas (main)
+$ git status
+
+pcjor@PC MINGW64 ~/Documents/GitHub/Puzlitas (main)
+$ git add . #para agregar todos mis cambios
+
+pcjor@PC MINGW64 ~/Documents/GitHub/Puzlitas (main)
+$ git status
+
+pcjor@PC MINGW64 ~/Documents/GitHub/Puzlitas (main)
+$ git commit -m "Este es el proyecto godot"
+[main 25b82a1] Este es el proyecto godot
+ 5 files changed, 57 insertions(+)
+ create mode 100644 Proyecto Godot/.gitattributes
+ create mode 100644 Proyecto Godot/.gitignore
+ create mode 100644 Proyecto Godot/icon.svg
+ create mode 100644 Proyecto Godot/icon.svg.import
+ create mode 100644 Proyecto Godot/project.godot
+
+pcjor@PC MINGW64 ~/Documents/GitHub/Puzlitas (main)
+$ git push
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (8/8), 1.80 KiB | 1.80 MiB/s, done.
+Total 8 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/AlePatata/Puzlitas.git
+   5c8d01f..25b82a1  main -> main
+
+pcjor@PC MINGW64 ~/Documents/GitHub/Puzlitas (main)
+$ git branch paul0li
+
+pcjor@PC MINGW64 ~/Documents/GitHub/Puzlitas (main)
+$ git checkout paul0li
+Switched to branch 'paul0li'
+
+pcjor@PC MINGW64 ~/Documents/GitHub/Puzlitas (paul0li)
+$
