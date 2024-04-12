@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr2r46e2xsdjb"]
+
+[ext_resource type="Texture2D" uid="uid://cw01lvdfq6xd" path="res://assets/whiteCircle.png" id="1_j26w1"]
+[ext_resource type="Script" path="res://Light.gd" id="1_sxh25"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gvuc5"]
+
+[node name="Light" type="Node2D"]
+
+[node name="Light" type="CharacterBody2D" parent="."]
+script = ExtResource("1_sxh25")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Light"]
+position = Vector2(76, 30)
+shape = SubResource("CircleShape2D_gvuc5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Light/CollisionShape2D"]
+texture_filter = 1
+texture = ExtResource("1_j26w1")
