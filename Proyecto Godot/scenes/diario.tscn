@@ -1,0 +1,79 @@
+
+[gd_scene load_steps=9 format=3 uid="uid://beks5ba1d64ov"]
+
+[ext_resource type="Texture2D" uid="uid://dip1kgp0mqm7u" path="res://assets/diario.png" id="1_j0ugt"]
+[ext_resource type="Script" path="res://scenes/palabras.gd" id="2_ea2fk"]
+[ext_resource type="FontFile" uid="uid://8togpyok3edv" path="res://assets/fonts/Pixelify_Sans/static/PixelifySans-Medium.ttf" id="3_xnje1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_un3k4"]
+size = Vector2(973, 527)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tibx8"]
+font = ExtResource("3_xnje1")
+font_size = 23
+font_color = Color(0.937255, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rh27a"]
+size = Vector2(128, 26)
+
+[sub_resource type="Animation" id="Animation_e1vom"]
+resource_name = "Move"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(111, 112), Vector2(121, 585)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c0cub"]
+_data = {
+"Move": SubResource("Animation_e1vom")
+}
+
+
+[node name="main" type="Node2D"]
+position = Vector2(39, 3)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+position = Vector2(-178, -98)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+position = Vector2(706.045, 409.5)
+scale = Vector2(10.1011, 11.587)
+texture = ExtResource("1_j0ugt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(716.5, 417.5)
+shape = SubResource("RectangleShape2D_un3k4")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(106, 113)
+script = ExtResource("2_ea2fk")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Area2D"]
+offset_left = -6.0
+offset_right = 97.0
+offset_bottom = 32.0
+text = "Esperanza"
+label_settings = SubResource("LabelSettings_tibx8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+use_parent_material = true
+position = Vector2(60, 16)
+shape = SubResource("RectangleShape2D_rh27a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
+root_node = NodePath("../CollisionShape2D")
+libraries = {
+"": SubResource("AnimationLibrary_c0cub")
+}
+
