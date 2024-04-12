@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=9 format=3 uid="uid://beks5ba1d64ov"]
 
 [ext_resource type="Texture2D" uid="uid://dip1kgp0mqm7u" path="res://assets/diario.png" id="1_j0ugt"]
@@ -35,10 +36,12 @@ _data = {
 "Move": SubResource("Animation_e1vom")
 }
 
+
 [node name="main" type="Node2D"]
 position = Vector2(39, 3)
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
 position = Vector2(-178, -98)
 metadata/_edit_group_ = true
 
@@ -73,3 +76,4 @@ root_node = NodePath("../CollisionShape2D")
 libraries = {
 "": SubResource("AnimationLibrary_c0cub")
 }
+
