@@ -11,7 +11,9 @@ config_version=5
 [application]
 
 config/name="Dictiotheraphy"
+
 run/main_scene="res://main_menu.tscn"
+
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://scenes/icon.svg"
 
