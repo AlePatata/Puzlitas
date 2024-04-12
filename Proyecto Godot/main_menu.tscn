@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvuopves0sjn8"]
+
+[ext_resource type="Theme" uid="uid://b4e1fmdbmqdbq" path="res://resources/theme.tres" id="1_6inmr"]
+[ext_resource type="Script" path="res://main_menu.gd" id="2_p2xhh"]
+[ext_resource type="Texture2D" uid="uid://thiha28tsny3" path="res://assets/books.png" id="3_7bmqn"]
+
+[node name="MainMenu" type="MarginContainer"]
+offset_left = 386.0
+offset_top = 234.0
+offset_right = 786.0
+offset_bottom = 434.0
+theme = ExtResource("1_6inmr")
+script = ExtResource("2_p2xhh")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="PanelContainer"]
+position = Vector2(131, 86)
+scale = Vector2(4.01923, 3.725)
+texture = ExtResource("3_7bmqn")
+hframes = 3
+vframes = 2
+frame = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "MENU"
+horizontal_alignment = 1
+
+[node name="Start" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "START"
+
+[node name="Options" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "OPTIONS"
+
+[node name="Quit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "QUIT"
