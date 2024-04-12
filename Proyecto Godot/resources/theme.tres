@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b4e1fmdbmqdbq"]
+
+[ext_resource type="FontFile" uid="uid://bf67r7j5qlhmy" path="res://assets/fonts/Press_Start_2P/PressStart2P-Regular.ttf" id="1_t4tvq"]
+
+[resource]
+default_font = ExtResource("1_t4tvq")
+MarginContainer/constants/margin_bottom = 30
+MarginContainer/constants/margin_left = 70
+MarginContainer/constants/margin_right = 70
+MarginContainer/constants/margin_top = 20
