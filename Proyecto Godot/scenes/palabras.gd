@@ -15,4 +15,3 @@ func _on_input_event(viewport, event, shape_idx):
 
 func move_object():
 	$AnimationPlayer.play("Move")
-

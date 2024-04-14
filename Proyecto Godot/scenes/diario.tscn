@@ -68,6 +68,12 @@ use_parent_material = true
 position = Vector2(60, 16)
 shape = SubResource("RectangleShape2D_rh27a")
 
+[node name="Button" type="Button" parent="Area2D/CollisionShape2D"]
+offset_left = -60.0
+offset_top = -16.0
+offset_right = -52.0
+offset_bottom = -8.0
+
 [node name="Animatio nPlayer" type="AnimationPlayer" parent="Area2D"]
 root_node = NodePath("../CollisionShape2D")
 libraries = {

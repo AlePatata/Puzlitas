@@ -44,6 +44,10 @@ text = "START"
 layout_mode = 2
 text = "OPTIONS"
 
+[node name="Dictionary" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "DICTIONARY"
+
 [node name="Quit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "QUIT"
