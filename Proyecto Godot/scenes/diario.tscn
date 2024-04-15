@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 [gd_scene load_steps=11 format=3 uid="uid://beks5ba1d64ov"]
+=======
+[gd_scene load_steps=12 format=3 uid="uid://beks5ba1d64ov"]
+>>>>>>> 0d9e8f37daff005b0030642ed3ece0f6332b7874
 
 [ext_resource type="Texture2D" uid="uid://dip1kgp0mqm7u" path="res://assets/diario.png" id="1_j0ugt"]
 [ext_resource type="FontFile" uid="uid://dxvgvvaibbhev" path="res://assets/fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="2_7w42x"]
 [ext_resource type="Script" path="res://scenes/palabras.gd" id="2_ea2fk"]
 [ext_resource type="FontFile" uid="uid://8togpyok3edv" path="res://assets/fonts/Pixelify_Sans/static/PixelifySans-Medium.ttf" id="3_xnje1"]
+[ext_resource type="PackedScene" uid="uid://bwppq0fe37iiy" path="res://scenes/pause_menu.tscn" id="5_8lu0e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_un3k4"]
 size = Vector2(973.949, 540.336)
@@ -132,3 +137,10 @@ root_node = NodePath("../CollisionShape2D")
 libraries = {
 "": SubResource("AnimationLibrary_c0cub")
 }
+<<<<<<< HEAD
+=======
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("5_8lu0e")]
+>>>>>>> 0d9e8f37daff005b0030642ed3ece0f6332b7874
