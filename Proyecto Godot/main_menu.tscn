@@ -5,10 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://thiha28tsny3" path="res://assets/books.png" id="3_7bmqn"]
 
 [node name="MainMenu" type="MarginContainer"]
-offset_left = 386.0
-offset_top = 234.0
-offset_right = 786.0
-offset_bottom = 434.0
+offset_right = 1280.0
+offset_bottom = 720.0
 theme = ExtResource("1_6inmr")
 script = ExtResource("2_p2xhh")
 
@@ -18,8 +16,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="PanelContainer"]
-position = Vector2(131, 86)
-scale = Vector2(4.01923, 3.725)
+position = Vector2(206, 131)
+scale = Vector2(14.999, 13.902)
 texture = ExtResource("3_7bmqn")
 hframes = 3
 vframes = 2
@@ -33,17 +31,25 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 70
 text = "MENU"
 horizontal_alignment = 1
 
 [node name="Start" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "START"
 
 [node name="Options" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "OPTIONS"
+
+[node name="Dictionary" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "DICTIONARY"
 
 [node name="Quit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "QUIT"
