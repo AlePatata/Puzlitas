@@ -13,7 +13,7 @@ func _ready() -> void:
 		
 
 func _on_start_pressed():
-	get_tree().change_scene_to_file("res://light.tscn")
+	get_tree().change_scene_to_file("res://scenes/light.tscn")
 	
 func _on_dictionary_pressed():
 	get_tree().change_scene_to_file("res://scenes/diario.tscn")
