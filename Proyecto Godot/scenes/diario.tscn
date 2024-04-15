@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=11 format=3 uid="uid://beks5ba1d64ov"]
+
 
 [ext_resource type="Texture2D" uid="uid://dip1kgp0mqm7u" path="res://assets/diario.png" id="1_j0ugt"]
 [ext_resource type="FontFile" uid="uid://dxvgvvaibbhev" path="res://assets/fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="2_7w42x"]
@@ -44,7 +46,9 @@ _data = {
 [node name="main" type="Node2D"]
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
 position = Vector2(0, -50)
+
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
@@ -55,6 +59,7 @@ texture = ExtResource("1_j0ugt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
 position = Vector2(640, 360)
 shape = SubResource("RectangleShape2D_un3k4")
+
 
 [node name="texto1" type="Label" parent="."]
 offset_left = 209.0
@@ -88,6 +93,7 @@ horizontal_alignment = 3
 [node name="esperanza" type="Area2D" parent="."]
 position = Vector2(473, 248)
 scale = Vector2(1.5, 1.5)
+
 script = ExtResource("2_ea2fk")
 
 [node name="label" type="Label" parent="esperanza"]
@@ -102,11 +108,14 @@ use_parent_material = true
 position = Vector2(38.3333, 11.1667)
 shape = SubResource("RectangleShape2D_rh27a")
 
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="esperanza"]
+
 root_node = NodePath("../CollisionShape2D")
 libraries = {
 "": SubResource("AnimationLibrary_c0cub")
 }
+
 
 [node name="valor" type="Area2D" parent="."]
 position = Vector2(249, 294)
@@ -132,3 +141,4 @@ root_node = NodePath("../CollisionShape2D")
 libraries = {
 "": SubResource("AnimationLibrary_c0cub")
 }
+
