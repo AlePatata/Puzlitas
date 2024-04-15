@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cr2r46e2xsdjb"]
+[gd_scene load_steps=9 format=3 uid="uid://cr2r46e2xsdjb"]
 
 [ext_resource type="Texture2D" uid="uid://cw01lvdfq6xd" path="res://assets/whiteCircle.png" id="1_j26w1"]
 [ext_resource type="Script" path="res://scenes/Light.gd" id="1_pkk3y"]
 [ext_resource type="Script" path="res://scenes/Background.gd" id="3_3lcru"]
 [ext_resource type="Texture2D" uid="uid://b013uocnh27v3" path="res://assets/undertaleHouse1.png" id="3_hynyh"]
 [ext_resource type="PackedScene" uid="uid://bwppq0fe37iiy" path="res://scenes/pause_menu.tscn" id="5_b81n1"]
+[ext_resource type="AudioStream" uid="uid://dvj62735wl0i8" path="res://assets/music/y2mate.com - Begin Your Journey .wav" id="6_b8tev"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n2y3i"]
 
@@ -46,3 +47,7 @@ shape = SubResource("CircleShape2D_gvuc5")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("5_b81n1")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_b8tev")
+autoplay = true
