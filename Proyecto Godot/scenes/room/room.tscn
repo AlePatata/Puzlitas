@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://cynibsxa0sjol"]
+
+[ext_resource type="Texture2D" uid="uid://c71qy0o4qrkws" path="res://assets/brain.png" id="1_4k4cx"]
+[ext_resource type="Script" path="res://scenes/room/room.gd" id="1_wyv4l"]
+
+[node name="Cutscene" type="Node2D"]
+position = Vector2(-1777, 566)
+script = ExtResource("1_wyv4l")
+
+[node name="Brain" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(3521, -576)
+texture = ExtResource("1_4k4cx")
+
+[node name="Target" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(2927, -454)
+gizmo_extents = 100.0
+
+[node name="Target2" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(2759, -90)
+gizmo_extents = 100.0
+
+[node name="Target3" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(2374, -399)
+gizmo_extents = 100.0
+
+[node name="Target4" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(2240, -22)
+gizmo_extents = 100.0
