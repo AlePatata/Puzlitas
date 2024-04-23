@@ -17,7 +17,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="PanelContainer"]
-position = Vector2(268, 173)
+position = Vector2(202, 179)
 scale = Vector2(14.999, 13.902)
 texture = ExtResource("3_hg8uk")
 hframes = 3
@@ -46,10 +46,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "OPTIONS"
 
-[node name="Dictionary" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="lvlselector" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "DICTIONARY"
+text = "LEVELS"
 
 [node name="Quit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
