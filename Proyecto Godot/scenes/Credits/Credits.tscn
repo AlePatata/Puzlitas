@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/Credits/Credits.gd" id="1_1cw2j"]
 [ext_resource type="FontFile" uid="uid://cgxedj7ice014" path="res://assets/fonts/DotGothic16/DotGothic16-Regular.ttf" id="1_u4ybr"]
-[ext_resource type="AudioStream" uid="uid://djy5k8d87lvl6" path="res://assets/music/y2mate.com - A Lonely Cherry Tree .wav" id="3_s8lt1"]
+[ext_resource type="AudioStream" uid="uid://dfwua0ao8qvoi" path="res://assets/music/y2mate.com - A Lonely Cherry Tree .wav" id="3_s8lt1"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -59,7 +59,6 @@ Amigo del Tomy
 [/center]"
 
 [node name="Back_to_main" type="TextureButton" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
