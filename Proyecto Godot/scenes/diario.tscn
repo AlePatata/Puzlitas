@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=15 format=3 uid="uid://beks5ba1d64ov"]
+
 
 [ext_resource type="Texture2D" uid="uid://dip1kgp0mqm7u" path="res://assets/diario.png" id="1_j0ugt"]
 [ext_resource type="FontFile" uid="uid://dxvgvvaibbhev" path="res://assets/fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="2_7w42x"]
@@ -137,9 +139,6 @@ libraries = {
 "": SubResource("AnimationLibrary_c0cub")
 }
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("5_8lu0e")]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_ufkxq")
@@ -165,3 +164,4 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(65, 60)
 scale = Vector2(0.277435, 0.244008)
 texture = ExtResource("8_eibrk")
+
