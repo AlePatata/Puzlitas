@@ -34,10 +34,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "MAIN"
 
-[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Levels" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "OPTIONS"
+text = "LEVELS"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
