@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cr2r46e2xsdjb"]
+[gd_scene load_steps=9 format=3 uid="uid://cr2r46e2xsdjb"]
 
 [ext_resource type="Texture2D" uid="uid://cw01lvdfq6xd" path="res://assets/whiteCircle.png" id="1_j26w1"]
 [ext_resource type="Texture2D" uid="uid://b013uocnh27v3" path="res://assets/undertaleHouse1.png" id="3_hynyh"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://thiha28tsny3" path="res://assets/books.png" id="6_2bd13"]
 [ext_resource type="AudioStream" uid="uid://dtyclel88dxdt" path="res://assets/music/y2mate.com - Begin Your Journey .wav" id="6_b8tev"]
 [ext_resource type="Script" path="res://scenes/dic_button_gameplay.gd" id="6_bhgdu"]
+[ext_resource type="Texture2D" uid="uid://voo7evsiktog" path="res://scenes/icon.svg" id="8_2f68d"]
 [ext_resource type="Script" path="res://scenes/whiteCircle.gd" id="8_4nb80"]
 
 [node name="Light" type="Node2D"]
@@ -17,6 +18,19 @@ position = Vector2(1489, 314)
 scale = Vector2(4, 4)
 texture = ExtResource("3_hynyh")
 
+[node name="Shine" type="Button" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.977
+offset_left = 1041.0
+offset_top = 164.0
+offset_right = 1172.0
+offset_bottom = 292.0
+
+[node name="Object" type="Sprite2D" parent="Shine"]
+position = Vector2(66, 65)
+texture = ExtResource("8_2f68d")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(640, 360)
 script = ExtResource("4_lifw5")
@@ -25,16 +39,16 @@ script = ExtResource("4_lifw5")
 stream = ExtResource("6_b8tev")
 autoplay = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="BackgMovement" type="CanvasLayer" parent="."]
 
-[node name="MoveLeft" type="TextureRect" parent="CanvasLayer"]
+[node name="MoveLeft" type="TextureRect" parent="BackgMovement"]
 anchors_preset = -1
 anchor_right = 0.187
 anchor_bottom = 1.0
 offset_right = 0.639984
 offset_bottom = -1.0
 
-[node name="MoveRight" type="TextureRect" parent="CanvasLayer"]
+[node name="MoveRight" type="TextureRect" parent="BackgMovement"]
 anchors_preset = -1
 anchor_left = 0.798
 anchor_right = 1.002
@@ -45,7 +59,7 @@ offset_right = 0.439941
 offset_bottom = -1.0
 size_flags_horizontal = 8
 
-[node name="whiteCircle" type="Sprite2D" parent="CanvasLayer"]
+[node name="whiteCircle" type="Sprite2D" parent="BackgMovement"]
 modulate = Color(1, 0.996078, 0.768627, 0.878431)
 show_behind_parent = true
 texture_filter = 1

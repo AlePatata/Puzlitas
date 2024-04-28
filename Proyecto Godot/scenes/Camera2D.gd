@@ -3,8 +3,10 @@ extends Camera2D
 @export var camera_speed: float = 200
 @onready var background = $"../Background"
 
-@onready var move_left = $"../CanvasLayer/MoveLeft"
-@onready var move_right = $"../CanvasLayer/MoveRight"
+
+@onready var move_left = $"../BackgMovement/MoveLeft"
+@onready var move_right = $"../BackgMovement/MoveRight"
+
 
 var _moving_left = false
 var _moving_right = false
