@@ -1,9 +1,11 @@
-extends CharacterBody2D
+extends Node2D
+@onready var shine = $Shine
+@onready var object = $Shine/Object
 
-#@onready var background = $"res://scenes/Background.gd"
 
-func _physics_process(delta) -> void:
-	global_position = get_global_mouse_position()
-	#while not is_on_wall(): 
-		#background.global_position = get_global_mouse_position()
+func _ready():
+	shine.pressed.connect(_found)
+
+func _found():
+	object.set_visibility(false)
 	
