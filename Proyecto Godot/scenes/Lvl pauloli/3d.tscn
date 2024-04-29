@@ -1,0 +1,129 @@
+[gd_scene load_steps=17 format=3 uid="uid://di3sr6fq11fhf"]
+
+[ext_resource type="Script" path="res://animation_camera.gd" id="1_hooya"]
+[ext_resource type="Texture2D" uid="uid://drr5x7gueprxc" path="res://scenes/Lvl pauloli/pixel park pared.png" id="2_ych3m"]
+[ext_resource type="Texture2D" uid="uid://bury8yu36kwu0" path="res://scenes/Lvl pauloli/pixel park suelo.png" id="3_di4eo"]
+
+[sub_resource type="Environment" id="Environment_xo2rp"]
+background_mode = 2
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ifibd"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_scmvq"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_hx7gn"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hh2w2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1i3ay"]
+albedo_color = Color(0.94902, 0.94902, 0.94902, 1)
+albedo_texture = SubResource("CanvasTexture_hh2w2")
+metallic = 0.5
+roughness = 0.0
+
+[sub_resource type="Animation" id="Animation_5u0mh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(5.34562, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ih5ky"]
+resource_name = "avanza"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.1, 9.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(8.51597, 0, 0), Vector3(1.8411, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_35qi6"]
+_data = {
+"RESET": SubResource("Animation_5u0mh"),
+"avanza": SubResource("Animation_ih5ky")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vaqhm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lefkh"]
+albedo_texture = ExtResource("2_ych3m")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kyrrs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvg1f"]
+albedo_texture = ExtResource("3_di4eo")
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_hooya")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.0840872, -0.074474, 0.993671, 0.00627974, 0.997223, 0.0742087, -0.996439, -1.40198e-09, 0.0843213, 5.34562, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xo2rp")
+camera_attributes = SubResource("CameraAttributesPractical_ifibd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CapsuleShape3D_scmvq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("CapsuleMesh_hx7gn")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_1i3ay")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_35qi6")
+}
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -25.3577, 0, -10.4634)
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.23594)
+visible = false
+shape = SubResource("BoxShape3D_vaqhm")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="StaticBody3D2"]
+transform = Transform3D(0.0177673, 1.49131, 0.000797272, 0.0237172, -0.118562, -1.00569, -1.49987, -0.0007794, -0.0175053, -0.463022, -0.0593569, -0.0411806)
+material_overlay = SubResource("StandardMaterial3D_lefkh")
+mesh = SubResource("PlaneMesh_kyrrs")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -25.3577, 0, -10.4634)
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.23594)
+visible = false
+shape = SubResource("BoxShape3D_vaqhm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D3"]
+transform = Transform3D(0.0155957, 0.16999, 0.985391, 0.0164366, 0.985365, -0.170101, -1.49983, 0.0125662, 0.00838231, -0.462287, -0.0760394, -0.0308546)
+material_override = SubResource("StandardMaterial3D_uvg1f")
+material_overlay = SubResource("StandardMaterial3D_lefkh")
+mesh = SubResource("PlaneMesh_kyrrs")
+skeleton = NodePath("../..")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.00839671, 0.914602, -0.404269, 0.349497, -0.381471, -0.855764, -0.9369, -0.134105, -0.322853, -17.1516, 1.01961, -0.967404)
+visible = false
+light_energy = 9.983

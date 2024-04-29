@@ -1,19 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://cr2r46e2xsdjb"]
+[gd_scene load_steps=9 format=3 uid="uid://cr2r46e2xsdjb"]
 
 [ext_resource type="Texture2D" uid="uid://cw01lvdfq6xd" path="res://assets/whiteCircle.png" id="1_j26w1"]
 [ext_resource type="Script" path="res://scenes/Light.gd" id="1_pkk3y"]
 [ext_resource type="Script" path="res://scenes/Background.gd" id="3_3lcru"]
 [ext_resource type="Texture2D" uid="uid://b013uocnh27v3" path="res://assets/undertaleHouse1.png" id="3_hynyh"]
- 
-
 [ext_resource type="Texture2D" uid="uid://thiha28tsny3" path="res://assets/books.png" id="6_2bd13"]
-[ext_resource type="AudioStream" uid="uid://dvj62735wl0i8" path="res://assets/music/y2mate.com - Begin Your Journey .wav" id="6_b8tev"]
+[ext_resource type="AudioStream" uid="uid://dtyclel88dxdt" path="res://assets/music/y2mate.com - Begin Your Journey .wav" id="6_b8tev"]
 [ext_resource type="Script" path="res://scenes/dic_button_gameplay.gd" id="6_bhgdu"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n2y3i"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_gvuc5"]
 
 [node name="Light" type="Node2D"]
 
@@ -34,7 +29,6 @@ light_mask = 2
 visibility_layer = 2
 shape = SubResource("RectangleShape2D_n2y3i")
 
-
 [node name="Light" type="CharacterBody2D" parent="Background"]
 script = ExtResource("1_pkk3y")
 
@@ -44,8 +38,6 @@ show_behind_parent = true
 texture_filter = 1
 scale = Vector2(7, 7)
 texture = ExtResource("1_j26w1")
-
-
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 script = ExtResource("6_bhgdu")
@@ -68,5 +60,3 @@ frame = 1
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_b8tev")
 autoplay = true
-
-
