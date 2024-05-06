@@ -125,5 +125,4 @@ skeleton = NodePath("../..")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.00839671, 0.914602, -0.404269, 0.349497, -0.381471, -0.855764, -0.9369, -0.134105, -0.322853, -17.1516, 1.01961, -0.967404)
-visible = false
 light_energy = 9.983
