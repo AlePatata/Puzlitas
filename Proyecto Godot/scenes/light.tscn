@@ -1,43 +1,78 @@
 [gd_scene load_steps=9 format=3 uid="uid://cr2r46e2xsdjb"]
 
 [ext_resource type="Texture2D" uid="uid://cw01lvdfq6xd" path="res://assets/whiteCircle.png" id="1_j26w1"]
-[ext_resource type="Script" path="res://scenes/Light.gd" id="1_pkk3y"]
-[ext_resource type="Script" path="res://scenes/Background.gd" id="3_3lcru"]
 [ext_resource type="Texture2D" uid="uid://b013uocnh27v3" path="res://assets/undertaleHouse1.png" id="3_hynyh"]
+
+
+[ext_resource type="Script" path="res://scenes/Camera2D.gd" id="4_lifw5"]
 [ext_resource type="Texture2D" uid="uid://thiha28tsny3" path="res://assets/books.png" id="6_2bd13"]
 [ext_resource type="AudioStream" uid="uid://dtyclel88dxdt" path="res://assets/music/y2mate.com - Begin Your Journey .wav" id="6_b8tev"]
 [ext_resource type="Script" path="res://scenes/dic_button_gameplay.gd" id="6_bhgdu"]
+[ext_resource type="Texture2D" uid="uid://voo7evsiktog" path="res://scenes/icon.svg" id="8_2f68d"]
+[ext_resource type="Script" path="res://scenes/whiteCircle.gd" id="8_4nb80"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2y3i"]
 
 [node name="Light" type="Node2D"]
 
-[node name="Background" type="StaticBody2D" parent="."]
-light_mask = 2
-visibility_layer = 2
-script = ExtResource("3_3lcru")
-
-[node name="Sprite2D" type="Sprite2D" parent="Background"]
+[node name="Background" type="Sprite2D" parent="."]
 light_mask = 2
 visibility_layer = 2
 position = Vector2(1489, 314)
 scale = Vector2(4, 4)
 texture = ExtResource("3_hynyh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Background"]
-light_mask = 2
-visibility_layer = 2
-shape = SubResource("RectangleShape2D_n2y3i")
+[node name="Shine" type="Button" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.977
+offset_left = 1041.0
+offset_top = 164.0
+offset_right = 1172.0
+offset_bottom = 292.0
 
-[node name="Light" type="CharacterBody2D" parent="Background"]
-script = ExtResource("1_pkk3y")
+[node name="Object" type="Sprite2D" parent="Shine"]
+position = Vector2(66, 65)
+texture = ExtResource("8_2f68d")
 
-[node name="Sprite2D" type="Sprite2D" parent="Background/Light"]
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(640, 360)
+script = ExtResource("4_lifw5")
+
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_b8tev")
+autoplay = true
+
+[node name="BackgMovement" type="CanvasLayer" parent="."]
+
+[node name="MoveLeft" type="TextureRect" parent="BackgMovement"]
+anchors_preset = -1
+anchor_right = 0.187
+anchor_bottom = 1.0
+offset_right = 0.639984
+offset_bottom = -1.0
+
+[node name="MoveRight" type="TextureRect" parent="BackgMovement"]
+anchors_preset = -1
+anchor_left = 0.798
+anchor_right = 1.002
+anchor_bottom = 1.0
+offset_left = 0.559937
+offset_top = 7.0
+offset_right = 0.439941
+offset_bottom = -1.0
+size_flags_horizontal = 8
+
+[node name="whiteCircle" type="Sprite2D" parent="BackgMovement"]
 modulate = Color(1, 0.996078, 0.768627, 0.878431)
 show_behind_parent = true
 texture_filter = 1
+position = Vector2(601, 296)
 scale = Vector2(7, 7)
 texture = ExtResource("1_j26w1")
+
+script = ExtResource("8_4nb80")
+
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 script = ExtResource("6_bhgdu")
@@ -57,6 +92,3 @@ hframes = 3
 vframes = 2
 frame = 1
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_b8tev")
-autoplay = true
