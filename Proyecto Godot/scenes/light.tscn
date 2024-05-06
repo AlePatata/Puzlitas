@@ -2,12 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://cw01lvdfq6xd" path="res://assets/whiteCircle.png" id="1_j26w1"]
 [ext_resource type="Texture2D" uid="uid://b013uocnh27v3" path="res://assets/undertaleHouse1.png" id="3_hynyh"]
+
+
 [ext_resource type="Script" path="res://scenes/Camera2D.gd" id="4_lifw5"]
 [ext_resource type="Texture2D" uid="uid://thiha28tsny3" path="res://assets/books.png" id="6_2bd13"]
 [ext_resource type="AudioStream" uid="uid://dtyclel88dxdt" path="res://assets/music/y2mate.com - Begin Your Journey .wav" id="6_b8tev"]
 [ext_resource type="Script" path="res://scenes/dic_button_gameplay.gd" id="6_bhgdu"]
 [ext_resource type="Texture2D" uid="uid://voo7evsiktog" path="res://scenes/icon.svg" id="8_2f68d"]
 [ext_resource type="Script" path="res://scenes/whiteCircle.gd" id="8_4nb80"]
+
 
 [node name="Light" type="Node2D"]
 
@@ -34,6 +37,7 @@ texture = ExtResource("8_2f68d")
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(640, 360)
 script = ExtResource("4_lifw5")
+
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_b8tev")
@@ -66,7 +70,9 @@ texture_filter = 1
 position = Vector2(601, 296)
 scale = Vector2(7, 7)
 texture = ExtResource("1_j26w1")
+
 script = ExtResource("8_4nb80")
+
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 script = ExtResource("6_bhgdu")
@@ -85,3 +91,4 @@ texture = ExtResource("6_2bd13")
 hframes = 3
 vframes = 2
 frame = 1
+

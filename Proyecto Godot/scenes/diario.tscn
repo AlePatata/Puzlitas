@@ -1,13 +1,10 @@
-
-[gd_scene load_steps=15 format=3 uid="uid://beks5ba1d64ov"]
-
+[gd_scene load_steps=14 format=3 uid="uid://beks5ba1d64ov"]
 
 [ext_resource type="Texture2D" uid="uid://dip1kgp0mqm7u" path="res://assets/diario.png" id="1_j0ugt"]
 [ext_resource type="FontFile" uid="uid://dxvgvvaibbhev" path="res://assets/fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="2_7w42x"]
 [ext_resource type="Script" path="res://scenes/palabras.gd" id="2_ea2fk"]
 [ext_resource type="FontFile" uid="uid://8togpyok3edv" path="res://assets/fonts/Pixelify_Sans/static/PixelifySans-Medium.ttf" id="3_xnje1"]
-[ext_resource type="PackedScene" uid="uid://bwppq0fe37iiy" path="res://scenes/pause_menu.tscn" id="5_8lu0e"]
-[ext_resource type="AudioStream" uid="uid://dvj62735wl0i8" path="res://assets/music/y2mate.com - Begin Your Journey .wav" id="6_ufkxq"]
+[ext_resource type="AudioStream" uid="uid://dtyclel88dxdt" path="res://assets/music/y2mate.com - Begin Your Journey .wav" id="6_ufkxq"]
 [ext_resource type="Script" path="res://scenes/brain_button.gd" id="7_d8o77"]
 [ext_resource type="Texture2D" uid="uid://c71qy0o4qrkws" path="res://assets/brain.png" id="8_eibrk"]
 
@@ -139,7 +136,6 @@ libraries = {
 "": SubResource("AnimationLibrary_c0cub")
 }
 
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_ufkxq")
 autoplay = true
@@ -148,7 +144,6 @@ autoplay = true
 script = ExtResource("7_d8o77")
 
 [node name="brain_button" type="Button" parent="CanvasLayer2"]
-visible = false
 anchors_preset = -1
 anchor_left = -0.0078125
 anchor_top = -0.0111111
@@ -164,4 +159,3 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(65, 60)
 scale = Vector2(0.277435, 0.244008)
 texture = ExtResource("8_eibrk")
-
