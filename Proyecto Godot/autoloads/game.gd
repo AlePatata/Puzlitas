@@ -3,7 +3,6 @@ extends Node
 signal inventory_updated
 signal palabras_updated
 
-#mi inventario, se le puede añadir más que palabras.
 var inventory = {
 	palabras = []
 } :
@@ -26,6 +25,7 @@ func remove_palabra(palabra: String):
 
 var current_palabra
 #################################
+
 
 
 
