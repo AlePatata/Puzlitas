@@ -19,3 +19,4 @@ func agregar_nodo_palabra(nodo_hijo):
 func conectar_para_agregar_nodo(ui_palabra):
 	ui_palabra.me_tomaron.connect(agregar_nodo_palabra)
 
+
