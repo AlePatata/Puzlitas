@@ -158,4 +158,6 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
 position = Vector2(65, 60)
 scale = Vector2(0.277435, 0.244008)
+
 texture = ExtResource("8_eibrk")
+

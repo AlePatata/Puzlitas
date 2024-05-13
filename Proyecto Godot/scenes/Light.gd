@@ -110,5 +110,5 @@ func _on_palabra_6_area_entered(area):
 		area.get_parent().droplocation_id = 6
 		fill_slot(area.get_parent().drop_location_id)
 
-
 ######Fin inventario
+
