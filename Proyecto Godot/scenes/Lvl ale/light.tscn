@@ -1,0 +1,115 @@
+[gd_scene load_steps=13 format=3 uid="uid://cr2r46e2xsdjb"]
+
+[ext_resource type="Texture2D" uid="uid://cw01lvdfq6xd" path="res://assets/whiteCircle.png" id="1_j26w1"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/Find.gd" id="2_88n75"]
+[ext_resource type="Texture2D" uid="uid://b013uocnh27v3" path="res://assets/undertaleHouse1.png" id="3_hynyh"]
+[ext_resource type="Texture2D" uid="uid://bjtx8ggb08jc8" path="res://assets/bed.png" id="3_o4d4o"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/Camera2D.gd" id="4_lifw5"]
+[ext_resource type="Texture2D" uid="uid://thiha28tsny3" path="res://assets/books.png" id="6_2bd13"]
+[ext_resource type="AudioStream" uid="uid://dtyclel88dxdt" path="res://assets/music/y2mate.com - Begin Your Journey .wav" id="6_b8tev"]
+[ext_resource type="Script" path="res://scenes/dic_button_gameplay.gd" id="6_bhgdu"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/whiteCircle.gd" id="8_4nb80"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4srp"]
+size = Vector2(180, 170)
+
+[sub_resource type="Animation" id="Animation_xg828"]
+resource_name = "Move"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.554785, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 360)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yig4k"]
+_data = {
+"Move": SubResource("Animation_xg828")
+}
+
+[node name="Light" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(1489, 314)
+scale = Vector2(4, 4)
+texture = ExtResource("3_hynyh")
+
+[node name="Object" type="Area2D" parent="."]
+script = ExtResource("2_88n75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Object"]
+position = Vector2(1866, 237)
+shape = SubResource("RectangleShape2D_v4srp")
+
+[node name="Object" type="Sprite2D" parent="Object/CollisionShape2D"]
+position = Vector2(17, -1)
+scale = Vector2(4, 4)
+texture = ExtResource("3_o4d4o")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Object"]
+libraries = {
+"": SubResource("AnimationLibrary_yig4k")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(640, 360)
+script = ExtResource("4_lifw5")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_b8tev")
+autoplay = true
+
+[node name="BackgMovement" type="CanvasLayer" parent="."]
+
+[node name="MoveLeft" type="TextureRect" parent="BackgMovement"]
+anchors_preset = -1
+anchor_right = 0.187
+anchor_bottom = 1.0
+offset_right = 0.639984
+offset_bottom = -1.0
+
+[node name="MoveRight" type="TextureRect" parent="BackgMovement"]
+anchors_preset = -1
+anchor_left = 0.798
+anchor_right = 1.002
+anchor_bottom = 1.0
+offset_left = -3.43994
+offset_top = 1.0
+offset_right = -3.55994
+offset_bottom = -7.0
+size_flags_horizontal = 8
+
+[node name="whiteCircle" type="Sprite2D" parent="BackgMovement"]
+modulate = Color(1, 0.996078, 0.768627, 0.878431)
+show_behind_parent = true
+texture_filter = 1
+position = Vector2(601, 296)
+scale = Vector2(7, 7)
+texture = ExtResource("1_j26w1")
+script = ExtResource("8_4nb80")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+script = ExtResource("6_bhgdu")
+
+[node name="Dic_button" type="Button" parent="CanvasLayer2"]
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 103.0
+offset_bottom = 93.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
+position = Vector2(70.256, 64.588)
+scale = Vector2(1.406, 1.30883)
+texture = ExtResource("6_2bd13")
+hframes = 3
+vframes = 2
+frame = 1
