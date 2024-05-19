@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://36hs0qxnubcf"]
+
+[ext_resource type="Script" path="res://scenes/Lvl tomy/lvl_tomy.gd" id="1_7q76t"]
+[ext_resource type="Texture2D" uid="uid://b4jm2pbc85vlm" path="res://scenes/Lvl tomy/Classroom_alegre.jpeg" id="1_aj13p"]
+[ext_resource type="AudioStream" uid="uid://li0to1xojj4d" path="res://assets/music/Canciones propias/Tensa.wav" id="2_doxwl"]
+[ext_resource type="Texture2D" uid="uid://d0o4feqquvo1y" path="res://scenes/Lvl tomy/Exit.jpeg" id="4_md0so"]
+[ext_resource type="Script" path="res://scenes/dic_button_gameplay.gd" id="5_66o5q"]
+[ext_resource type="Texture2D" uid="uid://thiha28tsny3" path="res://assets/books.png" id="6_0crqv"]
+
+[node name="LvlTomy" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7q76t")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_aj13p")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_doxwl")
+autoplay = true
+
+[node name="Back_to_main" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -192.0
+offset_right = 1728.0
+offset_bottom = 1920.0
+grow_horizontal = 0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("4_md0so")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+script = ExtResource("5_66o5q")
+
+[node name="Dic_button" type="Button" parent="CanvasLayer2"]
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 103.0
+offset_bottom = 93.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
+position = Vector2(70.256, 64.588)
+scale = Vector2(1.406, 1.30883)
+texture = ExtResource("6_0crqv")
+hframes = 3
+vframes = 2
+frame = 1
