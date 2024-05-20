@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cr2r46e2xsdjb"]
+[gd_scene load_steps=16 format=3 uid="uid://cr2r46e2xsdjb"]
 
 [ext_resource type="Texture2D" uid="uid://cw01lvdfq6xd" path="res://assets/whiteCircle.png" id="1_j26w1"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/Find.gd" id="2_88n75"]
@@ -12,8 +12,6 @@
 [ext_resource type="Script" path="res://scenes/dic_button_gameplay.gd" id="6_bhgdu"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/whiteCircle.gd" id="8_4nb80"]
 [ext_resource type="Texture2D" uid="uid://3jgut3cfek2k" path="res://assets/darkUndertale.png" id="12_jimqw"]
-[ext_resource type="Script" path="res://scenes/Lvl ale/switch.gd" id="13_wiyv7"]
-[ext_resource type="Texture2D" uid="uid://voo7evsiktog" path="res://assets/icon.svg" id="14_17eiq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4srp"]
 size = Vector2(141, 98)
@@ -38,15 +36,7 @@ _data = {
 "Move": SubResource("Animation_xg828")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a514j"]
-size = Vector2(99, 77)
-
 [node name="Light" type="Node2D"]
-
-[node name="darkBackground" type="Sprite2D" parent="."]
-position = Vector2(1580.87, 362.75)
-scale = Vector2(4.26413, 4.61364)
-texture = ExtResource("12_jimqw")
 
 [node name="Background" type="Sprite2D" parent="."]
 light_mask = 2
@@ -54,6 +44,11 @@ visibility_layer = 2
 position = Vector2(1585, 362)
 scale = Vector2(4.25841, 4.62338)
 texture = ExtResource("3_hynyh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1580.87, 362.75)
+scale = Vector2(4.26413, 4.61364)
+texture = ExtResource("12_jimqw")
 
 [node name="Object" type="Area2D" parent="."]
 script = ExtResource("2_88n75")
@@ -110,15 +105,6 @@ libraries = {
 offset = Vector2(640, 360)
 script = ExtResource("4_lifw5")
 
-[node name="whiteCircle" type="Sprite2D" parent="Camera2D"]
-modulate = Color(1, 0.996078, 0.768627, 0.878431)
-show_behind_parent = true
-texture_filter = 1
-position = Vector2(601, 296)
-scale = Vector2(7, 7)
-texture = ExtResource("1_j26w1")
-script = ExtResource("8_4nb80")
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_b8tev")
 autoplay = true
@@ -143,6 +129,15 @@ offset_right = -3.55994
 offset_bottom = -7.0
 size_flags_horizontal = 8
 
+[node name="whiteCircle" type="Sprite2D" parent="BackgMovement"]
+modulate = Color(1, 0.996078, 0.768627, 0.878431)
+show_behind_parent = true
+texture_filter = 1
+position = Vector2(601, 296)
+scale = Vector2(7, 7)
+texture = ExtResource("1_j26w1")
+script = ExtResource("8_4nb80")
+
 [node name="Sprite2D" type="Sprite2D" parent="BackgMovement"]
 position = Vector2(70.256, 64.588)
 scale = Vector2(1.406, 1.30883)
@@ -160,14 +155,3 @@ offset_top = 34.0
 offset_right = 103.0
 offset_bottom = 93.0
 metadata/_edit_use_anchors_ = true
-
-[node name="switch" type="Area2D" parent="."]
-script = ExtResource("13_wiyv7")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="switch"]
-position = Vector2(155.5, 235.5)
-shape = SubResource("RectangleShape2D_a514j")
-
-[node name="Icon" type="Sprite2D" parent="switch"]
-position = Vector2(159, 239)
-texture = ExtResource("14_17eiq")
