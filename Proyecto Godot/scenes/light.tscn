@@ -149,17 +149,20 @@ vframes = 2
 frame = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="Raiz_Palabras" type="Node2D" parent="."]
+
+[node name="Palabra" parent="Raiz_Palabras" instance=ExtResource("13_1dxrp")]
+position = Vector2(223, 393)
+
+[node name="Palabra2" parent="Raiz_Palabras" instance=ExtResource("13_1dxrp")]
+position = Vector2(457, 403)
+palabra = "Esperanza"
 
 [node name="Dictionary" type="CanvasLayer" parent="."]
 script = ExtResource("10_fdrxe")
 ui_palabra = ExtResource("12_0brxs")
-
-[node name="Palabra" parent="Dictionary" instance=ExtResource("13_1dxrp")]
-position = Vector2(223, 393)
-
-[node name="Palabra2" parent="Dictionary" instance=ExtResource("13_1dxrp")]
-position = Vector2(457, 403)
-palabra = "Esperanza"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Dictionary"]
 libraries = {
@@ -184,7 +187,7 @@ position = Vector2(667, 763)
 shape = SubResource("RectangleShape2D_1n31q")
 
 [node name="MarginContainer" type="MarginContainer" parent="Dictionary/Node2D"]
-offset_left = -426.0
+offset_left = -294.0
 offset_top = -206.0
 offset_right = 433.0
 offset_bottom = 191.0

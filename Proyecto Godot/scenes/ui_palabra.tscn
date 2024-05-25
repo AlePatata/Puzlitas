@@ -1,6 +1,12 @@
-[gd_scene format=3 uid="uid://ca6ulc0jbl1kj"]
+[gd_scene load_steps=2 format=3 uid="uid://ca6ulc0jbl1kj"]
+
+[ext_resource type="Script" path="res://scenes/quitar_palabra_del_dic.gd" id="1_kikws"]
 
 [node name="UIPalabra" type="Label"]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "meh"
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 43.0
+offset_bottom = 24.0
+mouse_filter = 0
+text = "ui_palabra"
+script = ExtResource("1_kikws")
