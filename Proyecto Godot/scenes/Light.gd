@@ -2,7 +2,7 @@ extends Node2D
 @onready var shine = $Shine
 @onready var object = $Shine/Object
 @onready var raiz_palabras = $Raiz_Palabras
-@onready var dictionary = $Dictionary
+@onready var dictionary = %Dictionary
 
 
 	

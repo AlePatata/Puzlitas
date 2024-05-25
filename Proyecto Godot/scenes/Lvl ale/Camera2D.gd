@@ -7,7 +7,6 @@ extends Camera2D
 @onready var move_left = $"../BackgMovement/MoveLeft"
 @onready var move_right = $"../BackgMovement/MoveRight"
 
-
 var _moving_left = false
 var _moving_right = false
 
@@ -17,7 +16,7 @@ func _ready() -> void:
 	move_right.mouse_entered.connect(_on_move_right_entered)
 	move_right.mouse_exited.connect(_on_move_right_exited)
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if _moving_left and camera_2d.global_position.x >  0:
 		camera_2d.global_position.x -= camera_speed * delta
 	

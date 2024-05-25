@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Node2D
 
 # No olvides asignar el AnimationPlayer en el inspector o por script
 @onready var anim_player = $AnimationPlayer
