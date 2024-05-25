@@ -44,7 +44,7 @@ _data = {
 "Move": SubResource("Animation_e1vom")
 }
 
-[node name="main" type="Node2D"]
+[node name="diario" type="Node2D"]
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
 position = Vector2(0, -50)

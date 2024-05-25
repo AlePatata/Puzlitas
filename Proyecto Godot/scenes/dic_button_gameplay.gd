@@ -1,4 +1,5 @@
 extends CanvasLayer
+#@onready var brain: Button = $brain_button
 @onready var dic: Button = $Dic_button
 
 
