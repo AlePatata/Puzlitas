@@ -89,7 +89,7 @@ label_settings = SubResource("LabelSettings_es6gg")
 horizontal_alignment = 3
 
 [node name="esperanza" type="Area2D" parent="."]
-position = Vector2(473, 248)
+position = Vector2(249, 294)
 scale = Vector2(1.5, 1.5)
 script = ExtResource("2_ea2fk")
 
@@ -158,4 +158,6 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
 position = Vector2(65, 60)
 scale = Vector2(0.277435, 0.244008)
+
 texture = ExtResource("8_eibrk")
+
