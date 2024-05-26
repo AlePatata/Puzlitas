@@ -10,6 +10,7 @@ var inventory = {
 		inventory = value
 		inventory_updated.emit()
 
+
 func add_palabra(palabra: String):
 	if palabra in inventory.palabras:
 		return
@@ -25,6 +26,7 @@ func remove_palabra(palabra: String):
 
 var current_palabra
 #################################
+
 
 
 

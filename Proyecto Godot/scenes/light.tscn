@@ -191,3 +191,5 @@ columns = 2
 [connection signal="input_event" from="Dictionary/Node2D/Dictionary/Area2D" to="Dictionary" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Dictionary/Node2D/Dictionary/Area2D" to="Dictionary" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Dictionary/Node2D/Dictionary/Area2D" to="Dictionary" method="_on_area_2d_mouse_exited"]
+
+
