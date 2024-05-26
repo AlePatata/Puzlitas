@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://cr2r46e2xsdjb"]
 
-[ext_resource type="Script" path="res://scenes/Light.gd" id="1_f147q"]
+[ext_resource type="Script" path="res://scenes/scrip_inventario.gd" id="1_f147q"]
 [ext_resource type="Texture2D" uid="uid://cw01lvdfq6xd" path="res://assets/whiteCircle.png" id="1_j26w1"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/Find.gd" id="2_88n75"]
 [ext_resource type="Texture2D" uid="uid://b013uocnh27v3" path="res://assets/undertaleHouse1.png" id="3_hynyh"]

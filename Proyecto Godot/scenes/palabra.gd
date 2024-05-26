@@ -3,7 +3,6 @@ extends Node2D
 var dragging = false
 signal palabra_tomada
 
-
 #para que el label siempre sea el correspondiente a la palabra
 @export var palabra: String:
 	set(value):
@@ -24,7 +23,6 @@ func _physics_process(delta):
 		z_index = 10
 	else:
 		z_index = 0
-
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	#si hice click sobre mi palabra u objeto

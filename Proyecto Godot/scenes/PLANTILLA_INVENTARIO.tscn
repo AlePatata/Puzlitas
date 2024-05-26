@@ -1,18 +1,18 @@
 [gd_scene load_steps=19 format=3 uid="uid://cr2r46e2xsdjb"]
 
-[ext_resource type="Script" path="res://scenes/Light.gd" id="1_f147q"]
-[ext_resource type="Texture2D" uid="uid://cw01lvdfq6xd" path="res://assets/whiteCircle.png" id="1_j26w1"]
-[ext_resource type="Texture2D" uid="uid://b013uocnh27v3" path="res://assets/undertaleHouse1.png" id="3_hynyh"]
-[ext_resource type="Script" path="res://scenes/Lvl ale/Camera2D.gd" id="4_lifw5"]
-[ext_resource type="Texture2D" uid="uid://thiha28tsny3" path="res://assets/books.png" id="6_2bd13"]
-[ext_resource type="AudioStream" uid="uid://dtyclel88dxdt" path="res://assets/music/y2mate.com - Begin Your Journey .wav" id="6_b8tev"]
-[ext_resource type="Script" path="res://scenes/dic_button_gameplay.gd" id="6_bhgdu"]
-[ext_resource type="Texture2D" uid="uid://voo7evsiktog" path="res://assets/icon.svg" id="8_2f68d"]
-[ext_resource type="Script" path="res://scenes/Lvl ale/whiteCircle.gd" id="8_4nb80"]
-[ext_resource type="Script" path="res://scenes/Dictionary_slide.gd" id="10_fdrxe"]
-[ext_resource type="Texture2D" uid="uid://dxnok5mya3fam" path="res://assets/diccionario.png" id="11_4daps"]
-[ext_resource type="PackedScene" uid="uid://ca6ulc0jbl1kj" path="res://scenes/ui_palabra.tscn" id="12_0brxs"]
-[ext_resource type="PackedScene" uid="uid://ctghvosvhtgwc" path="res://scenes/palabra.tscn" id="13_1dxrp"]
+[ext_resource type="Script" path="res://scenes/scrip_inventario.gd" id="1_awnat"]
+[ext_resource type="Texture2D" uid="uid://b013uocnh27v3" path="res://assets/undertaleHouse1.png" id="2_h7mli"]
+[ext_resource type="Texture2D" uid="uid://voo7evsiktog" path="res://assets/icon.svg" id="3_soyuf"]
+[ext_resource type="AudioStream" uid="uid://beac6s038w7qs" path="res://assets/music/Canciones propias/Inexpresiva.wav" id="4_4wvy5"]
+[ext_resource type="Texture2D" uid="uid://cw01lvdfq6xd" path="res://assets/whiteCircle.png" id="5_kkx8j"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/whiteCircle.gd" id="6_41rsw"]
+[ext_resource type="Script" path="res://scenes/dic_button_gameplay.gd" id="7_m61cb"]
+[ext_resource type="Texture2D" uid="uid://thiha28tsny3" path="res://assets/books.png" id="8_cs2yn"]
+[ext_resource type="PackedScene" uid="uid://ctghvosvhtgwc" path="res://scenes/palabra.tscn" id="9_fqd01"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/Camera2D.gd" id="10_3gaus"]
+[ext_resource type="Script" path="res://scenes/Dictionary_slide.gd" id="11_tki1i"]
+[ext_resource type="PackedScene" uid="uid://ca6ulc0jbl1kj" path="res://scenes/ui_palabra.tscn" id="12_3f0ti"]
+[ext_resource type="Texture2D" uid="uid://dxnok5mya3fam" path="res://assets/diccionario.png" id="13_bjroa"]
 
 [sub_resource type="Animation" id="Animation_tmahn"]
 length = 0.001
@@ -59,14 +59,14 @@ _data = {
 size = Vector2(877, 423)
 
 [node name="Light" type="Node2D"]
-script = ExtResource("1_f147q")
+script = ExtResource("1_awnat")
 
 [node name="Background" type="Sprite2D" parent="."]
 light_mask = 2
 visibility_layer = 2
 position = Vector2(1489, 314)
 scale = Vector2(4, 4)
-texture = ExtResource("3_hynyh")
+texture = ExtResource("2_h7mli")
 
 [node name="Shine" type="Button" parent="."]
 anchors_preset = -1
@@ -79,16 +79,17 @@ offset_bottom = 292.0
 
 [node name="Object" type="Sprite2D" parent="Shine"]
 position = Vector2(66, 65)
-texture = ExtResource("8_2f68d")
+texture = ExtResource("3_soyuf")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_b8tev")
+stream = ExtResource("4_4wvy5")
 autoplay = true
 
 [node name="BackgMovement" type="CanvasLayer" parent="."]
 layer = 3
 
 [node name="MoveLeft" type="TextureRect" parent="BackgMovement"]
+visible = false
 anchors_preset = -1
 anchor_right = 0.187
 anchor_bottom = 1.0
@@ -112,11 +113,11 @@ show_behind_parent = true
 texture_filter = 1
 position = Vector2(601, 296)
 scale = Vector2(7, 7)
-texture = ExtResource("1_j26w1")
-script = ExtResource("8_4nb80")
+texture = ExtResource("5_kkx8j")
+script = ExtResource("6_41rsw")
 
 [node name="TherapyButton" type="CanvasLayer" parent="."]
-script = ExtResource("6_bhgdu")
+script = ExtResource("7_m61cb")
 
 [node name="Dic_button" type="Button" parent="TherapyButton"]
 offset_left = 36.0
@@ -128,7 +129,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="TherapyButton"]
 position = Vector2(70.256, 64.588)
 scale = Vector2(1.406, 1.30883)
-texture = ExtResource("6_2bd13")
+texture = ExtResource("8_cs2yn")
 hframes = 3
 vframes = 2
 frame = 1
@@ -137,21 +138,22 @@ frame = 1
 
 [node name="Raiz_Palabras" type="Node2D" parent="."]
 
-[node name="Palabra" parent="Raiz_Palabras" instance=ExtResource("13_1dxrp")]
-position = Vector2(223, 393)
-
-[node name="Palabra2" parent="Raiz_Palabras" instance=ExtResource("13_1dxrp")]
+[node name="Palabra2" parent="Raiz_Palabras" instance=ExtResource("9_fqd01")]
 position = Vector2(457, 403)
-palabra = "Esperanza"
+palabra = "Miedo"
+
+[node name="Palabra3" parent="Raiz_Palabras" instance=ExtResource("9_fqd01")]
+position = Vector2(223, 393)
+palabra = "HOli"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(640, 360)
-script = ExtResource("4_lifw5")
+script = ExtResource("10_3gaus")
 
 [node name="Dictionary" type="Node2D" parent="Camera2D"]
 unique_name_in_owner = true
-script = ExtResource("10_fdrxe")
-ui_palabra = ExtResource("12_0brxs")
+script = ExtResource("11_tki1i")
+ui_palabra = ExtResource("12_3f0ti")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/Dictionary"]
 libraries = {
@@ -163,7 +165,7 @@ position = Vector2(662, 761)
 
 [node name="Dictionary" type="Sprite2D" parent="Camera2D/Dictionary/Node2D"]
 scale = Vector2(9.53093, 9.23)
-texture = ExtResource("11_4daps")
+texture = ExtResource("13_bjroa")
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
