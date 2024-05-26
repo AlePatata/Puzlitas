@@ -6,7 +6,7 @@ extends Node2D
 @export var ui_palabra: PackedScene
 @onready var palabra_container = %PalabraContainer
 
-signal light_conectar_ui_palabra
+signal inventario_conectar_ui_palabra
 
 func _ready():
 	Game.palabras_updated.connect(_on_palabras_updated)
@@ -18,7 +18,7 @@ func _on_palabras_updated():
 	print(Game.inventory.palabras)
 	for palabra in Game.inventory.palabras:
 		var palabra_inst = ui_palabra.instantiate()
-		light_conectar_ui_palabra.emit(palabra_inst)
+		inventario_conectar_ui_palabra.emit(palabra_inst)
 		palabra_container.add_child(palabra_inst)
 		print(palabra)
 		palabra_inst.text = palabra
