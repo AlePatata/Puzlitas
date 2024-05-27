@@ -19,10 +19,6 @@ config/icon="res://assets/icon.svg"
 
 Game="*res://autoloads/game.gd"
 
-[autoload]
-
-Game="*res://autoloads/game.gd"
-
 [display]
 
 window/size/viewport_width=1280
