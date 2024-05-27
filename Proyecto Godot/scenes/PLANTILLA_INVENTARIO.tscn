@@ -1,8 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://cr2r46e2xsdjb"]
+[gd_scene load_steps=18 format=3 uid="uid://cr2r46e2xsdjb"]
 
 [ext_resource type="Script" path="res://scenes/scrip_inventario.gd" id="1_awnat"]
 [ext_resource type="Texture2D" uid="uid://b013uocnh27v3" path="res://assets/undertaleHouse1.png" id="2_h7mli"]
-[ext_resource type="Texture2D" uid="uid://voo7evsiktog" path="res://assets/icon.svg" id="3_soyuf"]
 [ext_resource type="AudioStream" uid="uid://beac6s038w7qs" path="res://assets/music/Canciones propias/Inexpresiva.wav" id="4_4wvy5"]
 [ext_resource type="Texture2D" uid="uid://cw01lvdfq6xd" path="res://assets/whiteCircle.png" id="5_kkx8j"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/whiteCircle.gd" id="6_41rsw"]
@@ -68,19 +67,6 @@ position = Vector2(1489, 314)
 scale = Vector2(4, 4)
 texture = ExtResource("2_h7mli")
 
-[node name="Shine" type="Button" parent="."]
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.977
-offset_left = 1041.0
-offset_top = 164.0
-offset_right = 1172.0
-offset_bottom = 292.0
-
-[node name="Object" type="Sprite2D" parent="Shine"]
-position = Vector2(66, 65)
-texture = ExtResource("3_soyuf")
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_4wvy5")
 autoplay = true
@@ -89,7 +75,6 @@ autoplay = true
 layer = 3
 
 [node name="MoveLeft" type="TextureRect" parent="BackgMovement"]
-visible = false
 anchors_preset = -1
 anchor_right = 0.187
 anchor_bottom = 1.0
