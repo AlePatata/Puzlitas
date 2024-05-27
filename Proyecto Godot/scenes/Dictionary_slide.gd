@@ -33,6 +33,7 @@ func _on_Book_mouse_exited():
 func _on_area_2d_mouse_exited():
 	_on_Book_mouse_exited()
 
+@warning_ignore("unused_parameter")
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if not event.pressed:
