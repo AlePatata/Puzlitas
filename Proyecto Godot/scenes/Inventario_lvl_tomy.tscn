@@ -1,9 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://ca2il73ug60f8"]
+[gd_scene load_steps=18 format=3 uid="uid://ca2il73ug60f8"]
 
 [ext_resource type="Script" path="res://scenes/scrip_inventario.gd" id="1_pitas"]
-[ext_resource type="Texture2D" uid="uid://b013uocnh27v3" path="res://assets/undertaleHouse1.png" id="2_ys3b2"]
-[ext_resource type="Texture2D" uid="uid://voo7evsiktog" path="res://assets/icon.svg" id="3_xgls8"]
-[ext_resource type="AudioStream" uid="uid://beac6s038w7qs" path="res://assets/music/Canciones propias/Inexpresiva.wav" id="4_sksyb"]
+[ext_resource type="Texture2D" uid="uid://b4jm2pbc85vlm" path="res://scenes/Lvl tomy/Classroom_alegre.jpeg" id="2_v7q5b"]
+[ext_resource type="AudioStream" uid="uid://li0to1xojj4d" path="res://assets/music/Canciones propias/Tensa.wav" id="3_y28qc"]
 [ext_resource type="Texture2D" uid="uid://cw01lvdfq6xd" path="res://assets/whiteCircle.png" id="5_jf0qq"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/whiteCircle.gd" id="6_8630h"]
 [ext_resource type="Script" path="res://scenes/dic_button_gameplay.gd" id="7_18w16"]
@@ -64,33 +63,18 @@ script = ExtResource("1_pitas")
 [node name="Background" type="Sprite2D" parent="."]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(1489, 314)
-scale = Vector2(4, 4)
-texture = ExtResource("2_ys3b2")
-
-[node name="Shine" type="Button" parent="."]
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.977
-offset_left = 1041.0
-offset_top = 164.0
-offset_right = 1172.0
-offset_bottom = 292.0
-button_mask = 0
-
-[node name="Object" type="Sprite2D" parent="Shine"]
-position = Vector2(66, 65)
-texture = ExtResource("3_xgls8")
+position = Vector2(875.56, 318)
+scale = Vector2(1.11536, 0.82)
+texture = ExtResource("2_v7q5b")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_sksyb")
+stream = ExtResource("3_y28qc")
 autoplay = true
 
 [node name="BackgMovement" type="CanvasLayer" parent="."]
 layer = 3
 
 [node name="MoveLeft" type="TextureRect" parent="BackgMovement"]
-visible = false
 anchors_preset = -1
 anchor_right = 0.187
 anchor_bottom = 1.0
@@ -121,14 +105,14 @@ script = ExtResource("6_8630h")
 script = ExtResource("7_18w16")
 
 [node name="Dic_button" type="Button" parent="TherapyButton"]
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 103.0
-offset_bottom = 93.0
+offset_left = 261.0
+offset_top = 10.0
+offset_right = 328.0
+offset_bottom = 69.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="TherapyButton"]
-position = Vector2(70.256, 64.588)
+position = Vector2(295, 42)
 scale = Vector2(1.406, 1.30883)
 texture = ExtResource("8_ho6ue")
 hframes = 3
@@ -140,11 +124,11 @@ frame = 1
 [node name="Raiz_Palabras" type="Node2D" parent="."]
 
 [node name="Palabra2" parent="Raiz_Palabras" instance=ExtResource("9_pd5d1")]
-position = Vector2(457, 403)
+position = Vector2(1195, 106)
 palabra = "Vergüenza"
 
 [node name="Palabra3" parent="Raiz_Palabras" instance=ExtResource("9_pd5d1")]
-position = Vector2(223, 393)
+position = Vector2(457, 280)
 palabra = "Temor"
 
 [node name="Camera2D" type="Camera2D" parent="."]
