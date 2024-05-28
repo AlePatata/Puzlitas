@@ -1,3 +1,24 @@
-[gd_scene format=3 uid="uid://dwru1l51fm2wu"]
+[gd_scene load_steps=5 format=3 uid="uid://dwru1l51fm2wu"]
+
+[ext_resource type="Script" path="res://scenes/Lvl pauloli/3d.gd" id="1_hqiwu"]
+[ext_resource type="Texture2D" uid="uid://dej8abu6fsykj" path="res://scenes/Lvl pauloli/unnamed.png" id="1_ihhft"]
+[ext_resource type="Texture2D" uid="uid://voo7evsiktog" path="res://scenes/icon.svg" id="2_wa81t"]
+[ext_resource type="PackedScene" uid="uid://di3sr6fq11fhf" path="res://scenes/Lvl pauloli/3d.tscn" id="4_e32fj"]
 
 [node name="Lvl" type="Node2D"]
+script = ExtResource("1_hqiwu")
+
+[node name="Unnamed" type="Sprite2D" parent="."]
+position = Vector2(641.5, 359.5)
+scale = Vector2(0.668229, 0.671296)
+texture = ExtResource("1_ihhft")
+
+[node name="Screen" type="Sprite2D" parent="."]
+position = Vector2(559, 359)
+scale = Vector2(1.14844, 1.67187)
+texture = ExtResource("2_wa81t")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+
+[node name="Node3D" parent="SubViewport" instance=ExtResource("4_e32fj")]
