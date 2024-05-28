@@ -4,6 +4,7 @@ extends Camera2D
 @onready var background = $"../Background"
 @onready var white_circle = $whiteCircle
 @onready var dark_background = $"../darkBackground"
+@onready var object_2 = $"../Object2"
 
 
 @onready var move_left = $"../BackgMovement/MoveLeft"
@@ -22,14 +23,17 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	object_2.hide()
 	white_circle.global_position = get_global_mouse_position()
 	if white_circle.isOn(): 
 		background.hide()
+		object_2.show()
 		dark_background.show()
 	else:
 		background.show()
+		object_2.hide()
 		dark_background.hide()
-		
+	
 	
 	if _moving_left and camera_2d.global_position.x >  0:
 		camera_2d.global_position.x -= camera_speed * delta
