@@ -20,10 +20,8 @@ func _on_palabras_updated():
 		var palabra_inst = ui_palabra.instantiate()
 		inventario_conectar_ui_palabra.emit(palabra_inst)
 		palabra_container.add_child(palabra_inst)
-		
+		print(palabra)
 		palabra_inst.text = palabra
-		
-		
 
 func _on_Book_mouse_entered():
 	anim_player.play("asomar_libro")
@@ -43,4 +41,3 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 				Game.add_palabra(Game.current_palabra.palabra)
 				Game.current_palabra.queue_free()
 				Game.current_palabra = null
-

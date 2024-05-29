@@ -127,7 +127,7 @@ frame = 1
 
 [node name="Palabra2" parent="Raiz_Palabras" instance=ExtResource("8_q8cpf")]
 position = Vector2(457, 403)
-palabra = "something"
+palabra = "noHope"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(640, 360)
