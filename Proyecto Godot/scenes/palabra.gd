@@ -2,7 +2,7 @@ extends Node2D
 
 var dragging = false
 signal palabra_tomada
-signal prender_luz
+
 
 #para que el label siempre sea el correspondiente a la palabra
 @export var palabra: String:
@@ -16,7 +16,7 @@ signal prender_luz
 #Hace que la palabra sea igual a su valor al iniciar la escena 
 func _ready():
 	self.palabra = palabra
-	if palabra == "Hope": prender_luz.emit(self)
+	
 
 func _physics_process(delta): 
 	#si arrastro, puedo cambiar la posición de mi palabra u objeto

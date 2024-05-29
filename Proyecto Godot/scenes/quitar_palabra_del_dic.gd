@@ -1,5 +1,6 @@
 extends Label
 signal me_tomaron
+signal prender_luz
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,7 +14,7 @@ var nodo_hijo: Node2D
 var palabra_scene = preload("res://scenes/Palabra.tscn")
 
 func tomar_palabra():
-
+	if text == "Hope": prender_luz.emit(self)
 	# Crea un nuevo Node2D y asigna el script necesario
 	nodo_hijo = palabra_scene.instantiate()
 	nodo_hijo.palabra = text
