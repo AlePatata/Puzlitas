@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://660dh6t2ip5u"]
+[gd_scene load_steps=23 format=3 uid="uid://660dh6t2ip5u"]
 
 [ext_resource type="Script" path="res://scenes/scrip_inventario.gd" id="1_0fovx"]
 [ext_resource type="Texture2D" uid="uid://b013uocnh27v3" path="res://assets/undertaleHouse1.png" id="2_syoeg"]
@@ -12,6 +12,31 @@
 [ext_resource type="Script" path="res://scenes/Dictionary_slide.gd" id="10_ijxuc"]
 [ext_resource type="PackedScene" uid="uid://ca6ulc0jbl1kj" path="res://scenes/ui_palabra.tscn" id="11_43f16"]
 [ext_resource type="Texture2D" uid="uid://dxnok5mya3fam" path="res://assets/diccionario.png" id="12_x8m1o"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/Object.gd" id="13_uf0ds"]
+[ext_resource type="Texture2D" uid="uid://bjtx8ggb08jc8" path="res://assets/bed.png" id="14_i8rcs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8023h"]
+size = Vector2(259.667, 139.333)
+
+[sub_resource type="Animation" id="Animation_e1vom"]
+resource_name = "Move"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(249, 294), Vector2(88, 600)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c0cub"]
+_data = {
+"Move": SubResource("Animation_e1vom")
+}
 
 [sub_resource type="Animation" id="Animation_tmahn"]
 length = 0.001
@@ -123,11 +148,32 @@ frame = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Object" type="Area2D" parent="."]
+position = Vector2(249, 294)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("13_uf0ds")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Object"]
+use_parent_material = true
+position = Vector2(4, -24)
+shape = SubResource("RectangleShape2D_8023h")
+
+[node name="Sprite2D" type="Sprite2D" parent="Object/CollisionShape2D"]
+position = Vector2(5.5, -21.6667)
+scale = Vector2(5, 5)
+texture = ExtResource("14_i8rcs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Object"]
+root_node = NodePath("../CollisionShape2D")
+libraries = {
+"": SubResource("AnimationLibrary_c0cub")
+}
+
 [node name="Raiz_Palabras" type="Node2D" parent="."]
 
 [node name="Palabra2" parent="Raiz_Palabras" instance=ExtResource("8_q8cpf")]
 position = Vector2(457, 403)
-palabra = "noHope"
+palabra = "aaaHope"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(640, 360)

@@ -1,7 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://cyqs5x0wc0prh"]
+[gd_scene load_steps=19 format=3 uid="uid://cyqs5x0wc0prh"]
 
 [ext_resource type="Script" path="res://scenes/scrip_inventario.gd" id="1_dn67n"]
+[ext_resource type="Texture2D" uid="uid://cw01lvdfq6xd" path="res://assets/whiteCircle.png" id="3_4k76d"]
 [ext_resource type="AudioStream" uid="uid://beac6s038w7qs" path="res://assets/music/Canciones propias/Inexpresiva.wav" id="3_ce1i3"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/whiteCircle.gd" id="4_f8d73"]
 [ext_resource type="Script" path="res://scenes/dic_button_gameplay.gd" id="6_h6ly6"]
 [ext_resource type="Texture2D" uid="uid://thiha28tsny3" path="res://assets/books.png" id="7_hmfgy"]
 [ext_resource type="PackedScene" uid="uid://ctghvosvhtgwc" path="res://scenes/palabra.tscn" id="8_kgj24"]
@@ -59,9 +61,44 @@ size = Vector2(877, 423)
 [node name="Light" type="Node2D"]
 script = ExtResource("1_dn67n")
 
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(100, 100)
+texture = ExtResource("14_ybv00")
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ce1i3")
 autoplay = true
+
+[node name="BackgMovement" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="MoveLeft" type="TextureRect" parent="BackgMovement"]
+anchors_preset = -1
+anchor_right = 0.187
+anchor_bottom = 1.0
+offset_left = -87.0
+offset_right = -86.36
+offset_bottom = -1.0
+
+[node name="MoveRight" type="TextureRect" parent="BackgMovement"]
+anchors_preset = -1
+anchor_left = 0.798
+anchor_right = 1.002
+anchor_bottom = 1.0
+offset_left = 135.56
+offset_top = 4.0
+offset_right = 135.44
+offset_bottom = -4.0
+size_flags_horizontal = 8
+
+[node name="whiteCircle" type="Sprite2D" parent="BackgMovement"]
+modulate = Color(1, 0.894118, 0.662745, 0.682353)
+show_behind_parent = true
+texture_filter = 1
+position = Vector2(747, 798)
+scale = Vector2(7, 7)
+texture = ExtResource("3_4k76d")
+script = ExtResource("4_f8d73")
 
 [node name="TherapyButton" type="CanvasLayer" parent="."]
 script = ExtResource("6_h6ly6")

@@ -7,6 +7,8 @@ extends Node2D
 @onready var palabra_container = %PalabraContainer
 
 signal inventario_conectar_ui_palabra
+signal apagar_luz
+
 
 func _ready():
 	Game.palabras_updated.connect(_on_palabras_updated)
@@ -37,6 +39,8 @@ func _on_area_2d_mouse_exited():
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if not event.pressed:
+			if Game.current_palabra.palabra == "Hope":
+				apagar_luz.emit(self)
 			if Game.current_palabra:
 				Game.add_palabra(Game.current_palabra.palabra)
 				Game.current_palabra.queue_free()
