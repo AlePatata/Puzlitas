@@ -1,17 +1,16 @@
-[gd_scene load_steps=18 format=3 uid="uid://660dh6t2ip5u"]
+[gd_scene load_steps=17 format=3 uid="uid://cyqs5x0wc0prh"]
 
-[ext_resource type="Script" path="res://scenes/scrip_inventario.gd" id="1_0fovx"]
-[ext_resource type="Texture2D" uid="uid://b013uocnh27v3" path="res://assets/undertaleHouse1.png" id="2_syoeg"]
-[ext_resource type="AudioStream" uid="uid://beac6s038w7qs" path="res://assets/music/Canciones propias/Inexpresiva.wav" id="3_hdepm"]
-[ext_resource type="Texture2D" uid="uid://cw01lvdfq6xd" path="res://assets/whiteCircle.png" id="4_qqb3p"]
-[ext_resource type="Script" path="res://scenes/Lvl ale/whiteCircle.gd" id="5_egv65"]
-[ext_resource type="Script" path="res://scenes/dic_button_gameplay.gd" id="6_tmlmg"]
-[ext_resource type="Texture2D" uid="uid://thiha28tsny3" path="res://assets/books.png" id="7_gur7d"]
-[ext_resource type="PackedScene" uid="uid://ctghvosvhtgwc" path="res://scenes/palabra.tscn" id="8_q8cpf"]
-[ext_resource type="Script" path="res://scenes/Lvl ale/Camera2D.gd" id="9_pum0y"]
-[ext_resource type="Script" path="res://scenes/Dictionary_slide.gd" id="10_ijxuc"]
-[ext_resource type="PackedScene" uid="uid://ca6ulc0jbl1kj" path="res://scenes/ui_palabra.tscn" id="11_43f16"]
-[ext_resource type="Texture2D" uid="uid://dxnok5mya3fam" path="res://assets/diccionario.png" id="12_x8m1o"]
+[ext_resource type="Script" path="res://scenes/scrip_inventario.gd" id="1_dn67n"]
+[ext_resource type="AudioStream" uid="uid://beac6s038w7qs" path="res://assets/music/Canciones propias/Inexpresiva.wav" id="3_ce1i3"]
+[ext_resource type="Script" path="res://scenes/dic_button_gameplay.gd" id="6_h6ly6"]
+[ext_resource type="Texture2D" uid="uid://thiha28tsny3" path="res://assets/books.png" id="7_hmfgy"]
+[ext_resource type="PackedScene" uid="uid://ctghvosvhtgwc" path="res://scenes/palabra.tscn" id="8_kgj24"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/Camera2D.gd" id="9_gqklh"]
+[ext_resource type="Script" path="res://scenes/Dictionary_slide.gd" id="10_bjs8d"]
+[ext_resource type="PackedScene" uid="uid://ca6ulc0jbl1kj" path="res://scenes/ui_palabra.tscn" id="11_tmelx"]
+[ext_resource type="Texture2D" uid="uid://dxnok5mya3fam" path="res://assets/diccionario.png" id="12_h6lwp"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/Button.gd" id="13_fuxf5"]
+[ext_resource type="Texture2D" uid="uid://voo7evsiktog" path="res://assets/icon.svg" id="14_ybv00"]
 
 [sub_resource type="Animation" id="Animation_tmahn"]
 length = 0.001
@@ -58,53 +57,14 @@ _data = {
 size = Vector2(877, 423)
 
 [node name="Light" type="Node2D"]
-script = ExtResource("1_0fovx")
-
-[node name="Background" type="Sprite2D" parent="."]
-modulate = Color(0.431373, 0.34902, 1, 1)
-light_mask = 2
-visibility_layer = 2
-position = Vector2(1568, 359.5)
-scale = Vector2(4.21265, 4.59091)
-texture = ExtResource("2_syoeg")
+script = ExtResource("1_dn67n")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_hdepm")
+stream = ExtResource("3_ce1i3")
 autoplay = true
 
-[node name="BackgMovement" type="CanvasLayer" parent="."]
-layer = 3
-
-[node name="MoveLeft" type="TextureRect" parent="BackgMovement"]
-anchors_preset = -1
-anchor_right = 0.187
-anchor_bottom = 1.0
-offset_left = -87.0
-offset_right = -86.36
-offset_bottom = -1.0
-
-[node name="MoveRight" type="TextureRect" parent="BackgMovement"]
-anchors_preset = -1
-anchor_left = 0.798
-anchor_right = 1.002
-anchor_bottom = 1.0
-offset_left = 135.56
-offset_top = 4.0
-offset_right = 135.44
-offset_bottom = -4.0
-size_flags_horizontal = 8
-
-[node name="whiteCircle" type="Sprite2D" parent="BackgMovement"]
-modulate = Color(1, 0.894118, 0.662745, 0.682353)
-show_behind_parent = true
-texture_filter = 1
-position = Vector2(747, 798)
-scale = Vector2(7, 7)
-texture = ExtResource("4_qqb3p")
-script = ExtResource("5_egv65")
-
 [node name="TherapyButton" type="CanvasLayer" parent="."]
-script = ExtResource("6_tmlmg")
+script = ExtResource("6_h6ly6")
 
 [node name="Dic_button" type="Button" parent="TherapyButton"]
 offset_left = 36.0
@@ -116,7 +76,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="TherapyButton"]
 position = Vector2(70.256, 64.588)
 scale = Vector2(1.406, 1.30883)
-texture = ExtResource("7_gur7d")
+texture = ExtResource("7_hmfgy")
 hframes = 3
 vframes = 2
 frame = 1
@@ -125,18 +85,22 @@ frame = 1
 
 [node name="Raiz_Palabras" type="Node2D" parent="."]
 
-[node name="Palabra2" parent="Raiz_Palabras" instance=ExtResource("8_q8cpf")]
+[node name="Palabra2" parent="Raiz_Palabras" instance=ExtResource("8_kgj24")]
 position = Vector2(457, 403)
-palabra = "something"
+palabra = "Hope"
+
+[node name="Palabra3" parent="Raiz_Palabras" instance=ExtResource("8_kgj24")]
+position = Vector2(223, 393)
+palabra = "HOli"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(640, 360)
-script = ExtResource("9_pum0y")
+script = ExtResource("9_gqklh")
 
 [node name="Dictionary" type="Node2D" parent="Camera2D"]
 unique_name_in_owner = true
-script = ExtResource("10_ijxuc")
-ui_palabra = ExtResource("11_43f16")
+script = ExtResource("10_bjs8d")
+ui_palabra = ExtResource("11_tmelx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/Dictionary"]
 libraries = {
@@ -148,7 +112,7 @@ position = Vector2(662, 761)
 
 [node name="Dictionary" type="Sprite2D" parent="Camera2D/Dictionary/Node2D"]
 scale = Vector2(9.53093, 9.23)
-texture = ExtResource("12_x8m1o")
+texture = ExtResource("12_h6lwp")
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
@@ -176,6 +140,18 @@ size_flags_vertical = 0
 theme_override_constants/h_separation = 384
 theme_override_constants/v_separation = 55
 columns = 2
+
+[node name="Button" type="Button" parent="."]
+offset_left = 189.0
+offset_top = 40.0
+offset_right = 301.0
+offset_bottom = 146.0
+script = ExtResource("13_fuxf5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Button"]
+position = Vector2(57, 53)
+scale = Vector2(0.796875, 0.804688)
+texture = ExtResource("14_ybv00")
 
 [connection signal="input_event" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_entered"]
