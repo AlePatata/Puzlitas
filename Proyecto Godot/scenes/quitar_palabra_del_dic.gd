@@ -15,6 +15,7 @@ var nodo_hijo: Node2D
 var palabra_scene = preload("res://scenes/Palabra.tscn")
 
 func tomar_palabra():
+	Game.current_palabra = text
 	if text == "Hope": prender_luz.emit(self)
 	#if text == "Order": ordenar_objeto.emit(self)
 	# Crea un nuevo Node2D y asigna el script necesario
@@ -28,3 +29,4 @@ func tomar_palabra():
 # Elimínalo la palabra del diccionario
 	Game.remove_palabra(text)
 	self.queue_free()
+	Game.nodoporeliminar = nodo_hijo

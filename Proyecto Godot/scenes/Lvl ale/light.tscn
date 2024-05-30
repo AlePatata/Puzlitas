@@ -1,20 +1,25 @@
-[gd_scene load_steps=22 format=3 uid="uid://660dh6t2ip5u"]
+[gd_scene load_steps=26 format=3 uid="uid://660dh6t2ip5u"]
 
 [ext_resource type="Script" path="res://scenes/scrip_inventario.gd" id="1_0fovx"]
 [ext_resource type="Texture2D" uid="uid://b013uocnh27v3" path="res://assets/undertaleHouse1.png" id="2_syoeg"]
 [ext_resource type="AudioStream" uid="uid://beac6s038w7qs" path="res://assets/music/Canciones propias/Inexpresiva.wav" id="3_hdepm"]
 [ext_resource type="Texture2D" uid="uid://cw01lvdfq6xd" path="res://assets/whiteCircle.png" id="4_qqb3p"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/whiteCircle.gd" id="5_egv65"]
-[ext_resource type="Script" path="res://scenes/dic_button_gameplay.gd" id="6_tmlmg"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/Dic_button.gd" id="7_4t6pb"]
 [ext_resource type="Texture2D" uid="uid://thiha28tsny3" path="res://assets/books.png" id="7_gur7d"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/Object.gd" id="8_75rwv"]
 [ext_resource type="PackedScene" uid="uid://ctghvosvhtgwc" path="res://scenes/palabra.tscn" id="8_q8cpf"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/Camera2D.gd" id="9_pum0y"]
 [ext_resource type="Script" path="res://scenes/Dictionary_slide.gd" id="10_ijxuc"]
 [ext_resource type="PackedScene" uid="uid://bbbb3fynp4krm" path="res://scenes/Lvl ale/object.tscn" id="10_illft"]
 [ext_resource type="PackedScene" uid="uid://ca6ulc0jbl1kj" path="res://scenes/ui_palabra.tscn" id="11_43f16"]
+[ext_resource type="Texture2D" uid="uid://bjtx8ggb08jc8" path="res://assets/bed.png" id="11_eo25o"]
 [ext_resource type="Texture2D" uid="uid://dxnok5mya3fam" path="res://assets/diccionario.png" id="12_x8m1o"]
 [ext_resource type="Texture2D" uid="uid://voo7evsiktog" path="res://assets/icon.svg" id="14_70rci"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/Final_Object.gd" id="15_n54j5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bsws3"]
+size = Vector2(259.667, 139.333)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i1sbs"]
 size = Vector2(143, 136)
@@ -63,6 +68,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1n31q"]
 size = Vector2(877, 423)
 
+[sub_resource type="Theme" id="Theme_e5dq4"]
+/fonts/VICTORIA = null
+
 [node name="Light" type="Node2D"]
 script = ExtResource("1_0fovx")
 
@@ -109,47 +117,44 @@ scale = Vector2(7, 7)
 texture = ExtResource("4_qqb3p")
 script = ExtResource("5_egv65")
 
-[node name="TherapyButton" type="CanvasLayer" parent="."]
-script = ExtResource("6_tmlmg")
-
-[node name="Dic_button" type="Button" parent="TherapyButton"]
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 103.0
-offset_bottom = 93.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="TherapyButton"]
-position = Vector2(70.256, 64.588)
-scale = Vector2(1.406, 1.30883)
-texture = ExtResource("7_gur7d")
-hframes = 3
-vframes = 2
-frame = 1
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Cama" type="Node2D" parent="."]
+position = Vector2(263.25, 225.5)
+scale = Vector2(7.5, 7.5)
+script = ExtResource("8_75rwv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Cama"]
+texture = ExtResource("11_eo25o")
+
+[node name="Area2D" type="Area2D" parent="Cama/Sprite2D"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Cama/Sprite2D/Area2D"]
+use_parent_material = true
+position = Vector2(-1.1, 4.33334)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_bsws3")
+
 [node name="Objects" type="Node2D" parent="."]
+visible = false
 
 [node name="Final_Object" type="Area2D" parent="Objects"]
 visible = false
 script = ExtResource("15_n54j5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Final_Object"]
+visible = false
 position = Vector2(1850, 303)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_i1sbs")
 
 [node name="Sprite2D" type="Sprite2D" parent="Objects/Final_Object/CollisionShape2D"]
+visible = false
 texture = ExtResource("14_70rci")
 
 [node name="Object" parent="Objects" instance=ExtResource("10_illft")]
 
 [node name="Raiz_Palabras" type="Node2D" parent="."]
-
-[node name="Palabra2" parent="Raiz_Palabras" instance=ExtResource("8_q8cpf")]
-position = Vector2(580, 413)
-palabra = "Order"
 
 [node name="Palabra3" parent="Raiz_Palabras" instance=ExtResource("8_q8cpf")]
 position = Vector2(763, 423)
@@ -203,6 +208,43 @@ theme_override_constants/h_separation = 384
 theme_override_constants/v_separation = 55
 columns = 2
 
+[node name="TherapyButton" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Dic_button" type="Button" parent="TherapyButton"]
+anchors_preset = -1
+anchor_left = 0.026
+anchor_top = 0.039
+anchor_right = 0.078
+anchor_bottom = 0.121
+offset_left = -0.279999
+offset_top = -0.0799999
+offset_right = 0.159996
+offset_bottom = -0.120003
+script = ExtResource("7_4t6pb")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="TherapyButton/Dic_button"]
+position = Vector2(34.256, 30.588)
+scale = Vector2(1.406, 1.30883)
+texture = ExtResource("7_gur7d")
+hframes = 3
+vframes = 2
+frame = 1
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 177.0
+offset_top = 193.0
+offset_right = 1080.0
+offset_bottom = 466.0
+theme = SubResource("Theme_e5dq4")
+theme_override_font_sizes/font_size = 200
+text = "VICTORIA"
+
+[connection signal="input_event" from="Cama/Sprite2D/Area2D" to="Cama" method="_on_area_2d_input_event"]
+[connection signal="area_entered" from="Objects/Object" to="Raiz_Palabras/Palabra3" method="_on_object_area_entered"]
 [connection signal="input_event" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_exited"]
+[connection signal="pressed" from="TherapyButton/Dic_button" to="." method="_on_dic_button_pressed"]

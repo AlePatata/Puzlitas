@@ -6,7 +6,7 @@ extends Node2D
 
 func _ready():
 	dictionary.inventario_conectar_ui_palabra.connect(conectar_para_agregar_nodo)
-	cama.victoria.connect(mostrar_victoria)
+	#cama.victoria.connect(mostrar_victoria)
 
 func agregar_nodo_palabra(nodo_hijo):
 	raiz_palabras.add_child(nodo_hijo)
@@ -16,7 +16,3 @@ func conectar_para_agregar_nodo(ui_palabra):
 	
 func mostrar_victoria():
 	label.visible = true
-
-
-func _on_dic_button_pressed():
-	pass # Replace with function body.
