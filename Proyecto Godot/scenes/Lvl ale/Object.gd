@@ -1,13 +1,20 @@
 extends Area2D
+@onready var raiz_palabras = $"../../Raiz_Palabras"
+
 
 func _ready():
-	# Conectar la señal de eventos de entrada de forma más moderna
-	connect("input_event", Callable(self, "_on_input_event"))
-
-func _on_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		# Llamar a la función para mover el objeto
-		move_object()
-
-func move_object():
+	pass
+	
+func _physics_process(delta):
+	for emisor in raiz_palabras.get_children():
+		if not emisor.is_connected("ordenar_objeto", Callable(self, "_ordenar")):
+			emisor.ordenar_objeto.connect(Callable(self, "_ordenar"))
+			print("Señal recibida")
+	
+func _ordenar(Emisor):
+	print("Funcion ordenar")
+	connect("body_entered", Callable(self, "_move_object"))	#_move_object()
+	print(Emisor)
+	
+func _move_object():
 	$AnimationPlayer.play("Move")

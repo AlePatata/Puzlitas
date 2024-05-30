@@ -16,10 +16,10 @@ func _physics_process(_delta):
 		dictionary.apagar_luz.connect(Callable(self, "_apagar"))
 	
 
-func _prender(emisor):
+func _prender(Emisor):
 	show()
-	print(emisor) # no sacar, se cae
+	print(Emisor) # no sacar, se cae
 	
-func _apagar(dictionary):
+func _apagar(Emisor_dictionary):
 	hide()
-	print(dictionary)
+	print(Emisor_dictionary)

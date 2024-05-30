@@ -1,7 +1,6 @@
 extends CanvasLayer
 #@onready var brain: Button = $brain_button
 @onready var dic: Button = $Dic_button
-@onready var white_circle = $"../Camera2D/whiteCircle"
 
 
 func _ready():
