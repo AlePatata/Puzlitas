@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cylw2y4qhtp20"]
+
+[ext_resource type="PackedScene" uid="uid://bxr5tqxj6vyny" path="res://scenes/Lvl ale/area_2d.tscn" id="1_lxa2v"]
+[ext_resource type="PackedScene" uid="uid://ctghvosvhtgwc" path="res://scenes/palabra.tscn" id="3_tow8u"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Area2D" parent="." instance=ExtResource("1_lxa2v")]
+
+[node name="Palabra" parent="." instance=ExtResource("3_tow8u")]
+position = Vector2(1000, 124)

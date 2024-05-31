@@ -1,0 +1,202 @@
+[gd_scene load_steps=18 format=3 uid="uid://cyqs5x0wc0prh"]
+
+[ext_resource type="Script" path="res://scenes/Lvl ale/RecogerHope.gd" id="1_rougu"]
+[ext_resource type="Texture2D" uid="uid://cw01lvdfq6xd" path="res://assets/whiteCircle.png" id="3_4k76d"]
+[ext_resource type="AudioStream" uid="uid://beac6s038w7qs" path="res://assets/music/Canciones propias/Inexpresiva.wav" id="3_ce1i3"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/whiteCircle.gd" id="4_f8d73"]
+[ext_resource type="Texture2D" uid="uid://thiha28tsny3" path="res://assets/books.png" id="7_hmfgy"]
+[ext_resource type="PackedScene" uid="uid://ctghvosvhtgwc" path="res://scenes/palabra.tscn" id="8_kgj24"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/Camera2D.gd" id="9_gqklh"]
+[ext_resource type="Script" path="res://scenes/Dictionary_slide.gd" id="10_bjs8d"]
+[ext_resource type="PackedScene" uid="uid://ca6ulc0jbl1kj" path="res://scenes/ui_palabra.tscn" id="11_tmelx"]
+[ext_resource type="Texture2D" uid="uid://dxnok5mya3fam" path="res://assets/diccionario.png" id="12_h6lwp"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/Button.gd" id="13_fuxf5"]
+[ext_resource type="Texture2D" uid="uid://voo7evsiktog" path="res://assets/icon.svg" id="14_ybv00"]
+
+[sub_resource type="Animation" id="Animation_tmahn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(662, 761)]
+}
+
+[sub_resource type="Animation" id="Animation_j8a81"]
+resource_name = "asomar_libro"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(662, 761), Vector2(662, 461)]
+}
+
+[sub_resource type="Animation" id="Animation_kt7q1"]
+resource_name = "avanzar"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3kwxq"]
+_data = {
+"RESET": SubResource("Animation_tmahn"),
+"asomar_libro": SubResource("Animation_j8a81"),
+"avanzar": SubResource("Animation_kt7q1")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1n31q"]
+size = Vector2(877, 423)
+
+[node name="Light" type="Node2D"]
+script = ExtResource("1_rougu")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(100, 100)
+texture = ExtResource("14_ybv00")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ce1i3")
+autoplay = true
+
+[node name="BackgMovement" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="MoveLeft" type="TextureRect" parent="BackgMovement"]
+anchors_preset = -1
+anchor_right = 0.187
+anchor_bottom = 1.0
+offset_left = -87.0
+offset_right = -86.36
+offset_bottom = -1.0
+
+[node name="MoveRight" type="TextureRect" parent="BackgMovement"]
+anchors_preset = -1
+anchor_left = 0.798
+anchor_right = 1.002
+anchor_bottom = 1.0
+offset_left = 135.56
+offset_top = 4.0
+offset_right = 135.44
+offset_bottom = -4.0
+size_flags_horizontal = 8
+
+[node name="whiteCircle" type="Sprite2D" parent="BackgMovement"]
+modulate = Color(1, 0.894118, 0.662745, 0.682353)
+show_behind_parent = true
+texture_filter = 1
+position = Vector2(747, 798)
+scale = Vector2(7, 7)
+texture = ExtResource("3_4k76d")
+script = ExtResource("4_f8d73")
+
+[node name="TherapyButton" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Dic_button" type="Button" parent="TherapyButton"]
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 103.0
+offset_bottom = 93.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="TherapyButton/Dic_button"]
+position = Vector2(34.256, 30.588)
+scale = Vector2(1.406, 1.30883)
+texture = ExtResource("7_hmfgy")
+hframes = 3
+vframes = 2
+frame = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Raiz_Palabras" type="Node2D" parent="."]
+
+[node name="Palabra2" parent="Raiz_Palabras" instance=ExtResource("8_kgj24")]
+position = Vector2(457, 403)
+palabra = "Hope"
+
+[node name="Palabra3" parent="Raiz_Palabras" instance=ExtResource("8_kgj24")]
+position = Vector2(223, 393)
+palabra = "Get your life together"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(640, 360)
+script = ExtResource("9_gqklh")
+
+[node name="Dictionary" type="Node2D" parent="Camera2D"]
+unique_name_in_owner = true
+script = ExtResource("10_bjs8d")
+ui_palabra = ExtResource("11_tmelx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/Dictionary"]
+libraries = {
+"": SubResource("AnimationLibrary_3kwxq")
+}
+
+[node name="Node2D" type="Node2D" parent="Camera2D/Dictionary"]
+position = Vector2(662, 761)
+
+[node name="Dictionary" type="Sprite2D" parent="Camera2D/Dictionary/Node2D"]
+scale = Vector2(9.53093, 9.23)
+texture = ExtResource("12_h6lwp")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="Camera2D/Dictionary/Node2D/Dictionary"]
+position = Vector2(-69.4581, -82.4485)
+scale = Vector2(0.104922, 0.108342)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Dictionary/Node2D/Dictionary/Area2D"]
+position = Vector2(667, 763)
+shape = SubResource("RectangleShape2D_1n31q")
+
+[node name="MarginContainer" type="MarginContainer" parent="Camera2D/Dictionary/Node2D"]
+custom_minimum_size = Vector2(0.47, 0)
+offset_left = -306.0
+offset_top = -205.0
+offset_right = 553.0
+offset_bottom = 192.0
+theme_override_constants/margin_top = 52
+
+[node name="PalabraContainer" type="GridContainer" parent="Camera2D/Dictionary/Node2D/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/h_separation = 384
+theme_override_constants/v_separation = 55
+columns = 2
+
+[node name="Button" type="Button" parent="."]
+offset_left = 189.0
+offset_top = 40.0
+offset_right = 301.0
+offset_bottom = 146.0
+script = ExtResource("13_fuxf5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Button"]
+position = Vector2(57, 53)
+scale = Vector2(0.796875, 0.804688)
+texture = ExtResource("14_ybv00")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 370.0
+offset_top = 11.0
+offset_right = 858.0
+offset_bottom = 51.0
+theme_override_font_sizes/font_size = 26
+text = "Añade todas las palabras al diccionario"
+
+[connection signal="input_event" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_exited"]

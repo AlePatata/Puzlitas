@@ -15,6 +15,7 @@ func add_palabra(palabra: String):
 	if palabra in inventory.palabras:
 		return
 	inventory.palabras.push_back(palabra)
+	print(palabra)
 	palabras_updated.emit()
 	
 func remove_palabra(palabra: String):
@@ -25,6 +26,7 @@ func remove_palabra(palabra: String):
 	
 
 var current_palabra
+var nodoporeliminar
 #################################
 
 

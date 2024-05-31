@@ -1,7 +1,6 @@
 extends Label
 signal me_tomaron
-signal prender_luz
-signal ordenar_objeto
+@onready var white_circle = $BackgMovement/whiteCircle
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,14 +9,13 @@ func _ready():
 func _on_input_event(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		tomar_palabra()
+		
 
 var nodo_hijo: Node2D
 var palabra_scene = preload("res://scenes/palabra.tscn")
 
 func tomar_palabra():
-	Game.current_palabra = text
-	if text == "Hope": prender_luz.emit(self)
-	#if text == "Order": ordenar_objeto.emit(self)
+
 	# Crea un nuevo Node2D y asigna el script necesario
 	nodo_hijo = palabra_scene.instantiate()
 	nodo_hijo.palabra = text
@@ -29,4 +27,10 @@ func tomar_palabra():
 # Elimínalo la palabra del diccionario
 	Game.remove_palabra(text)
 	self.queue_free()
-	Game.nodoporeliminar = nodo_hijo
+
+
+#_tool(palabra)
+
+func _tool(name: String):
+	if name == "Hope":
+		white_circle.show()
