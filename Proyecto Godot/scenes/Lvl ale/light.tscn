@@ -1,11 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://660dh6t2ip5u"]
+[gd_scene load_steps=28 format=3 uid="uid://660dh6t2ip5u"]
 
 [ext_resource type="Script" path="res://scenes/scrip_inventario.gd" id="1_0fovx"]
 [ext_resource type="Texture2D" uid="uid://b013uocnh27v3" path="res://assets/undertaleHouse1.png" id="2_syoeg"]
-[ext_resource type="AudioStream" uid="uid://beac6s038w7qs" path="res://assets/music/Canciones propias/Inexpresiva.wav" id="3_hdepm"]
+[ext_resource type="AudioStream" uid="uid://d26axieb1tyla" path="res://assets/music/Canciones propias/Triste.wav" id="3_7esru"]
 [ext_resource type="Texture2D" uid="uid://cw01lvdfq6xd" path="res://assets/whiteCircle.png" id="4_qqb3p"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/whiteCircle.gd" id="5_egv65"]
-[ext_resource type="Script" path="res://scenes/Lvl ale/Dic_button.gd" id="7_4t6pb"]
 [ext_resource type="Texture2D" uid="uid://thiha28tsny3" path="res://assets/books.png" id="7_gur7d"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/Object.gd" id="8_75rwv"]
 [ext_resource type="PackedScene" uid="uid://ctghvosvhtgwc" path="res://scenes/palabra.tscn" id="8_q8cpf"]
@@ -17,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://dxnok5mya3fam" path="res://assets/diccionario.png" id="12_x8m1o"]
 [ext_resource type="Texture2D" uid="uid://voo7evsiktog" path="res://assets/icon.svg" id="14_70rci"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/Final_Object.gd" id="15_n54j5"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/dicbutton.gd" id="17_ufa5u"]
+[ext_resource type="PackedScene" uid="uid://rl28wrp7sgkh" path="res://scenes/ui/pause_menu.tscn" id="18_x6clr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bsws3"]
 size = Vector2(259.667, 139.333)
@@ -71,6 +72,9 @@ size = Vector2(877, 423)
 [sub_resource type="Theme" id="Theme_e5dq4"]
 /fonts/VICTORIA = null
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oyrse"]
+size = Vector2(44.808, 46.6065)
+
 [node name="Light" type="Node2D"]
 script = ExtResource("1_0fovx")
 
@@ -81,10 +85,6 @@ visibility_layer = 2
 position = Vector2(1575, 360.5)
 scale = Vector2(4.23149, 4.65584)
 texture = ExtResource("2_syoeg")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_hdepm")
-autoplay = true
 
 [node name="BackgMovement" type="CanvasLayer" parent="."]
 layer = 3
@@ -116,8 +116,6 @@ position = Vector2(747, 798)
 scale = Vector2(7, 7)
 texture = ExtResource("4_qqb3p")
 script = ExtResource("5_egv65")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Cama" type="Node2D" parent="."]
 position = Vector2(263.25, 225.5)
@@ -208,30 +206,6 @@ theme_override_constants/h_separation = 384
 theme_override_constants/v_separation = 55
 columns = 2
 
-[node name="TherapyButton" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="Dic_button" type="Button" parent="TherapyButton"]
-anchors_preset = -1
-anchor_left = 0.026
-anchor_top = 0.039
-anchor_right = 0.078
-anchor_bottom = 0.121
-offset_left = -0.279999
-offset_top = -0.0799999
-offset_right = 0.159996
-offset_bottom = -0.120003
-script = ExtResource("7_4t6pb")
-metadata/_edit_use_anchors_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="TherapyButton/Dic_button"]
-position = Vector2(34.256, 30.588)
-scale = Vector2(1.406, 1.30883)
-texture = ExtResource("7_gur7d")
-hframes = 3
-vframes = 2
-frame = 1
-
 [node name="Label" type="Label" parent="."]
 visible = false
 offset_left = 177.0
@@ -242,9 +216,44 @@ theme = SubResource("Theme_e5dq4")
 theme_override_font_sizes/font_size = 200
 text = "VICTORIA"
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(55, 45)
+scale = Vector2(1.406, 1.30883)
+texture = ExtResource("7_gur7d")
+hframes = 3
+vframes = 2
+frame = 1
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/Sprite2D/Area2D"]
+position = Vector2(0.355621, 0.382019)
+shape = SubResource("RectangleShape2D_oyrse")
+script = ExtResource("17_ufa5u")
+
+[node name="TherapyButton" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7esru")
+autoplay = true
+
+[node name="Menu de Pausa" type="Node2D" parent="."]
+
+[node name="PauseMenu" parent="Menu de Pausa" instance=ExtResource("18_x6clr")]
+
+[node name="Label" type="Label" parent="Menu de Pausa"]
+offset_left = 294.0
+offset_top = 8.0
+offset_right = 334.0
+offset_bottom = 31.0
+text = "Debido a un bug, guarda primero NOHOPE y luego haz tu cama. Puedes probar la funcionalidad de Hope."
+
 [connection signal="input_event" from="Cama/Sprite2D/Area2D" to="Cama" method="_on_area_2d_input_event"]
 [connection signal="area_entered" from="Objects/Object" to="Raiz_Palabras/Palabra3" method="_on_object_area_entered"]
 [connection signal="input_event" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_exited"]
-[connection signal="pressed" from="TherapyButton/Dic_button" to="." method="_on_dic_button_pressed"]
+[connection signal="input_event" from="CanvasLayer/Sprite2D/Area2D" to="CanvasLayer/Sprite2D/Area2D/CollisionShape2D" method="_on_area_2d_input_event"]

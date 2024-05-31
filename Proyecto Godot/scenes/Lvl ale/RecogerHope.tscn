@@ -189,6 +189,14 @@ position = Vector2(57, 53)
 scale = Vector2(0.796875, 0.804688)
 texture = ExtResource("14_ybv00")
 
+[node name="Label" type="Label" parent="."]
+offset_left = 370.0
+offset_top = 11.0
+offset_right = 858.0
+offset_bottom = 51.0
+theme_override_font_sizes/font_size = 26
+text = "Añade todas las palabras al diccionario"
+
 [connection signal="input_event" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_exited"]

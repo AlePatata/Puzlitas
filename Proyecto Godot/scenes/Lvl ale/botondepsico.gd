@@ -14,3 +14,4 @@ func _on_dic_button_pressed():
 	print("Hola")
 	get_tree().change_scene("res://scenes/Lvl ale/RecogerHope.tscn")
 
+

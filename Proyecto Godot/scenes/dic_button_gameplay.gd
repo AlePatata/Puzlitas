@@ -1,4 +1,4 @@
-extends CanvasLayer
+'extends CanvasLayer
 #@onready var brain: Button = $brain_button
 @onready var dic: Button = $Dic_button
 
@@ -12,3 +12,4 @@ func _on_dic_pressed():
 
 func _on_dic_button_pressed():
 	_on_dic_pressed() # Replace with function body.
+'

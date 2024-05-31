@@ -3,6 +3,8 @@ extends Node2D
 @onready var dictionary = %Dictionary
 @onready var cama = $Cama
 @onready var label = $Label
+@onready var nuevo_stream = preload("res://assets/music/Canciones propias/Alegre.wav")
+@onready var audio_player = $AudioStreamPlayer2D
 
 func _ready():
 	dictionary.inventario_conectar_ui_palabra.connect(conectar_para_agregar_nodo)
@@ -16,7 +18,5 @@ func conectar_para_agregar_nodo(ui_palabra):
 	
 func mostrar_victoria():
 	label.visible = true
-
-
-func _on_dic_button_pressed():
-	pass # Replace with function body.
+	audio_player.stream = nuevo_stream
+	audio_player.play()

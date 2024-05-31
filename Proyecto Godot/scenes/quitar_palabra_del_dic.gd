@@ -12,7 +12,7 @@ func _on_input_event(event):
 		tomar_palabra()
 
 var nodo_hijo: Node2D
-var palabra_scene = preload("res://scenes/Palabra.tscn")
+var palabra_scene = preload("res://scenes/palabra.tscn")
 
 func tomar_palabra():
 	Game.current_palabra = text
