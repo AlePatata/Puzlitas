@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://brhlw81qrggvp"]
+
+[ext_resource type="Script" path="res://scenes/sofi ;3/therapist.gd" id="1_7dv1a"]
+[ext_resource type="Texture2D" uid="uid://2seko6y4b3u8" path="res://assets/fondosimplemorado.png" id="2_jbbiy"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_7dv1a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(641, 361)
+scale = Vector2(5.333, 5.333)
+texture = ExtResource("2_jbbiy")
