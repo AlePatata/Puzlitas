@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://brhlw81qrggvp"]
+[gd_scene load_steps=4 format=3 uid="uid://brhlw81qrggvp"]
 
 [ext_resource type="Script" path="res://scenes/sofi ;3/therapist.gd" id="1_7dv1a"]
 [ext_resource type="Texture2D" uid="uid://2seko6y4b3u8" path="res://assets/fondosimplemorado.png" id="2_jbbiy"]
+[ext_resource type="AudioStream" uid="uid://beac6s038w7qs" path="res://assets/music/Canciones propias/Inexpresiva.wav" id="3_n75vd"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_7dv1a")
@@ -10,3 +11,6 @@ script = ExtResource("1_7dv1a")
 position = Vector2(641, 361)
 scale = Vector2(5.333, 5.333)
 texture = ExtResource("2_jbbiy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_n75vd")

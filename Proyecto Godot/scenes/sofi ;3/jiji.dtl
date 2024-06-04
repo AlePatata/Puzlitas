@@ -1,11 +1,15 @@
 join user 1
 join "gatito terapeuta" 2 [animation="Fade In Out" length="1" wait="true"]
 user: Hi, I'm sorry for being late, I got caught up in traffic.
-"gatito terapeuta": Hi, you're good, don't worry about it, I know traffic's been awful lately around these parts.
-"gatito terapeuta": Let's begin with introductions, my name is firulais and i will be your therapist from now on. Tell me, what is your name?
-set {cat_name} = "firulais"
+"gatito terapeuta": Hi, you're good, don't worry about it, traffic's been pretty bad lately around here.
+"gatito terapeuta": Let's begin with introductions, my name is gatsby and i will be your therapist from now on. Tell me, what's your name?
+set {cat_name} = "gatsby"
 [text_input text="What's your name?" var="username"]
 user: My name is {username}
 "gatito terapeuta": That's a pretty name! So, tell me {username}, why did you decide to come here?
-user: My memories don't feel quite right. When i try to remember certain things, it feels like something's blocking me
+user: My memories don't feel quite right. When i try to remember certain things, it feels like something's blocking me.
 "gatito terapeuta": Oh, my. That sounds hard. When did you begin to feel this way?
+user: About a month ago. It's like I'm stuck in a room in my mind where all my memories are in picture frames, but they all look... off.
+"gatito terapeuta": That's an interesting way to put it. Tell me more about this mental room of yours.
+user: It's... well, it looks exactly like my childhood bedroom. Except there's no windows and all the walls are bare except for the pictures. I look sad in moments where I know for *sure* I was happy, and everything looks grim. 
+[end_timeline]
