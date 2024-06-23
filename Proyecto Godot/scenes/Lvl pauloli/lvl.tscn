@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/Lvl pauloli/3d.gd" id="1_hqiwu"]
 [ext_resource type="Texture2D" uid="uid://dej8abu6fsykj" path="res://scenes/Lvl pauloli/unnamed.png" id="1_ihhft"]
-[ext_resource type="Texture2D" uid="uid://voo7evsiktog" path="res://scenes/icon.svg" id="2_wa81t"]
+[ext_resource type="Texture2D" uid="uid://voo7evsiktog" path="res://assets/icon.svg" id="2_wa81t"]
 [ext_resource type="PackedScene" uid="uid://di3sr6fq11fhf" path="res://scenes/Lvl pauloli/3d.tscn" id="4_e32fj"]
 
 [node name="Lvl" type="Node2D"]
