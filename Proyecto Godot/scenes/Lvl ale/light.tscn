@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://660dh6t2ip5u"]
+[gd_scene load_steps=29 format=3 uid="uid://660dh6t2ip5u"]
 
 [ext_resource type="Script" path="res://scenes/scrip_inventario.gd" id="1_0fovx"]
 [ext_resource type="Texture2D" uid="uid://b013uocnh27v3" path="res://assets/undertaleHouse1.png" id="2_syoeg"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" path="res://scenes/Lvl ale/Final_Object.gd" id="15_n54j5"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/dicbutton.gd" id="17_ufa5u"]
 [ext_resource type="PackedScene" uid="uid://rl28wrp7sgkh" path="res://scenes/ui/pause_menu.tscn" id="18_x6clr"]
+[ext_resource type="PackedScene" uid="uid://bp0y16jxkxypq" path="res://scenes/Lvl ale/progressBar.tscn" id="19_5ml6d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bsws3"]
 size = Vector2(259.667, 139.333)
@@ -134,7 +135,6 @@ scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_bsws3")
 
 [node name="Objects" type="Node2D" parent="."]
-visible = false
 
 [node name="Final_Object" type="Area2D" parent="Objects"]
 visible = false
@@ -250,6 +250,12 @@ offset_top = 8.0
 offset_right = 334.0
 offset_bottom = 31.0
 text = "Debido a un bug, guarda primero NOHOPE y luego haz tu cama. Puedes probar la funcionalidad de Hope."
+
+[node name="Control" parent="." instance=ExtResource("19_5ml6d")]
+offset_left = 367.0
+offset_top = -199.0
+offset_right = 367.0
+offset_bottom = -199.0
 
 [connection signal="input_event" from="Cama/Sprite2D/Area2D" to="Cama" method="_on_area_2d_input_event"]
 [connection signal="area_entered" from="Objects/Object" to="Raiz_Palabras/Palabra3" method="_on_object_area_entered"]
