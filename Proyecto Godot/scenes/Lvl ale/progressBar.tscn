@@ -32,6 +32,8 @@ texture = ExtResource("2_v37st")
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer"]
 layout_mode = 2
 theme = ExtResource("3_2wuy4")
+theme_override_colors/font_color = Color(0.556863, 0.737255, 0.878431, 1)
+value = 76.49
 script = ExtResource("5_ujrcy")
 
 [node name="HP" type="Sprite2D" parent="MarginContainer"]

@@ -12,7 +12,7 @@ func _ready():
 #			print("Señal recibida")
 	
 func _ordenar():
-	var sprite = $Sprite2D  # Asegúrate de que 'Sprite2D' coincida con el nombre del nodo Sprite en la jerarquía
+	var sprite = $Sprite2D 
 	sprite.texture = nueva_textura
 	victoria.emit()
 	

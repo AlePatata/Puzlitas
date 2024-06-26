@@ -14,7 +14,7 @@ func _ready() -> void:
 	quit.pressed.connect(_on_quit_pressed)
 		
 func _on_start_pressed():
-	get_tree().change_scene_to_file("res://scenes/Lvl ale/RecogerHope.tscn")
+	get_tree().change_scene_to_file("res://scenes/sofi ;3/therapist.tscn")
 	
 func _on_lvlselector_pressed():
 	get_tree().change_scene_to_file("res://scenes/lvl_selector.tscn")
