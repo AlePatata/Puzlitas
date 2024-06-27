@@ -27,6 +27,7 @@ directories/dch_directory={
 "user": "res://user.dch"
 }
 directories/dtl_directory={
+"LvlSelector": "res://scenes/LvlSelector.dtl",
 "jiji": "res://scenes/sofi ;3/jiji.dtl"
 }
 variables={

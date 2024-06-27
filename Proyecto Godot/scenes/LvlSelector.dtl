@@ -1,0 +1,5 @@
+join "gatito terapeuta" 1
+"gatito terapeuta": Si
+[signal arg="Desbloquear"]
+"gatito terapeuta": lol
+[end_timeline]
