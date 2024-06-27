@@ -1,20 +1,22 @@
 extends Node2D
+@onready var mental_room_button = $MentalRoomButton
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	start_dialog()
+	
+func start_dialog():
+	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	Dialogic.start("jiji")
 	$AudioStreamPlayer.play()
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-
+	
+func _on_timeline_ended():
+	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
+	mental_room_button._go_to_mental_room()
+ 
 func _input(event: InputEvent):
-	if Dialogic.current_timeline != null:
-		return
-
-	if event is InputEventKey and event.keycode == KEY_ENTER and event.pressed:
-		Dialogic.start('jiji')
-		get_viewport().set_input_as_handled()
+	#if Dialogic.current_timeline != null:
+	#	return
+	pass
+	#if event is InputEventKey and event.keycode == KEY_ENTER and event.pressed:
+		#Dialogic.start('jiji')
+		#get_viewport().set_input_as_handled()

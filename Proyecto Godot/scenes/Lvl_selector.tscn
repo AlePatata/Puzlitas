@@ -1,19 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://d3skujaduvn6l"]
+[gd_scene load_steps=5 format=3 uid="uid://d3skujaduvn6l"]
 
+[ext_resource type="Script" path="res://scenes/Lvl_selector.gd" id="1_2ag0y"]
 [ext_resource type="Texture2D" uid="uid://ccqmu6183rnlj" path="res://assets/fondosimpleverde.png" id="1_ba42i"]
 [ext_resource type="Texture2D" uid="uid://2seko6y4b3u8" path="res://assets/fondosimplemorado.png" id="2_g5w5q"]
-[ext_resource type="Script" path="res://scenes/select_lvl1.gd" id="3_j00x8"]
-[ext_resource type="Texture2D" uid="uid://c7qwkrsceoe7j" path="res://assets/fotos/Frame17.png" id="4_h33kx"]
-[ext_resource type="Texture2D" uid="uid://dbofx8mapw6ot" path="res://assets/fotos/GlareFrame1.png" id="5_q625v"]
-[ext_resource type="Texture2D" uid="uid://cfavsmi6h483g" path="res://assets/fotos/Frame18.png" id="6_dxcxe"]
-[ext_resource type="Texture2D" uid="uid://dt10li0si3iy8" path="res://assets/fotos/Frame23.png" id="7_5ctku"]
-[ext_resource type="Texture2D" uid="uid://bs3pu80uufl1v" path="res://assets/fotos/Frame25.png" id="8_fdwi7"]
 [ext_resource type="AudioStream" uid="uid://li0to1xojj4d" path="res://assets/music/Canciones propias/Tensa.wav" id="9_rwnkd"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_soa5c"]
-size = Vector2(24.93, 128)
-
 [node name="LvlSelector" type="Node2D"]
+script = ExtResource("1_2ag0y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(641.5, 293.5)
@@ -25,101 +18,6 @@ position = Vector2(643, 663)
 scale = Vector2(5.35833, 1)
 texture = ExtResource("2_g5w5q")
 
-[node name="marco 1" type="Area2D" parent="."]
-position = Vector2(643, 663)
-scale = Vector2(5.35833, 1)
-
-[node name="Marco 1" type="Sprite2D" parent="marco 1"]
-position = Vector2(-80.9953, -475)
-scale = Vector2(0.186625, 1)
-texture = ExtResource("4_h33kx")
-
-[node name="reflejo 1" type="Sprite2D" parent="marco 1/Marco 1"]
-position = Vector2(-2, -2)
-texture = ExtResource("5_q625v")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="marco 1"]
-position = Vector2(-80.9564, -474)
-shape = SubResource("RectangleShape2D_soa5c")
-script = ExtResource("3_j00x8")
-
-[node name="marco 2" type="Area2D" parent="."]
-position = Vector2(643, 663)
-scale = Vector2(5.35833, 1)
-
-[node name="Marco 2" type="Sprite2D" parent="marco 2"]
-position = Vector2(-41.0575, -283)
-scale = Vector2(0.186625, 1)
-texture = ExtResource("6_dxcxe")
-
-[node name="Reflejo 2" type="Sprite2D" parent="marco 2/Marco 2"]
-position = Vector2(3, 1)
-texture = ExtResource("5_q625v")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="marco 2"]
-position = Vector2(-41.4308, -283)
-shape = SubResource("RectangleShape2D_soa5c")
-
-[node name="marco 3" type="Area2D" parent="."]
-position = Vector2(643, 663)
-scale = Vector2(5.35833, 1)
-
-[node name="Marco 3" type="Sprite2D" parent="marco 3"]
-position = Vector2(-0.933113, -477)
-scale = Vector2(0.186625, 1)
-texture = ExtResource("7_5ctku")
-
-[node name="reflejo 3" type="Sprite2D" parent="marco 3/Marco 3"]
-position = Vector2(-3, -1)
-texture = ExtResource("5_q625v")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="marco 3"]
-position = Vector2(-1.11974, -478)
-shape = SubResource("RectangleShape2D_soa5c")
-
-[node name="marco 4" type="Area2D" parent="."]
-position = Vector2(643, 663)
-scale = Vector2(5.35833, 1)
-
-[node name="Marco 4" type="Sprite2D" parent="marco 4"]
-position = Vector2(40.6843, -279)
-scale = Vector2(0.186625, 1)
-texture = ExtResource("8_fdwi7")
-
-[node name="Reflejo 4" type="Sprite2D" parent="marco 4/Marco 4"]
-position = Vector2(2, -2)
-texture = ExtResource("5_q625v")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="marco 4"]
-position = Vector2(40.8709, -281)
-shape = SubResource("RectangleShape2D_soa5c")
-
-[node name="marco 5" type="Area2D" parent="."]
-position = Vector2(643, 663)
-scale = Vector2(5.35833, 1)
-
-[node name="Marco 5" type="Sprite2D" parent="marco 5"]
-position = Vector2(82.675, -472)
-scale = Vector2(0.186625, 1)
-texture = ExtResource("6_dxcxe")
-
-[node name="reflejo 5" type="Sprite2D" parent="marco 5/Marco 5"]
-position = Vector2(1, 2)
-texture = ExtResource("5_q625v")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="marco 5"]
-position = Vector2(82.675, -474)
-shape = SubResource("RectangleShape2D_soa5c")
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_rwnkd")
 autoplay = true
-
-[connection signal="input_event" from="marco 1" to="marco 1/CollisionShape2D" method="_on_marco_1_input_event"]
-[connection signal="mouse_entered" from="marco 1" to="marco 1/CollisionShape2D" method="_on_marco_1_mouse_entered"]
-[connection signal="input_event" from="marco 2" to="marco 1/CollisionShape2D" method="_on_marco_2_input_event"]
-[connection signal="mouse_entered" from="marco 2" to="marco 1/CollisionShape2D" method="_on_marco_2_mouse_entered"]
-[connection signal="input_event" from="marco 3" to="marco 1/CollisionShape2D" method="_on_marco_3_input_event"]
-[connection signal="mouse_entered" from="marco 3" to="marco 1/CollisionShape2D" method="_on_marco_3_mouse_entered"]
-[connection signal="input_event" from="marco 4" to="marco 1/CollisionShape2D" method="_on_marco_4_input_event"]
-[connection signal="input_event" from="marco 5" to="marco 1/CollisionShape2D" method="_on_marco_5_input_event"]
