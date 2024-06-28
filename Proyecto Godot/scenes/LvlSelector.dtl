@@ -1,5 +1,5 @@
-join "gatito terapeuta" 1
-"gatito terapeuta": Si
+join voice_over 1
+voice_over: Si
 [signal arg="Desbloquear"]
-"gatito terapeuta": lol
+voice_over: lol
 [end_timeline]
