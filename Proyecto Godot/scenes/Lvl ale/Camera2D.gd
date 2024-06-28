@@ -2,8 +2,6 @@ extends Camera2D
 @onready var camera_2d = $"."
 @export var camera_speed: float = 300
 @onready var background = $"../Background"
-
-
 @onready var move_left = $"../BackgMovement/MoveLeft"
 @onready var move_right = $"../BackgMovement/MoveRight"
 
