@@ -5,7 +5,7 @@ extends ProgressBar
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	value = 50
+	value = 100
 	_update_style("C9E4D3")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

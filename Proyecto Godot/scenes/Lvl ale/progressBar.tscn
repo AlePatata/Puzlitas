@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bp0y16jxkxypq"]
+[gd_scene load_steps=5 format=3 uid="uid://bp0y16jxkxypq"]
 
 [ext_resource type="Theme" uid="uid://b4e1fmdbmqdbq" path="res://resources/theme.tres" id="1_luaf3"]
 [ext_resource type="Texture2D" uid="uid://voo7evsiktog" path="res://assets/icon.svg" id="2_v37st"]
-[ext_resource type="Script" path="res://scenes/Lvl ale/MarginContainer.gd" id="2_wi0q8"]
 [ext_resource type="Theme" uid="uid://cbq4mlyad031" path="res://resources/progressBar.tres" id="3_2wuy4"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/ProgressBar.gd" id="5_ujrcy"]
 
@@ -21,7 +20,6 @@ offset_top = 230.0
 offset_right = 896.0
 offset_bottom = 300.0
 theme = ExtResource("1_luaf3")
-script = ExtResource("2_wi0q8")
 
 [node name="Icon" type="Sprite2D" parent="MarginContainer"]
 modulate = Color(1, 1, 1, 0.227451)
@@ -33,7 +31,7 @@ texture = ExtResource("2_v37st")
 layout_mode = 2
 theme = ExtResource("3_2wuy4")
 theme_override_colors/font_color = Color(0.556863, 0.737255, 0.878431, 1)
-value = 76.49
+value = 50.0
 script = ExtResource("5_ujrcy")
 
 [node name="HP" type="Sprite2D" parent="MarginContainer"]

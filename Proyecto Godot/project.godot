@@ -24,13 +24,18 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "gatito terapeuta": "res://scenes/sofi ;3/gatito terapeuta.dch",
-"user": "res://user.dch"
+"user": "res://user.dch",
+"voice_over": "res://scenes/Lvl ale/voice_over.dch"
 }
 directories/dtl_directory={
 "LvlSelector": "res://scenes/LvlSelector.dtl",
+"Tutorial": "res://scenes/Lvl ale/Tutorial.dtl",
+"Tutorial2": "res://scenes/Lvl ale/Tutorial2.dtl",
+"Tutorial3": "res://scenes/Lvl ale/Tutorial3.dtl",
 "jiji": "res://scenes/sofi ;3/jiji.dtl"
 }
 variables={
+"HOPE": false,
 "cat_name": "therapist",
 "username": "???"
 }
@@ -59,6 +64,7 @@ text/autopauses={}
 glossary/default_case_sensitive=true
 layout/style_list=[]
 layout/default_style="Default"
+layout/end_behaviour=0
 
 [display]
 
