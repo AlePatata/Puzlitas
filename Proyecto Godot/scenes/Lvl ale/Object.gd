@@ -4,7 +4,12 @@ class_name Objeto
 signal victoria
 @onready var sprite = $CollisionShape2D/Sprite2D
 @onready var collision_shape = $CollisionShape2D
+<<<<<<< HEAD
 var dragging = false
+=======
+
+
+>>>>>>> a7ec5fdf06a64c69638aeb9930390d28ed6a977b
 
 func _ready():
 	connect("input_event", Callable(self, "_on_area_2d_input_event"))
