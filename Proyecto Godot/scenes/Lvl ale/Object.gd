@@ -4,17 +4,23 @@ class_name Objeto
 signal victoria
 @onready var sprite = $CollisionShape2D/Sprite2D
 @onready var collision_shape = $CollisionShape2D
+<<<<<<< HEAD
+var dragging = false
+=======
 
 
+>>>>>>> a7ec5fdf06a64c69638aeb9930390d28ed6a977b
 
 func _ready():
-	pass
+	connect("input_event", Callable(self, "_on_area_2d_input_event"))
 	
-#func _physics_process(delta):
-	#for emisor in raiz_palabras.get_children():
-#		if not emisor.is_connected("ordenar_objeto", Callable(self, "_ordenar")):
-#			emisor.ordenar_objeto.connect(Callable(self, "_ordenar"))
-#			print("Señal recibida")
+func _physics_process(delta): 
+	var mouse = get_global_mouse_position()
+	if mouse.y < 300:
+		dragging = false
+	if dragging:
+		position = lerp(position, mouse, 30 * delta) 
+
 	
 func _ordenar(): 
 	set_sprite("res://assets/icon.svg")
@@ -51,6 +57,8 @@ func _move_object():
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if not event.pressed:
-			print(Game.current_palabra)
+			dragging = false
 			if Game.current_palabra == "Get your life together":
 				_ordenar()
+		else:
+			dragging = true
