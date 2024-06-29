@@ -16,7 +16,9 @@ var palabra_scene = preload("res://scenes/palabra.tscn")
 
 func tomar_palabra():
 	Game.current_palabra = text
-	if text == "Hope": prender_luz.emit(self)
+	if text == "Hope": 
+		prender_luz.emit(self)
+		
 	#if text == "Order": ordenar_objeto.emit(self)
 	# Crea un nuevo Node2D y asigna el script necesario
 	nodo_hijo = palabra_scene.instantiate()

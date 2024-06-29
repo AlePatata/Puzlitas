@@ -1,0 +1,5 @@
+join voice_over 1
+voice_over: Si
+[signal arg="Desbloquear"]
+voice_over: lol
+[end_timeline]
