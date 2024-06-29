@@ -12,5 +12,6 @@ user: My memories don't feel quite right. When i try to remember certain things,
 user: About a month ago. It's like I'm stuck in a room in my mind where all my memories are in picture frames, but they all look... off.
 "gatito terapeuta": That's an interesting way to put it. Tell me more about this mental room of yours.
 user: It's... well, it looks exactly like my childhood bedroom. Except there's no windows and all the walls are bare except for the pictures. I look sad in moments where I know for *sure* I was happy, and everything looks grim.
+leave "gatito terapeuta"
 [end_timeline]
 [signal arg="mental_room"]

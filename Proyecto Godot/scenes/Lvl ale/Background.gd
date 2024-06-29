@@ -6,6 +6,7 @@ extends Sprite2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	switch.connect("light_on", set_light)
+	modulate = Color("733bdb")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -13,5 +14,5 @@ func _process(delta):
 
 func set_light():
 	print("Se prendió la luz")
-	modulate = Color(modulate.r, modulate.g+50, modulate.b, modulate.a)
+	modulate = Color("ffffff")
 	Dialogic.start("Tutorial3")
