@@ -8,8 +8,9 @@ signal victoria
 
 
 func _ready():
-	pass
-	
+	connect("input_event", _on_area_2d_input_event)
+	connect("body_entered", _on_Area2D_body_entered)
+	connect("body_exited", _on_Area2D_body_exited)
 #func _physics_process(delta):
 	#for emisor in raiz_palabras.get_children():
 #		if not emisor.is_connected("ordenar_objeto", Callable(self, "_ordenar")):
@@ -54,3 +55,13 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 			print(Game.current_palabra)
 			if Game.current_palabra == "Get your life together":
 				_ordenar()
+
+func _on_Area2D_body_entered(body):
+	print("Un objeto ha entrado en el área")
+	if body.is_in_group("objetos"): # Puedes usar grupos para filtrar objetos
+		print("Un objeto ha entrado en el área")
+
+# Función que se llama cuando un cuerpo sale del área
+func _on_Area2D_body_exited(body):
+	if body.is_in_group("objetos"):
+		print("Un objeto ha salido del área")
