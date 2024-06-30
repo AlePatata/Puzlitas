@@ -4,18 +4,22 @@ class_name Objeto
 signal victoria
 @onready var sprite = $CollisionShape2D/Sprite2D
 @onready var collision_shape = $CollisionShape2D
-
-
+var dragging = false
 
 func _ready():
 	connect("input_event", _on_area_2d_input_event)
 	connect("body_entered", _on_Area2D_body_entered)
 	connect("body_exited", _on_Area2D_body_exited)
-#func _physics_process(delta):
-	#for emisor in raiz_palabras.get_children():
-#		if not emisor.is_connected("ordenar_objeto", Callable(self, "_ordenar")):
-#			emisor.ordenar_objeto.connect(Callable(self, "_ordenar"))
-#			print("Señal recibida")
+
+
+func _physics_process(delta): 
+	var mouse = get_global_mouse_position()
+	if mouse.y < 300:
+		dragging = false
+	if dragging:
+		position = lerp(position, mouse, 30 * delta) 
+
+
 	
 func _ordenar(): 
 	set_sprite("res://assets/icon.svg")
@@ -52,16 +56,8 @@ func _move_object():
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if not event.pressed:
-			print(Game.current_palabra)
+			dragging = false
 			if Game.current_palabra == "Get your life together":
 				_ordenar()
-
-func _on_Area2D_body_entered(body):
-	print("Un objeto ha entrado en el área")
-	if body.is_in_group("objetos"): # Puedes usar grupos para filtrar objetos
-		print("Un objeto ha entrado en el área")
-
-# Función que se llama cuando un cuerpo sale del área
-func _on_Area2D_body_exited(body):
-	if body.is_in_group("objetos"):
-		print("Un objeto ha salido del área")
+		else:
+			dragging = true
