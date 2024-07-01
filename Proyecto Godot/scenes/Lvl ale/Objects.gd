@@ -3,25 +3,21 @@ extends Node2D
 var bed_instance
 var pilow_instance
 var blanket_instance
-var TodosJuntos = false
+signal TodosJuntos
 var objetos = {}
 @onready var switch = $Switch
 
 func _ready():
 	_inicializar_objetos()
 	start_dialog()
+	
 		
 func _physics_process(_delta):
-	for i in get_children():
-		if i:
-			if not i.is_connected("juntos", Callable(self, "_Verifica").bind([i, true])):
-				i.connect("juntos", Callable(self, "_Verifica").bind([i, true])) 
-			if not i.is_connected("separados", Callable(self, "_Verifica").bind([i, false])):
-				i.connect("separados", Callable(self, "_Verifica").bind([i, false]))
-	if !objetos.is_empty():
-		if objetos.values():
+	
+	if len(objetos.values()) == 3:
+		if objetos.values()[0] and objetos.values()[1] and objetos.values()[2]:
 			TodosJuntos.emit()
-
+		
 func start_dialog():
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	Dialogic.start("LvlSelector")
@@ -44,7 +40,9 @@ func _inicializar_objetos():
 	add_child(blanket_instance)
 	blanket_instance.set_sprite("res://assets/manta.png")
 	blanket_instance.position = Vector2(pilow_instance.position.x + 300, pilow_instance.position.y - 100)
-	
+	for i in get_children():
+		i.juntos.connect(_Verifica.bind(i, true)) 
+		i.separados.connect(_Verifica.bind(i, false)) 
 	
 func _Verifica(objeto, estan_juntos):
 	print("se añadió el objeto: ", objeto.name)

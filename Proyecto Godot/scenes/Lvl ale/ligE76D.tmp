@@ -121,7 +121,7 @@ script = ExtResource("5_egv65")
 [node name="Objects" type="Node2D" parent="."]
 script = ExtResource("7_21vkm")
 
-[node name="Switch" parent="Objects" groups=["switch"] instance=ExtResource("10_illft")]
+[node name="Switch" parent="Objects" instance=ExtResource("10_illft")]
 script = ExtResource("9_yvejc")
 
 [node name="Raiz_Palabras" type="Node2D" parent="."]

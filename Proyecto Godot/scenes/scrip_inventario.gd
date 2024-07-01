@@ -4,11 +4,13 @@ extends Node2D
 @onready var label = $Label
 @onready var nuevo_stream = preload("res://assets/music/Canciones propias/Alegre.wav")
 @onready var audio_player = $AudioStreamPlayer2D
+@onready var objects = $Objects
 
+signal RecibeTodosJuntos
 
 func _ready():
 	dictionary.inventario_conectar_ui_palabra.connect(conectar_para_agregar_nodo)
-	#cama.victoria.connect(mostrar_victoria)
+	objects.TodosJuntos.connect(_emitir_RecibeTodosJuntos)
 	_start_dialog()
 	
 func _start_dialog():
@@ -29,3 +31,6 @@ func mostrar_victoria():
 	label.visible = true
 	audio_player.stream = nuevo_stream
 	audio_player.play()
+
+func _emitir_RecibeTodosJuntos():
+	RecibeTodosJuntos.emit()
