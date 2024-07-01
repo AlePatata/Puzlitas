@@ -19,7 +19,6 @@ func _start_dialog():
 func _on_timeline_ended():
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
 
-
 func agregar_nodo_palabra(nodo_hijo):
 	raiz_palabras.add_child(nodo_hijo)
 

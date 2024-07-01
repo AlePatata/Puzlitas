@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://bbbb3fynp4krm"]
 
 [ext_resource type="Script" path="res://scenes/Lvl ale/Object.gd" id="1_fscwb"]
-[ext_resource type="Texture2D" uid="uid://bjtx8ggb08jc8" path="res://assets/bed.png" id="2_ney1d"]
+[ext_resource type="Texture2D" uid="uid://voo7evsiktog" path="res://assets/icon.svg" id="2_euekb"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8023h"]
-size = Vector2(259.667, 139.333)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dard4"]
+size = Vector2(132, 129.333)
 
 [sub_resource type="Animation" id="Animation_e1vom"]
 resource_name = "Move"
@@ -26,20 +26,19 @@ _data = {
 "Move": SubResource("Animation_e1vom")
 }
 
-[node name="Object" type="Area2D"]
+[node name="Object" type="Area2D" groups=["objetos"]]
 position = Vector2(249, 294)
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_fscwb")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(60, -78.6667)
+texture = ExtResource("2_euekb")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 use_parent_material = true
-position = Vector2(4, -24)
-shape = SubResource("RectangleShape2D_8023h")
-
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
-position = Vector2(5.5, -21.6667)
-scale = Vector2(5, 5)
-texture = ExtResource("2_ney1d")
+position = Vector2(60, -78.6667)
+shape = SubResource("RectangleShape2D_dard4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../CollisionShape2D")
