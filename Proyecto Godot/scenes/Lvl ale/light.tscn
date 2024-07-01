@@ -215,10 +215,10 @@ autoplay = true
 [node name="Menu de Pausa" type="Node2D" parent="."]
 
 [node name="PauseMenu" parent="Menu de Pausa" instance=ExtResource("18_x6clr")]
-offset_left = 559.0
-offset_top = 54.0
-offset_right = 1399.0
-offset_bottom = 422.0
+offset_left = 203.0
+offset_top = 160.0
+offset_right = 1043.0
+offset_bottom = 528.0
 
 [connection signal="input_event" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_entered"]

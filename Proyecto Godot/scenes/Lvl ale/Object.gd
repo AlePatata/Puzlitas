@@ -1,34 +1,34 @@
 extends Node2D
 
 class_name Objeto 
-signal victoria
-@onready var sprite = $CollisionShape2D/Sprite2D
+signal juntos
+signal separados
+@onready var sprite = $Sprite2D
 @onready var collision_shape = $CollisionShape2D
+
 var dragging = false
 
 func _ready():
+	connect("area_entered", _on_Area2D_body_entered)
+	connect("area_exited", _on_Area2D_body_exited)
 	connect("input_event", _on_area_2d_input_event)
-	connect("body_entered", _on_Area2D_body_entered)
-	connect("body_exited", _on_Area2D_body_exited)
-
 
 func _physics_process(delta): 
 	var mouse = get_global_mouse_position()
 	if mouse.y < 300:
 		dragging = false
 	if dragging:
-		position = lerp(position, mouse, 30 * delta) 
-
-
+		global_position = lerp(position, mouse, 30 * delta) 
+	else: dragging = false
 	
 func _ordenar(): 
 	set_sprite("res://assets/icon.svg")
-	victoria.emit()
+	#victoria.emit()
 	
-func set_sprite(ruta = "res://assets/bed.png"): #Cama por defecto
+func set_sprite(ruta = "res://assets/icon.svg"): #Godot por defecto
 	sprite.texture = load(ruta)
 	if sprite.texture:
-		standardize_sprite_size(Vector2(100, 100))
+		standardize_sprite_size(Vector2(150, 150))
 		update_collision_shape()
 		
 func standardize_sprite_size(size: Vector2):
@@ -49,15 +49,23 @@ func update_collision_shape():
 		elif collision_shape.shape is CircleShape2D:
 			collision_shape.shape.radius = min(texture_size.x, texture_size.y) / 2
    
-	
-func _move_object():
-	$AnimationPlayer.play("Move")
+#func _move_object():
+#	$AnimationPlayer.play("Move")
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if not event.pressed:
-			dragging = false
-			if Game.current_palabra == "Get your life together":
-				_ordenar()
-		else:
+		if event.pressed:
 			dragging = true
+			#if Game.current_palabra == "Get your life together":
+			#	_ordenar()
+	else: 
+		dragging = false
+
+func _on_Area2D_body_entered(area):
+	if area.is_in_group("objetos"): # Puedes usar grupos para filtrar objetos
+		juntos.emit()
+
+# Función que se llama cuando un cuerpo sale del área
+func _on_Area2D_body_exited(area):
+	if area.is_in_group("objetos"):
+		separados.emit()
