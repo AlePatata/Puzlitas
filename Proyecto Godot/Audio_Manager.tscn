@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://1yfky7gx0pjq"]
+
+[ext_resource type="Script" path="res://Audio_Manager.gd" id="1_cb4u2"]
+[ext_resource type="AudioStream" uid="uid://uti7ycsfe5lv" path="res://assets/Sounds/Button.wav" id="2_3bno5"]
+[ext_resource type="AudioStream" uid="uid://hy1aop6v4x2f" path="res://assets/music/Canciones propias/Relajada.wav" id="3_qnqqm"]
+
+[node name="Audio_Manager" type="Node"]
+script = ExtResource("1_cb4u2")
+button_sound = ExtResource("2_3bno5")
+click_sound = ExtResource("3_qnqqm")
