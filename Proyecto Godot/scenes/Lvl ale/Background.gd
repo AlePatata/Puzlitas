@@ -8,9 +8,7 @@ func _ready():
 	switch.connect("light_on", set_light)
 	modulate = Color("733bdb")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+
 
 func set_light():
 	print("Se prendió la luz")
