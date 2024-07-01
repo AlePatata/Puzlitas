@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://660dh6t2ip5u"]
 
 [ext_resource type="Script" path="res://scenes/scrip_inventario.gd" id="1_0fovx"]
-[ext_resource type="Texture2D" uid="uid://b013uocnh27v3" path="res://assets/undertaleHouse1.png" id="2_syoeg"]
+[ext_resource type="Texture2D" uid="uid://b1jvl84sojx1q" path="res://assets/Pieza fondo.png" id="2_ktfo6"]
 [ext_resource type="AudioStream" uid="uid://d26axieb1tyla" path="res://assets/music/Canciones propias/Triste.wav" id="3_7esru"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/Background.gd" id="3_26dda"]
 [ext_resource type="Texture2D" uid="uid://cw01lvdfq6xd" path="res://assets/whiteCircle.png" id="4_qqb3p"]
@@ -75,9 +75,9 @@ script = ExtResource("1_0fovx")
 [node name="Background" type="Sprite2D" parent="."]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(1575, 360.5)
-scale = Vector2(4.23149, 4.65584)
-texture = ExtResource("2_syoeg")
+position = Vector2(1540, 359)
+scale = Vector2(1.613, 1.775)
+texture = ExtResource("2_ktfo6")
 script = ExtResource("3_26dda")
 
 [node name="BackgMovement" type="CanvasLayer" parent="."]
@@ -86,8 +86,8 @@ layer = 3
 [node name="Control" parent="BackgMovement" instance=ExtResource("19_5ml6d")]
 offset_left = 367.0
 offset_top = -199.0
-offset_right = 367.0
-offset_bottom = -199.0
+offset_right = 85.0
+offset_bottom = -570.0
 mouse_filter = 2
 
 [node name="MoveLeft" type="TextureRect" parent="BackgMovement"]
