@@ -3,7 +3,6 @@ extends Node
 signal inventory_updated
 signal palabras_updated
 
-#mi inventario, se le puede añadir más que palabras.
 var inventory = {
 	palabras = []
 } :
@@ -11,10 +10,12 @@ var inventory = {
 		inventory = value
 		inventory_updated.emit()
 
+
 func add_palabra(palabra: String):
 	if palabra in inventory.palabras:
 		return
 	inventory.palabras.push_back(palabra)
+	print(palabra)
 	palabras_updated.emit()
 	
 func remove_palabra(palabra: String):
@@ -25,7 +26,10 @@ func remove_palabra(palabra: String):
 	
 
 var current_palabra
+var nodoporeliminar
 #################################
+
+
 
 
 

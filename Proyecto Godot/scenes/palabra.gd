@@ -2,6 +2,9 @@ extends Node2D
 
 var dragging = false
 signal palabra_tomada
+signal ordenar_objeto
+@onready var light = $"../.."
+
 
 #para que el label siempre sea el correspondiente a la palabra
 @export var palabra: String:
@@ -14,7 +17,13 @@ signal palabra_tomada
 
 #Hace que la palabra sea igual a su valor al iniciar la escena 
 func _ready():
+	
 	self.palabra = palabra
+	if Game.current_palabra == "Get your life together": 
+		light.RecibeTodosJuntos.connect(_ordenar)
+		ordenar_objeto.emit(self)
+
+	
 
 func _physics_process(delta): 
 	#si arrastro, puedo cambiar la posición de mi palabra u objeto
@@ -31,9 +40,12 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 			dragging = true
 			z_index = 10 #le cambio el z_index para que se vea sobre el diccionario. 
 			palabra_tomada.emit(self)
-			Game.current_palabra = self
+			Game.current_palabra = palabra
+			Game.nodoporeliminar = self
 				
 		else:
 			dragging = false
 			z_index = 0
 	
+func _ordenar():
+	print("VICTORIA")

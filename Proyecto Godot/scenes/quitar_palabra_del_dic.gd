@@ -1,5 +1,7 @@
 extends Label
 signal me_tomaron
+signal prender_luz
+signal ordenar_objeto
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,10 +12,14 @@ func _on_input_event(event):
 		tomar_palabra()
 
 var nodo_hijo: Node2D
-var palabra_scene = preload("res://scenes/Palabra.tscn")
+var palabra_scene = preload("res://scenes/palabra.tscn")
 
 func tomar_palabra():
-
+	Game.current_palabra = text
+	if text == "Hope": 
+		prender_luz.emit(self)
+		
+	#if text == "Order": ordenar_objeto.emit(self)
 	# Crea un nuevo Node2D y asigna el script necesario
 	nodo_hijo = palabra_scene.instantiate()
 	nodo_hijo.palabra = text
@@ -25,6 +31,4 @@ func tomar_palabra():
 # Elimínalo la palabra del diccionario
 	Game.remove_palabra(text)
 	self.queue_free()
-
-
-	
+	Game.nodoporeliminar = nodo_hijo

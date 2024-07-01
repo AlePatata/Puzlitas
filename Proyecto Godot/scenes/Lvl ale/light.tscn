@@ -1,43 +1,23 @@
-[gd_scene load_steps=19 format=3 uid="uid://cr2r46e2xsdjb"]
+[gd_scene load_steps=26 format=3 uid="uid://660dh6t2ip5u"]
 
-[ext_resource type="Script" path="res://scenes/scrip_inventario.gd" id="1_f147q"]
-[ext_resource type="Texture2D" uid="uid://cw01lvdfq6xd" path="res://assets/whiteCircle.png" id="1_j26w1"]
-[ext_resource type="Script" path="res://scenes/Lvl ale/Find.gd" id="2_88n75"]
-[ext_resource type="Texture2D" uid="uid://b013uocnh27v3" path="res://assets/undertaleHouse1.png" id="3_hynyh"]
-[ext_resource type="Texture2D" uid="uid://bjtx8ggb08jc8" path="res://assets/bed.png" id="3_o4d4o"]
-[ext_resource type="Script" path="res://scenes/Lvl ale/Camera2D.gd" id="4_lifw5"]
-[ext_resource type="Texture2D" uid="uid://thiha28tsny3" path="res://assets/books.png" id="6_2bd13"]
-[ext_resource type="AudioStream" uid="uid://dtyclel88dxdt" path="res://assets/music/y2mate.com - Begin Your Journey .wav" id="6_b8tev"]
-[ext_resource type="Script" path="res://scenes/dic_button_gameplay.gd" id="6_bhgdu"]
-[ext_resource type="Script" path="res://scenes/Lvl ale/whiteCircle.gd" id="8_4nb80"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4srp"]
-size = Vector2(180, 170)
-
-[sub_resource type="Animation" id="Animation_xg828"]
-resource_name = "Move"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(0.554785, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 360)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_yig4k"]
-_data = {
-"Move": SubResource("Animation_xg828")
-}
-
-[ext_resource type="Script" path="res://scenes/Dictionary_slide.gd" id="10_fdrxe"]
-[ext_resource type="Texture2D" uid="uid://dxnok5mya3fam" path="res://assets/diccionario.png" id="11_4daps"]
-[ext_resource type="PackedScene" uid="uid://ca6ulc0jbl1kj" path="res://scenes/ui_palabra.tscn" id="12_0brxs"]
-[ext_resource type="PackedScene" uid="uid://ctghvosvhtgwc" path="res://scenes/palabra.tscn" id="13_1dxrp"]
+[ext_resource type="Script" path="res://scenes/scrip_inventario.gd" id="1_0fovx"]
+[ext_resource type="Texture2D" uid="uid://b1jvl84sojx1q" path="res://assets/Pieza fondo.png" id="2_ktfo6"]
+[ext_resource type="AudioStream" uid="uid://d26axieb1tyla" path="res://assets/music/Canciones propias/Triste.wav" id="3_7esru"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/Background.gd" id="3_26dda"]
+[ext_resource type="Texture2D" uid="uid://cw01lvdfq6xd" path="res://assets/whiteCircle.png" id="4_qqb3p"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/whiteCircle.gd" id="5_egv65"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/Objects.gd" id="7_21vkm"]
+[ext_resource type="Texture2D" uid="uid://thiha28tsny3" path="res://assets/books.png" id="7_gur7d"]
+[ext_resource type="PackedScene" uid="uid://ctghvosvhtgwc" path="res://scenes/palabra.tscn" id="8_q8cpf"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/Camera2D.gd" id="9_pum0y"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/switch.gd" id="9_yvejc"]
+[ext_resource type="Script" path="res://scenes/Dictionary_slide.gd" id="10_ijxuc"]
+[ext_resource type="PackedScene" uid="uid://bbbb3fynp4krm" path="res://scenes/Lvl ale/object.tscn" id="10_illft"]
+[ext_resource type="PackedScene" uid="uid://ca6ulc0jbl1kj" path="res://scenes/ui_palabra.tscn" id="11_43f16"]
+[ext_resource type="Texture2D" uid="uid://dxnok5mya3fam" path="res://assets/diccionario.png" id="12_x8m1o"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/dicbutton.gd" id="17_ufa5u"]
+[ext_resource type="PackedScene" uid="uid://rl28wrp7sgkh" path="res://scenes/ui/pause_menu.tscn" id="18_x6clr"]
+[ext_resource type="PackedScene" uid="uid://bp0y16jxkxypq" path="res://scenes/Lvl ale/progressBar.tscn" id="19_5ml6d"]
 
 [sub_resource type="Animation" id="Animation_tmahn"]
 length = 0.001
@@ -83,49 +63,39 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1n31q"]
 size = Vector2(877, 423)
 
+[sub_resource type="Theme" id="Theme_e5dq4"]
+/fonts/VICTORIA = null
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oyrse"]
+size = Vector2(44.808, 46.6065)
+
 [node name="Light" type="Node2D"]
-script = ExtResource("1_f147q")
+script = ExtResource("1_0fovx")
 
 [node name="Background" type="Sprite2D" parent="."]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(1489, 314)
-scale = Vector2(4, 4)
-texture = ExtResource("3_hynyh")
-
-[node name="Object" type="Area2D" parent="."]
-script = ExtResource("2_88n75")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Object"]
-position = Vector2(1866, 237)
-shape = SubResource("RectangleShape2D_v4srp")
-
-[node name="Object" type="Sprite2D" parent="Object/CollisionShape2D"]
-position = Vector2(17, -1)
-scale = Vector2(4, 4)
-texture = ExtResource("3_o4d4o")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Object"]
-libraries = {
-"": SubResource("AnimationLibrary_yig4k")
-}
-
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(640, 360)
-script = ExtResource("4_lifw5")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_b8tev")
-autoplay = true
+position = Vector2(1540, 359)
+scale = Vector2(1.613, 1.775)
+texture = ExtResource("2_ktfo6")
+script = ExtResource("3_26dda")
 
 [node name="BackgMovement" type="CanvasLayer" parent="."]
 layer = 3
+
+[node name="Control" parent="BackgMovement" instance=ExtResource("19_5ml6d")]
+offset_left = 367.0
+offset_top = -199.0
+offset_right = 85.0
+offset_bottom = -570.0
+mouse_filter = 2
 
 [node name="MoveLeft" type="TextureRect" parent="BackgMovement"]
 anchors_preset = -1
 anchor_right = 0.187
 anchor_bottom = 1.0
-offset_right = 0.639984
+offset_left = -87.0
+offset_right = -86.36
 offset_bottom = -1.0
 
 [node name="MoveRight" type="TextureRect" parent="BackgMovement"]
@@ -133,85 +103,73 @@ anchors_preset = -1
 anchor_left = 0.798
 anchor_right = 1.002
 anchor_bottom = 1.0
-offset_left = -3.43994
-offset_top = 1.0
-offset_right = -3.55994
-offset_bottom = -7.0
+offset_left = 135.56
+offset_top = 4.0
+offset_right = 135.44
+offset_bottom = -4.0
 size_flags_horizontal = 8
 
 [node name="whiteCircle" type="Sprite2D" parent="BackgMovement"]
-modulate = Color(1, 0.996078, 0.768627, 0.878431)
+modulate = Color(1, 0.894118, 0.662745, 0.682353)
 show_behind_parent = true
 texture_filter = 1
-position = Vector2(601, 296)
+position = Vector2(747, 798)
 scale = Vector2(7, 7)
-texture = ExtResource("1_j26w1")
-script = ExtResource("8_4nb80")
+texture = ExtResource("4_qqb3p")
+script = ExtResource("5_egv65")
 
-[node name="TherapyButton" type="CanvasLayer" parent="."]
-script = ExtResource("6_bhgdu")
+[node name="Objects" type="Node2D" parent="."]
+script = ExtResource("7_21vkm")
 
-[node name="Dic_button" type="Button" parent="TherapyButton"]
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 103.0
-offset_bottom = 93.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="TherapyButton"]
-position = Vector2(70.256, 64.588)
-scale = Vector2(1.406, 1.30883)
-texture = ExtResource("6_2bd13")
-hframes = 3
-vframes = 2
-frame = 1
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 0
+[node name="Switch" parent="Objects" groups=["switch"] instance=ExtResource("10_illft")]
+script = ExtResource("9_yvejc")
 
 [node name="Raiz_Palabras" type="Node2D" parent="."]
 
-[node name="Palabra" parent="Raiz_Palabras" instance=ExtResource("13_1dxrp")]
-position = Vector2(223, 393)
+[node name="Palabra3" parent="Raiz_Palabras" instance=ExtResource("8_q8cpf")]
+position = Vector2(139, 455)
+palabra = "Hope"
 
-[node name="Palabra2" parent="Raiz_Palabras" instance=ExtResource("13_1dxrp")]
-position = Vector2(457, 403)
-palabra = "Esperanza"
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(640, 360)
+script = ExtResource("9_pum0y")
 
-[node name="Dictionary" type="CanvasLayer" parent="."]
-script = ExtResource("10_fdrxe")
-ui_palabra = ExtResource("12_0brxs")
+[node name="Dictionary" type="Node2D" parent="Camera2D"]
+unique_name_in_owner = true
+script = ExtResource("10_ijxuc")
+ui_palabra = ExtResource("11_43f16")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Dictionary"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/Dictionary"]
 libraries = {
 "": SubResource("AnimationLibrary_3kwxq")
 }
 
-[node name="Node2D" type="Node2D" parent="Dictionary"]
+[node name="Node2D" type="Node2D" parent="Camera2D/Dictionary"]
 position = Vector2(662, 761)
 
-[node name="Dictionary" type="Sprite2D" parent="Dictionary/Node2D"]
+[node name="Dictionary" type="Sprite2D" parent="Camera2D/Dictionary/Node2D"]
 scale = Vector2(9.53093, 9.23)
-texture = ExtResource("11_4daps")
+texture = ExtResource("12_x8m1o")
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
-[node name="Area2D" type="Area2D" parent="Dictionary/Node2D/Dictionary"]
+[node name="Area2D" type="Area2D" parent="Camera2D/Dictionary/Node2D/Dictionary"]
 position = Vector2(-69.4581, -82.4485)
 scale = Vector2(0.104922, 0.108342)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dictionary/Node2D/Dictionary/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Dictionary/Node2D/Dictionary/Area2D"]
 position = Vector2(667, 763)
 shape = SubResource("RectangleShape2D_1n31q")
 
-[node name="MarginContainer" type="MarginContainer" parent="Dictionary/Node2D"]
-offset_left = -294.0
-offset_top = -206.0
-offset_right = 433.0
-offset_bottom = 191.0
+[node name="MarginContainer" type="MarginContainer" parent="Camera2D/Dictionary/Node2D"]
+custom_minimum_size = Vector2(0.47, 0)
+offset_left = -306.0
+offset_top = -205.0
+offset_right = 553.0
+offset_bottom = 192.0
 theme_override_constants/margin_top = 52
 
-[node name="PalabraContainer" type="GridContainer" parent="Dictionary/Node2D/MarginContainer"]
+[node name="PalabraContainer" type="GridContainer" parent="Camera2D/Dictionary/Node2D/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
@@ -220,7 +178,49 @@ theme_override_constants/h_separation = 384
 theme_override_constants/v_separation = 55
 columns = 2
 
-[connection signal="input_event" from="Dictionary/Node2D/Dictionary/Area2D" to="Dictionary" method="_on_area_2d_input_event"]
-[connection signal="mouse_entered" from="Dictionary/Node2D/Dictionary/Area2D" to="Dictionary" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Dictionary/Node2D/Dictionary/Area2D" to="Dictionary" method="_on_area_2d_mouse_exited"]
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 177.0
+offset_top = 193.0
+offset_right = 1080.0
+offset_bottom = 466.0
+theme = SubResource("Theme_e5dq4")
+theme_override_font_sizes/font_size = 200
+text = "VICTORIA"
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(55, 45)
+scale = Vector2(1.406, 1.30883)
+texture = ExtResource("7_gur7d")
+hframes = 3
+vframes = 2
+frame = 1
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/Sprite2D/Area2D"]
+position = Vector2(0.355621, 0.382019)
+shape = SubResource("RectangleShape2D_oyrse")
+script = ExtResource("17_ufa5u")
+
+[node name="TherapyButton" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7esru")
+autoplay = true
+
+[node name="Menu de Pausa" type="Node2D" parent="."]
+
+[node name="PauseMenu" parent="Menu de Pausa" instance=ExtResource("18_x6clr")]
+offset_left = 203.0
+offset_top = 160.0
+offset_right = 1043.0
+offset_bottom = 528.0
+
+[connection signal="input_event" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="CanvasLayer/Sprite2D/Area2D" to="CanvasLayer/Sprite2D/Area2D/CollisionShape2D" method="_on_area_2d_input_event"]

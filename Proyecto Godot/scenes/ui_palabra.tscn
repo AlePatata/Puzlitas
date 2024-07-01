@@ -3,10 +3,12 @@
 [ext_resource type="Script" path="res://scenes/quitar_palabra_del_dic.gd" id="1_kikws"]
 
 [node name="UIPalabra" type="Label"]
-offset_left = 3.0
-offset_top = 1.0
-offset_right = 43.0
-offset_bottom = 24.0
+offset_left = 19.0
+offset_top = 6.0
+offset_right = 131.0
+offset_bottom = 51.0
 mouse_filter = 0
 text = "ui_palabra"
+horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("1_kikws")

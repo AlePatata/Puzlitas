@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://bp0y16jxkxypq"]
+
+[ext_resource type="Theme" uid="uid://b4e1fmdbmqdbq" path="res://resources/theme.tres" id="1_luaf3"]
+[ext_resource type="Texture2D" uid="uid://voo7evsiktog" path="res://assets/icon.svg" id="2_v37st"]
+[ext_resource type="Theme" uid="uid://cbq4mlyad031" path="res://resources/progressBar.tres" id="3_2wuy4"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/ProgressBar.gd" id="5_ujrcy"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 498.0
+offset_top = 230.0
+offset_right = 896.0
+offset_bottom = 300.0
+theme = ExtResource("1_luaf3")
+
+[node name="Icon" type="Sprite2D" parent="MarginContainer"]
+modulate = Color(1, 1, 1, 0.227451)
+position = Vector2(203, 32.5)
+scale = Vector2(3.15625, 0.507813)
+texture = ExtResource("2_v37st")
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("3_2wuy4")
+theme_override_colors/font_color = Color(0.556863, 0.737255, 0.878431, 1)
+value = 50.0
+script = ExtResource("5_ujrcy")
+
+[node name="HP" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(43, 32)
+scale = Vector2(0.277344, 0.25)
+texture = ExtResource("2_v37st")
