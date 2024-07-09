@@ -14,7 +14,7 @@ func _on_input_event(event):
 var nodo_hijo: Node2D
 var palabra_scene = preload("res://scenes/palabra.tscn")
 
-func tomar_palabra():
+func tomar_palabra(): #sacarla del diccionario
 
 	# Crea un nuevo Node2D y asigna el script necesario
 	nodo_hijo = palabra_scene.instantiate()
@@ -24,7 +24,7 @@ func tomar_palabra():
 # añade el nodo hijo
 	me_tomaron.emit(nodo_hijo)
 
-# Elimínalo la palabra del diccionario
+# Elimína la palabra del diccionario porque ahora está en el mundo del juego
 	Game.remove_palabra(text)
 	self.queue_free()
 

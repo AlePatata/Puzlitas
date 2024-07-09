@@ -122,13 +122,14 @@ script = ExtResource("5_egv65")
 script = ExtResource("7_21vkm")
 
 [node name="Switch" parent="Objects" groups=["switch"] instance=ExtResource("10_illft")]
+position = Vector2(292, 201)
 script = ExtResource("9_yvejc")
 
 [node name="Raiz_Palabras" type="Node2D" parent="."]
 
 [node name="Palabra3" parent="Raiz_Palabras" instance=ExtResource("8_q8cpf")]
-position = Vector2(139, 455)
-palabra = "Hope"
+position = Vector2(290, 452)
+palabra = "Get your life together"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(640, 360)
@@ -213,6 +214,7 @@ stream = ExtResource("3_7esru")
 autoplay = true
 
 [node name="Menu de Pausa" type="Node2D" parent="."]
+visible = false
 
 [node name="PauseMenu" parent="Menu de Pausa" instance=ExtResource("18_x6clr")]
 offset_left = 203.0
