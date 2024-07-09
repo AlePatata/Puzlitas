@@ -31,3 +31,10 @@ Entonces hay que:
 Ojo: para ponerle parámetros a la función dentro de connect seguir alguna de estas formas: https://stackoverflow.com/questions/77360041/how-to-connect-a-signal-with-extra-arguments-in-godot-4
 
 Listooo, si no te funciona eres muy perkin y probablemente me faltó escribir un paso :C
+
+
+### Shaders :)
+Los shaders son como filtros que aplican una cierta accion a cada pixel de la pantalla y le cambian sus propiedades. Como trabajan a nivel de pixeles no interrumpen los procesos internos que se hacen para que el jueguito corra y haga todas sus cosas jueguísticas, es literal como un filtro confía :) \
+Lo malo es que se escriben en otro lenguaje llamado Shading language y tiene extensión  `.gdshader`, lo bueno es que el autocompletado apaña. Tú solo sigue este tutorial y estarás bien: \
+
+https://www.youtube.com/watch?v=gqe0InyIk4U
