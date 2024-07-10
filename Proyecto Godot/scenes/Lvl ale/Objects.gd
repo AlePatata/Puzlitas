@@ -47,3 +47,5 @@ func _inicializar_objetos():
 func _Verifica(objeto, estan_juntos):
 	print("se añadió el objeto: ", objeto.name)
 	objetos[objeto] = estan_juntos
+
+
