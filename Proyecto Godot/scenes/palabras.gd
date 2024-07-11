@@ -1,8 +1,5 @@
 extends Area2D
 
-# Indica la posición a la que se moverá el objeto cuando se haga clic
-var target_position = Vector2(100, 100) # Cambia esto según la ubicación deseada
-
 func _ready():
 	# Conectar la señal de eventos de entrada de forma más moderna
 	connect("input_event", Callable(self, "_on_input_event"))

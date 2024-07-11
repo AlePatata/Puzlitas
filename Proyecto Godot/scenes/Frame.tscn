@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddpfr10qahqq3"]
+
+[ext_resource type="Script" path="res://scenes/Frame.gd" id="1_0b2p5"]
+[ext_resource type="Texture2D" uid="uid://c7qwkrsceoe7j" path="res://assets/fotos/Frame17.png" id="1_unqqa"]
+[ext_resource type="Texture2D" uid="uid://dbofx8mapw6ot" path="res://assets/fotos/GlareFrame1.png" id="2_51wfj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_soa5c"]
+size = Vector2(24.93, 128)
+
+[node name="marco 1" type="Area2D"]
+position = Vector2(643, 663)
+scale = Vector2(5.35833, 1)
+script = ExtResource("1_0b2p5")
+
+[node name="Marco" type="Sprite2D" parent="."]
+position = Vector2(-80.9953, -475)
+scale = Vector2(0.186625, 1)
+texture = ExtResource("1_unqqa")
+
+[node name="reflejo" type="Sprite2D" parent="."]
+position = Vector2(-81.3685, -477)
+scale = Vector2(0.186625, 1)
+texture = ExtResource("2_51wfj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-80.9564, -474)
+shape = SubResource("RectangleShape2D_soa5c")
+
+[connection signal="input_event" from="." to="CollisionShape2D" method="_on_marco_1_input_event"]
+[connection signal="mouse_entered" from="." to="CollisionShape2D" method="_on_marco_1_mouse_entered"]

@@ -1,9 +1,7 @@
 extends Camera2D
 @onready var camera_2d = $"."
-@export var camera_speed: float = 200
+@export var camera_speed: float = 300
 @onready var background = $"../Background"
-
-
 @onready var move_left = $"../BackgMovement/MoveLeft"
 @onready var move_right = $"../BackgMovement/MoveRight"
 
@@ -20,7 +18,7 @@ func _physics_process(delta: float) -> void:
 	if _moving_left and camera_2d.global_position.x >  0:
 		camera_2d.global_position.x -= camera_speed * delta
 	
-	if _moving_right and camera_2d.global_position.x < background.position.x:
+	if _moving_right and camera_2d.global_position.x < (background.position.x)/2:
 		camera_2d.global_position.x += camera_speed * delta
 	
 	

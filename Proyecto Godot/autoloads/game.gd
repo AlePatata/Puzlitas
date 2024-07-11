@@ -1,8 +1,10 @@
+#Script del juego
 extends Node
 
 signal inventory_updated
 signal palabras_updated
 
+#diccionario
 var inventory = {
 	palabras = []
 } :
@@ -10,13 +12,14 @@ var inventory = {
 		inventory = value
 		inventory_updated.emit()
 
-
+#para añadir palabra
 func add_palabra(palabra: String):
 	if palabra in inventory.palabras:
 		return
 	inventory.palabras.push_back(palabra)
 	palabras_updated.emit()
 	
+#para eliminar una palabra
 func remove_palabra(palabra: String):
 	if not palabra in inventory.palabras:
 		return
@@ -25,6 +28,7 @@ func remove_palabra(palabra: String):
 	
 
 var current_palabra
+var nodoporeliminar
 #################################
 
 
