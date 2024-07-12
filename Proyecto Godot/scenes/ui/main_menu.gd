@@ -21,13 +21,15 @@ func _on_start_pressed():
 	
 func _on_lvlselector_pressed():
 	audio_stream_player.stop()
-	await AudioManager.play("res://assets/Sounds/Button.wav")
+	await AudioManager.play_sound_button()
 	get_tree().change_scene_to_file("res://scenes/lvl_selector.tscn")
 	
 func _on_credits_pressed():
 	audio_stream_player.stop()
-	await AudioManager.play_sound_click()
+	await AudioManager.play_sound_button()
 	get_tree().change_scene_to_file("res://scenes/Credits/Credits.tscn")
 	
 func _on_quit_pressed():
+	audio_stream_player.stop()
+	await AudioManager.play_sound_button()
 	get_tree().quit()

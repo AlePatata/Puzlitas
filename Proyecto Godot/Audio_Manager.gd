@@ -1,7 +1,11 @@
 extends Node
 @export var button_sound: AudioStream
-@export var click_sound: AudioStream
-
+@export var bedmaking_sound: AudioStream
+@export var meow_sound: AudioStream
+@export var pencilwriting_sound: AudioStream
+@export var takingobject_sound: AudioStream
+@export var mentalbar_sound: AudioStream
+@export var switch_sound: AudioStream
 
 func _play_sound(sound):
 	if not sound:
@@ -21,6 +25,21 @@ func play(sound_path):
 func play_sound_button():
 	await _play_sound(button_sound)
 	
-func play_sound_click():
-	await _play_sound(click_sound)
+func play_sound_meow():
+	await _play_sound(meow_sound)
+	
+func play_sound_pencilwriting():
+	await _play_sound(pencilwriting_sound)
+	
+func play_sound_takingobject():
+	await _play_sound(takingobject_sound)
+	
+func play_sound_bedmaking():
+	await _play_sound(bedmaking_sound)
+	
+func play_sound_mentalbar():
+	await _play_sound(mentalbar_sound)
+	
+func play_sound_switch():
+	await _play_sound(switch_sound)
 	
