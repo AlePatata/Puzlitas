@@ -6,10 +6,13 @@ var blanket_instance
 signal TodosJuntos
 var objetos = {}
 @onready var switch = $Switch
+@onready var light = $".."
+
 
 func _ready():
 	_inicializar_objetos()
 	start_dialog()
+	light.hacerlacama.connect(_on_light_hacerlacama)
 	
 		
 func _physics_process(_delta):
@@ -49,3 +52,15 @@ func _Verifica(objeto, estan_juntos):
 	objetos[objeto] = estan_juntos
 
 
+func _on_light_hacerlacama():
+	print("hola2")
+	for child in get_children():
+		print(child.get_node_or_null("Sprite"))
+		if child is Area2D: # Aseguramos que el hijo sea un Node2D
+			var sprite = child.get_node_or_null("Sprite") # Ajusta el path según la jerarquía de nodos
+			if sprite:
+				print(sprite.texture.get_name())
+				if sprite.texture.get_name() == "bed.png": # Cambia esto a la propiedad correcta si es diferente
+					child.queue_free() # Eliminamos el hijo
+				elif sprite.texture.get_name() == "cama deshecha.png": # Cambia esto a la propiedad correcta si es diferente
+					sprite.texture = preload("res://assets/cama hecha.png") # Cambia el sprite del hijo # Replace with function body.
