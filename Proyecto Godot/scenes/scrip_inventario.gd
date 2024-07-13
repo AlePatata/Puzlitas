@@ -6,11 +6,13 @@ extends Node2D
 @onready var audio_player = $AudioStreamPlayer2D
 @onready var objects = $Objects
 
+signal hacerlacama
 signal RecibeTodosJuntos
 
 func _ready():
 	dictionary.inventario_conectar_ui_palabra.connect(conectar_para_agregar_nodo)
 	objects.TodosJuntos.connect(_emitir_RecibeTodosJuntos)
+	raiz_palabras.ordenar_objeto_raiz.connect(_ordenar_objeto)
 	_start_dialog()
 	
 func _start_dialog():
@@ -34,3 +36,7 @@ func mostrar_victoria():
 
 func _emitir_RecibeTodosJuntos():
 	RecibeTodosJuntos.emit()
+
+func _ordenar_objeto():
+	hacerlacama.emit() 
+	

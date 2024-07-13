@@ -34,3 +34,5 @@ func tomar_palabra(): #sacarla del diccionario
 func _tool(name: String):
 	if name == "Hope":
 		white_circle.show()
+		
+
