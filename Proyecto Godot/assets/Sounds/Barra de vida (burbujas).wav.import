@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b1yh6n570fawe"
+path="res://.godot/imported/Barra de vida (burbujas).wav-8594838957ff386b8b137ab83b48854a.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/Barra de vida (burbujas).wav"
+dest_files=["res://.godot/imported/Barra de vida (burbujas).wav-8594838957ff386b8b137ab83b48854a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
