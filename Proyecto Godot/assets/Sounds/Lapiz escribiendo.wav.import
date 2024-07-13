@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c3nhr4mtn02nb"
+path="res://.godot/imported/Lapiz escribiendo.wav-bd711d668da978c054b6ff314db5ffb9.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/Lapiz escribiendo.wav"
+dest_files=["res://.godot/imported/Lapiz escribiendo.wav-bd711d668da978c054b6ff314db5ffb9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
