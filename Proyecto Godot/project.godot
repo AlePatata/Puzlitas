@@ -61,8 +61,8 @@ history/simple_history_enabled=true
 text/autocolor_names=false
 text/autopauses={}
 glossary/default_case_sensitive=true
-layout/style_list=[]
-layout/default_style="Default"
+layout/style_list=["res://estilodefault.tres", "res://estilotuto2.tres"]
+layout/default_style=""
 layout/end_behaviour=0
 
 [display]
