@@ -18,17 +18,21 @@ func _input(event: InputEvent) -> void:
 		
 
 func _on_resume_pressed():
+	await AudioManager.play_sound_button()
 	get_tree().paused = false
 	hide()
 	
 func _on_quit_pressed():
+	await AudioManager.play_sound_button()
 	get_tree().quit()
 	
 func _on_main_pressed():
+	await AudioManager.play_sound_button()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
 	
 func _on_lvl_selector_pressed():
+	await AudioManager.play_sound_button()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/Lvl_selector.tscn")
 
