@@ -45,7 +45,9 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 			z_index = 0
 	
 func _ordenar():
+	print("hola0")
 	ordenar_objeto.emit()
+	
 	
 	
 	

@@ -37,7 +37,6 @@ func mostrar_victoria():
 func _emitir_RecibeTodosJuntos():
 	RecibeTodosJuntos.emit()
 
-
 func _ordenar_objeto():
 	hacerlacama.emit() 
-	print("hola")
+	
