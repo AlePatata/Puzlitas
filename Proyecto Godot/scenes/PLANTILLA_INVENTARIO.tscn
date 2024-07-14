@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cr2r46e2xsdjb"]
+[gd_scene load_steps=19 format=3 uid="uid://cr2r46e2xsdjb"]
 
 [ext_resource type="Script" path="res://scenes/scrip_inventario.gd" id="1_awnat"]
 [ext_resource type="Texture2D" uid="uid://b013uocnh27v3" path="res://assets/undertaleHouse1.png" id="2_h7mli"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scenes/Lvl ale/whiteCircle.gd" id="6_41rsw"]
 [ext_resource type="Script" path="res://scenes/dic_button_gameplay.gd" id="7_m61cb"]
 [ext_resource type="Texture2D" uid="uid://thiha28tsny3" path="res://assets/books.png" id="8_cs2yn"]
+[ext_resource type="Texture2D" uid="uid://voo7evsiktog" path="res://assets/icon.svg" id="8_qjjiw"]
 [ext_resource type="PackedScene" uid="uid://ctghvosvhtgwc" path="res://scenes/palabra.tscn" id="9_fqd01"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/Camera2D.gd" id="10_3gaus"]
 [ext_resource type="Script" path="res://scenes/Dictionary_slide.gd" id="11_tki1i"]
@@ -121,6 +122,10 @@ frame = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(898, 281)
+texture = ExtResource("8_qjjiw")
+
 [node name="Raiz_Palabras" type="Node2D" parent="."]
 
 [node name="Palabra2" parent="Raiz_Palabras" instance=ExtResource("9_fqd01")]
@@ -178,6 +183,9 @@ size_flags_vertical = 0
 theme_override_constants/h_separation = 384
 theme_override_constants/v_separation = 55
 columns = 2
+
+[node name="UIPalabra" parent="Camera2D/Dictionary/Node2D/MarginContainer/PalabraContainer" instance=ExtResource("12_3f0ti")]
+layout_mode = 2
 
 [connection signal="input_event" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_entered"]

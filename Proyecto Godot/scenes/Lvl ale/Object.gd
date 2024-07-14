@@ -12,6 +12,7 @@ func _ready():
 	connect("area_entered", _on_Area2D_body_entered)
 	connect("area_exited", _on_Area2D_body_exited)
 	connect("input_event", _on_area_2d_input_event)
+	connect("ordenar_objeto", _hacerlacama)
 
 func _physics_process(delta): 
 	var mouse = get_global_mouse_position()
@@ -70,3 +71,7 @@ func _on_Area2D_body_exited(area):
 	if area.is_in_group("objetos"):
 		print("se emitió separados")
 		separados.emit()
+
+func _hacerlacama():
+	var sprite = $Sprite
+	#if sprite.texture == target_texture:# Replace with function body.

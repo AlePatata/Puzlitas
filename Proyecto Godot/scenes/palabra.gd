@@ -17,13 +17,10 @@ signal ordenar_objeto
 
 #Hace que la palabra sea igual a su valor al iniciar la escena 
 func _ready():
-	
 	self.palabra = palabra
 	if Game.current_palabra == "Get your life together": 
 		light.RecibeTodosJuntos.connect(_ordenar)
-		ordenar_objeto.emit(self)
 
-	
 
 func _physics_process(delta): 
 	#si arrastro, puedo cambiar la posición de mi palabra u objeto
@@ -48,4 +45,11 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 			z_index = 0
 	
 func _ordenar():
-	print("VICTORIA")
+	print("hola0")
+	ordenar_objeto.emit()
+	
+	
+	
+	
+	
+	

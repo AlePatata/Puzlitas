@@ -1,6 +1,8 @@
 extends Sprite2D
 @onready var palabra_container = %PalabraContainer
 @onready var dictionary = %Dictionary
+@onready var switch = $"../../Objects/Switch"
+
 var first_use = true # Inicia instrucciones la primera vez que se encuentra Hope
 
 func _ready():
