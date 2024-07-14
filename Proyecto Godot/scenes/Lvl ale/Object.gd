@@ -12,7 +12,7 @@ func _ready():
 	connect("area_entered", _on_Area2D_body_entered)
 	connect("area_exited", _on_Area2D_body_exited)
 	connect("input_event", _on_area_2d_input_event)
-
+	
 func _physics_process(delta): 
 	var mouse = get_global_mouse_position()
 	if mouse.y < 300:
@@ -29,8 +29,17 @@ func set_padre(padre_node):
 func set_sprite(ruta = "res://assets/icon.svg"): #Godot por defecto
 	sprite.texture = load(ruta)
 	if sprite.texture:
-		standardize_sprite_size(Vector2(150, 150))
+		var texture_name = sprite.texture.resource_path.get_file()
+		if texture_name == "cama deshecha.png" or texture_name == "cama hecha.png":
+			standardize_sprite_size(Vector2(200, 200))
+		elif texture_name == "almohadas (1).png":
+			standardize_sprite_size(Vector2(100, 100))
+		elif texture_name == "switch on.png" or texture_name == "switch off.png":
+			standardize_sprite_size(Vector2(25, 70))
+		else: standardize_sprite_size(Vector2(150, 150))
 		update_collision_shape()
+
+			
 		
 func standardize_sprite_size(size: Vector2):
 	if sprite.texture:

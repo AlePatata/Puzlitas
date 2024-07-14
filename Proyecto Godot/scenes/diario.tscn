@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://dxvgvvaibbhev" path="res://assets/fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="2_7w42x"]
 [ext_resource type="Script" path="res://scenes/palabras.gd" id="2_ea2fk"]
 [ext_resource type="FontFile" uid="uid://8togpyok3edv" path="res://assets/fonts/Pixelify_Sans/static/PixelifySans-Medium.ttf" id="3_xnje1"]
-[ext_resource type="Script" path="res://scenes/brain_button.gd" id="7_d8o77"]
+[ext_resource type="Script" path="res://scenes/ui/brain_button.gd" id="7_d8o77"]
 [ext_resource type="Texture2D" uid="uid://c71qy0o4qrkws" path="res://assets/brain.png" id="8_eibrk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_un3k4"]

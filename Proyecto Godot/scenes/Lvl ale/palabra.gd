@@ -18,7 +18,11 @@ signal ordenar_objeto
 #Hace que la palabra sea igual a su valor al iniciar la escena 
 func _ready():
 	self.palabra = palabra
-	light.eliminar_palabra.connect(quit_self)
+	var parent = get_parent()
+	if parent:
+		var grandparent = parent.get_parent()
+		if grandparent and grandparent.name == "light":
+			light.eliminar_palabra.connect(quit_self)
 #if Game.current_palabra == "Get your life together": 
 #		light.RecibeTodosJuntos.connect(_ordena)
 

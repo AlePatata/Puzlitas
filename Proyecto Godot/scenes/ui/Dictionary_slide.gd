@@ -42,10 +42,13 @@ func _on_area_2d_mouse_exited():
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if not event.pressed:
-			if Game.current_palabra == "Hope":
-				apagar_luz.emit(self) #apagar la luz cuando guardamos la palabra
 			if Game.current_palabra:
 				Game.add_palabra(Game.current_palabra)
 				Game.nodoporeliminar.queue_free()
+				if Game.current_palabra == "Hope":
+					apagar_luz.emit(self)
+					print("apagar luz") #apagar la luz cuando guardamos la palabra
 				Game.current_palabra = null
 				Game.nodoporeliminar = null
+				
+

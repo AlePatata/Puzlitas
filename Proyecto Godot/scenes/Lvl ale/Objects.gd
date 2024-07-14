@@ -17,7 +17,7 @@ func _ready():
 func _physics_process(_delta):
 	if len(objetos.values()) == 3:
 		if objetos.values()[0] and objetos.values()[1] and objetos.values()[2]:
-			#TodosJuntos.emit() esto se puede borrar
+			#TodosJuntos.emit()# esto se puede borrar
 			estamos_juntos = true
 			if usando_getyourlifetogether and estamos_juntos: #si todos los objetos están juntos y usamos la palabra, se hace la cama
 				hacerlacama()

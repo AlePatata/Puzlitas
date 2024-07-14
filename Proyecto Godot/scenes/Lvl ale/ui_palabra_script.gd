@@ -4,7 +4,7 @@ signal me_tomaron
 signal prender_luz
 signal ordenar_objeto
 var nodo_hijo: Node2D
-var palabra_scene = preload("res://scenes/palabra.tscn")
+var palabra_scene = preload("res://scenes/Lvl ale/palabra.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,4 +31,9 @@ func tomar_palabra(): #tomarla del diccionario
 	# Elimina la palabra del diccionario
 	Game.remove_palabra(text)
 	self.queue_free()
+	Game.current_palabra = null
+	Game.nodoporeliminar = null
 	Game.nodoporeliminar = nodo_hijo
+
+	
+

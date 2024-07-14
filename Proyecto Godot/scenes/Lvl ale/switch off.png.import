@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drr5x7gueprxc"
-path.s3tc="res://.godot/imported/pixel park pared.png-65f0b99d30576d511d4a945bb726962c.s3tc.ctex"
+uid="uid://cswsx5evpxp0j"
+path="res://.godot/imported/switch off.png-bb615f4c8c37a4cab0b19af4ee18ee5d.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Lvl pauloli/pixel park pared.png"
-dest_files=["res://.godot/imported/pixel park pared.png-65f0b99d30576d511d4a945bb726962c.s3tc.ctex"]
+source_file="res://scenes/Lvl ale/switch off.png"
+dest_files=["res://.godot/imported/switch off.png-bb615f4c8c37a4cab0b19af4ee18ee5d.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
