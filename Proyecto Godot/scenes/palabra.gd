@@ -18,8 +18,9 @@ signal ordenar_objeto
 #Hace que la palabra sea igual a su valor al iniciar la escena 
 func _ready():
 	self.palabra = palabra
-	if Game.current_palabra == "Get your life together": 
-		light.RecibeTodosJuntos.connect(_ordenar)
+	light.eliminar_palabra.connect(quit_self)
+#if Game.current_palabra == "Get your life together": 
+#		light.RecibeTodosJuntos.connect(_ordena)
 
 
 func _physics_process(delta): 
@@ -44,9 +45,13 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 			dragging = false
 			z_index = 0
 	
-func _ordenar():
-	print("hola0")
-	ordenar_objeto.emit()
+#func _ordenar():
+#	print("hola0") #este sí se printea
+#	ordenar_objeto.emit() #esta señal sí se emite porque se printea el hola
+
+func quit_self(palabra):
+	if self.palabra == palabra:
+		self.queue_free()
 	
 	
 	

@@ -25,4 +25,4 @@ func _prender(Emisor):
 	
 func _apagar(Emisor_dictionary):
 	hide()
-	print(Emisor_dictionary)
+	#print(Emisor_dictionary)

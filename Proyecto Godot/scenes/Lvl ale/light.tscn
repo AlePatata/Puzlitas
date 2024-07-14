@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://660dh6t2ip5u"]
+[gd_scene load_steps=26 format=3 uid="uid://660dh6t2ip5u"]
 
 [ext_resource type="Script" path="res://scenes/scrip_inventario.gd" id="1_0fovx"]
 [ext_resource type="Texture2D" uid="uid://b1jvl84sojx1q" path="res://assets/Pieza fondo.png" id="2_ktfo6"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://ctghvosvhtgwc" path="res://scenes/palabra.tscn" id="8_q8cpf"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/Camera2D.gd" id="9_pum0y"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/switch.gd" id="9_yvejc"]
-[ext_resource type="Script" path="res://scenes/Lvl ale/Raiz_Palabras.gd" id="10_1mkkl"]
 [ext_resource type="Script" path="res://scenes/Dictionary_slide.gd" id="10_ijxuc"]
 [ext_resource type="PackedScene" uid="uid://bbbb3fynp4krm" path="res://scenes/Lvl ale/object.tscn" id="10_illft"]
 [ext_resource type="PackedScene" uid="uid://ca6ulc0jbl1kj" path="res://scenes/ui_palabra.tscn" id="11_43f16"]
@@ -127,7 +126,6 @@ position = Vector2(292, 201)
 script = ExtResource("9_yvejc")
 
 [node name="Raiz_Palabras" type="Node2D" parent="."]
-script = ExtResource("10_1mkkl")
 
 [node name="Palabra3" parent="Raiz_Palabras" instance=ExtResource("8_q8cpf")]
 position = Vector2(290, 452)
@@ -224,7 +222,6 @@ offset_top = 160.0
 offset_right = 1043.0
 offset_bottom = 528.0
 
-[connection signal="hacerlacama" from="." to="Objects" method="_on_light_hacerlacama"]
 [connection signal="ordenar_objeto" from="Raiz_Palabras/Palabra3" to="." method="_on_palabra_3_ordenar_objeto"]
 [connection signal="ordenar_objeto" from="Raiz_Palabras/Palabra3" to="Raiz_Palabras" method="_on_palabra_3_ordenar_objeto"]
 [connection signal="input_event" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_input_event"]

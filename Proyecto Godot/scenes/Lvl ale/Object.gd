@@ -5,14 +5,13 @@ signal juntos
 signal separados
 @onready var sprite = $Sprite2D
 @onready var collision_shape = $CollisionShape2D
-
+signal señal_al_padre
 var dragging = false
 
 func _ready():
 	connect("area_entered", _on_Area2D_body_entered)
 	connect("area_exited", _on_Area2D_body_exited)
 	connect("input_event", _on_area_2d_input_event)
-	connect("ordenar_objeto", _hacerlacama)
 
 func _physics_process(delta): 
 	var mouse = get_global_mouse_position()
@@ -21,10 +20,11 @@ func _physics_process(delta):
 	if dragging:
 		global_position = lerp(position, mouse, 30 * delta) 
 	else: dragging = false
-	
-func _ordenar(): 
-	set_sprite("res://assets/icon.svg")
-	#victoria.emit()
+
+var padre
+
+func set_padre(padre_node):
+	padre = padre_node
 	
 func set_sprite(ruta = "res://assets/icon.svg"): #Godot por defecto
 	sprite.texture = load(ruta)
@@ -58,20 +58,19 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 		if event.pressed:
 			dragging = true
 		else: 
+			if Game.current_palabra == "Get your life together": #si suelto la palabra sobre cualquiera de los objetos
+				padre.getyourlifetogether()
 			dragging = false
 
 func _on_Area2D_body_entered(area):
 	if area.is_in_group("objetos"): # Puedes usar grupos para filtrar objetos
 		juntos.emit()
-		print("se emitió juntos")
+		#print("se emitió juntos")
 		
 
 # Función que se llama cuando un cuerpo sale del área
 func _on_Area2D_body_exited(area):
 	if area.is_in_group("objetos"):
-		print("se emitió separados")
+		#print("se emitió separados")
 		separados.emit()
 
-func _hacerlacama():
-	var sprite = $Sprite
-	#if sprite.texture == target_texture:# Replace with function body.

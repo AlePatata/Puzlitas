@@ -1,18 +1,20 @@
 extends Node2D
 @onready var raiz_palabras = $Raiz_Palabras
+@onready var palabra = $Raiz_Palabras/Palabra3
 @onready var dictionary = %Dictionary
 @onready var label = $Label
 @onready var nuevo_stream = preload("res://assets/music/Canciones propias/Alegre.wav")
 @onready var audio_player = $AudioStreamPlayer2D
 @onready var objects = $Objects
 
-signal hacerlacama
+signal eliminar_palabra
 signal RecibeTodosJuntos
+
 
 func _ready():
 	dictionary.inventario_conectar_ui_palabra.connect(conectar_para_agregar_nodo)
 	objects.TodosJuntos.connect(_emitir_RecibeTodosJuntos)
-	raiz_palabras.ordenar_objeto_raiz.connect(_ordenar_objeto)
+	objects.palabra_usada.connect(eliminar_palabra_usada)
 	_start_dialog()
 	
 func _start_dialog():
@@ -36,7 +38,11 @@ func mostrar_victoria():
 
 func _emitir_RecibeTodosJuntos():
 	RecibeTodosJuntos.emit()
-
-func _ordenar_objeto():
-	hacerlacama.emit() 
+	print("se emitio RecibeTodosJuntos")
 	
+func eliminar_palabra_usada(palabra):
+	eliminar_palabra.emit(palabra)
+	
+
+
+
