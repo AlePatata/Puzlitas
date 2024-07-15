@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3skujaduvn6l"]
+[gd_scene load_steps=6 format=3 uid="uid://d3skujaduvn6l"]
 
 [ext_resource type="Script" path="res://scenes/Lvl_selector.gd" id="1_2ag0y"]
 [ext_resource type="Texture2D" uid="uid://ccqmu6183rnlj" path="res://assets/fondosimpleverde.png" id="1_ba42i"]
 [ext_resource type="Texture2D" uid="uid://2seko6y4b3u8" path="res://assets/fondosimplemorado.png" id="2_g5w5q"]
+[ext_resource type="PackedScene" uid="uid://rl28wrp7sgkh" path="res://scenes/ui/pause_menu.tscn" id="5_mcdns"]
 [ext_resource type="AudioStream" uid="uid://li0to1xojj4d" path="res://assets/music/Canciones propias/Tensa.wav" id="9_rwnkd"]
 
 [node name="LvlSelector" type="Node2D"]
@@ -21,3 +22,5 @@ texture = ExtResource("2_g5w5q")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_rwnkd")
 autoplay = true
+
+[node name="PauseMenu" parent="." instance=ExtResource("5_mcdns")]

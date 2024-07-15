@@ -215,14 +215,7 @@ visible = false
 stream = ExtResource("3_7esru")
 autoplay = true
 
-[node name="Menu de Pausa" type="Node2D" parent="."]
-visible = false
-
-[node name="PauseMenu" parent="Menu de Pausa" instance=ExtResource("18_x6clr")]
-offset_left = 203.0
-offset_top = 160.0
-offset_right = 1043.0
-offset_bottom = 528.0
+[node name="PauseMenu" parent="." instance=ExtResource("18_x6clr")]
 
 [connection signal="hacerlacama" from="." to="Objects" method="_on_light_hacerlacama"]
 [connection signal="ordenar_objeto" from="Raiz_Palabras/Palabra3" to="." method="_on_palabra_3_ordenar_objeto"]

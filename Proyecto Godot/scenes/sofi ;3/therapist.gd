@@ -1,8 +1,11 @@
 extends Node2D
 @onready var mental_room_button = $MentalRoomButton
+@onready var pause_menu = $PauseMenu
+
 
 func _ready():
 	start_dialog()
+	
 	
 func start_dialog():
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
