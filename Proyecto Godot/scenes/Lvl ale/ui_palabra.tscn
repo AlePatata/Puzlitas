@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://ca6ulc0jbl1kj"]
+[gd_scene load_steps=4 format=3 uid="uid://ca6ulc0jbl1kj"]
 
 [ext_resource type="Script" path="res://scenes/Lvl ale/ui_palabra_script.gd" id="1_754n3"]
+[ext_resource type="FontFile" uid="uid://c55ycqohqtoqx" path="res://assets/fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="1_menoo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r0o1a"]
+font = ExtResource("1_menoo")
+font_color = Color(0, 0, 0, 1)
 
 [node name="UIPalabra" type="Label"]
 offset_left = 19.0
@@ -9,6 +14,7 @@ offset_right = 131.0
 offset_bottom = 51.0
 mouse_filter = 0
 text = "ui_palabra"
+label_settings = SubResource("LabelSettings_r0o1a")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_754n3")

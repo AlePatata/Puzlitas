@@ -57,7 +57,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1n31q"]
 size = Vector2(877, 423)
 
-[node name="Light" type="Node2D"]
+[node name="RecogerHope" type="Node2D"]
 script = ExtResource("1_rougu")
 
 [node name="Background" type="Sprite2D" parent="."]

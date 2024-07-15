@@ -12,7 +12,7 @@ signal palabra_usada
 
 func _ready():
 	_inicializar_objetos()
-	start_dialog()
+	#start_dialog()
 
 func _physics_process(_delta):
 	if len(objetos.values()) == 3:

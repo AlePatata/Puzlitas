@@ -18,13 +18,14 @@ signal ordenar_objeto
 #Hace que la palabra sea igual a su valor al iniciar la escena 
 func _ready():
 	self.palabra = palabra
+	#el siguiente codigo es para que se conecte a la señal de light ssi está en la escena de light.
 	var parent = get_parent()
 	if parent:
 		var grandparent = parent.get_parent()
-		if grandparent and grandparent.name == "light":
+		if grandparent and grandparent.name == "Light":
 			light.eliminar_palabra.connect(quit_self)
-#if Game.current_palabra == "Get your life together": 
-#		light.RecibeTodosJuntos.connect(_ordena)
+			print("la señal de eliminar desde light llegó a la palabra")
+			
 
 
 func _physics_process(delta): 
@@ -34,6 +35,10 @@ func _physics_process(delta):
 		z_index = 10
 	else:
 		z_index = 0
+	
+	
+	
+			
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	#si hice click sobre mi palabra u objeto

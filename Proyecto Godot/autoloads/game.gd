@@ -26,6 +26,9 @@ func remove_palabra(palabra: String):
 	inventory.palabras.erase(palabra)
 	palabras_updated.emit()
 	
+func update():
+	palabras_updated.emit()
+	
 
 var current_palabra
 var nodoporeliminar

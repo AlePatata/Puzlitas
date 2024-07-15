@@ -14,6 +14,7 @@ func _ready():
 func _on_input_event(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		tomar_palabra()
+		print("palabra tomada")
 
 func tomar_palabra(): #tomarla del diccionario
 	Game.current_palabra = text
@@ -22,6 +23,7 @@ func tomar_palabra(): #tomarla del diccionario
 	
 	# Crea un Nodo2D para la palabra para que aparezca en el mundo del juego.
 	nodo_hijo = palabra_scene.instantiate()
+	print(nodo_hijo)
 	nodo_hijo.palabra = text
 	nodo_hijo.dragging = true
 
@@ -31,8 +33,6 @@ func tomar_palabra(): #tomarla del diccionario
 	# Elimina la palabra del diccionario
 	Game.remove_palabra(text)
 	self.queue_free()
-	Game.current_palabra = null
-	Game.nodoporeliminar = null
 	Game.nodoporeliminar = nodo_hijo
 
 	

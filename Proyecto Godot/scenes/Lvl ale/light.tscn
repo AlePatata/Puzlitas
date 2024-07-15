@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://660dh6t2ip5u"]
+[gd_scene load_steps=25 format=3 uid="uid://660dh6t2ip5u"]
 
 [ext_resource type="Script" path="res://scenes/Lvl ale/Light.gd" id="1_0fovx"]
 [ext_resource type="Texture2D" uid="uid://b1jvl84sojx1q" path="res://assets/Pieza fondo.png" id="2_ktfo6"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" path="res://scenes/Lvl ale/whiteCircle.gd" id="5_egv65"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/Objects.gd" id="7_21vkm"]
 [ext_resource type="Texture2D" uid="uid://thiha28tsny3" path="res://assets/books.png" id="7_gur7d"]
-[ext_resource type="PackedScene" uid="uid://ctghvosvhtgwc" path="res://scenes/Lvl ale/palabra.tscn" id="8_q8cpf"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/Camera2D.gd" id="9_pum0y"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/switch.gd" id="9_yvejc"]
 [ext_resource type="Script" path="res://scenes/ui/Dictionary_slide.gd" id="10_ijxuc"]
@@ -126,8 +125,6 @@ position = Vector2(292, 201)
 script = ExtResource("9_yvejc")
 
 [node name="Raiz_Palabras" type="Node2D" parent="."]
-
-[node name="Palabra" parent="Raiz_Palabras" instance=ExtResource("8_q8cpf")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(640, 360)

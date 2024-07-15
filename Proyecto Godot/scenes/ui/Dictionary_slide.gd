@@ -12,7 +12,6 @@ signal apagar_luz
 #siempre actualizar diccionario de palabras
 func _ready():
 	Game.palabras_updated.connect(_on_palabras_updated)
-	_on_palabras_updated()
 
 #va revisando las palabras en el diccionario y les actualiza su valor
 func _on_palabras_updated():
@@ -46,8 +45,8 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 				Game.add_palabra(Game.current_palabra)
 				Game.nodoporeliminar.queue_free()
 				if Game.current_palabra == "Hope":
-					apagar_luz.emit(self)
-					print("apagar luz") #apagar la luz cuando guardamos la palabra
+					apagar_luz.emit(self)#apagar la luz cuando guardamos la palabra
+					print("apagar luz") 
 				Game.current_palabra = null
 				Game.nodoporeliminar = null
 				

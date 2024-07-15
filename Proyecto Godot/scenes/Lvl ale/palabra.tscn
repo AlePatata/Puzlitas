@@ -13,13 +13,15 @@ script = ExtResource("2_wv21s")
 palabra = "Valor"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(2.00003, 2.64001)
 scale = Vector2(1, 0.385)
 texture = ExtResource("1_fkagf")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
-position = Vector2(-1.20755, -5.33333)
+position = Vector2(1, 2.59738)
 scale = Vector2(1.17, 1.17)
 shape = SubResource("RectangleShape2D_27rvh")
 
@@ -28,10 +30,10 @@ wait_time = 0.2
 one_shot = true
 
 [node name="Label" type="Label" parent="."]
-offset_left = -56.0
-offset_top = -15.0
-offset_right = 57.0
-offset_bottom = 14.0
+offset_left = -26.0
+offset_top = -12.36
+offset_right = 87.0
+offset_bottom = 16.64
 text = "palabra"
 label_settings = SubResource("LabelSettings_a2i0s")
 

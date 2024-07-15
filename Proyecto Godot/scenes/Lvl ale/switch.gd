@@ -2,6 +2,7 @@ extends Objeto
 
 signal hope
 signal apagar_mouse
+signal hope_usado
 var dejar_encendida = false
 @onready var white_circle = $"../../BackgMovement/whiteCircle"
 
@@ -32,4 +33,5 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 			dejar_encendida = true #la deja prendida para siempre cuando la prendiste
 			set_sprite("res://assets/switch on.png")
 			apagar_mouse.emit() #desactiva la luz del mouse
+			hope_usado.emit("Hope") #envía la señal para que la palabra se elimine
 
