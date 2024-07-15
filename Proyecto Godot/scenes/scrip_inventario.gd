@@ -5,7 +5,7 @@ extends Node2D
 @onready var nuevo_stream = preload("res://assets/music/Canciones propias/Alegre.wav")
 @onready var audio_player = $AudioStreamPlayer2D
 @onready var objects = $Objects
-
+@onready var _shader = preload("res://shaders/pruebaDeShader.tscn")
 signal hacerlacama
 signal RecibeTodosJuntos
 
@@ -14,6 +14,10 @@ func _ready():
 	objects.TodosJuntos.connect(_emitir_RecibeTodosJuntos)
 	raiz_palabras.ordenar_objeto_raiz.connect(_ordenar_objeto)
 	_start_dialog()
+	var shader = _shader.instantiate()
+	add_child(shader)
+	shader.set_process_input(false)
+	
 	
 func _start_dialog():
 	Dialogic.timeline_ended.connect(_on_timeline_ended)

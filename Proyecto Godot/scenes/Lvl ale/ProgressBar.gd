@@ -5,7 +5,7 @@ extends ProgressBar
 const EXCESSIVE_CLICKS_THRESHOLD = 5
 const INACTIVITY_THRESHOLD = 3.0
 const TIME_INTERVAL = 2.0 
-const INCREASE = 0.05
+const INCREASE = 0.01
 
 
 var movement_counter : float = 0.0

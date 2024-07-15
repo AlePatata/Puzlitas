@@ -24,3 +24,4 @@ stream = ExtResource("9_rwnkd")
 autoplay = true
 
 [node name="PauseMenu" parent="." instance=ExtResource("5_mcdns")]
+visible = false
