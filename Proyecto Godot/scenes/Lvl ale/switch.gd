@@ -40,6 +40,9 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 			if event.pressed: #prende y apaga el interruptor
 				AudioManager.play_sound_switch()
 				Globals.switch_on = !Globals.switch_on
+				if Globals.luz_primera_vez:
+					Globals.luz_primera_vez = false
+					Dialogic.start_timeline("Tutorial3")
 				
 			apagar_mouse.emit() #desactiva la luz del mouse
 			hope_usado.emit("Hope") #envía la señal para que la palabra se elimine

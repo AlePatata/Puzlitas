@@ -61,7 +61,7 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			dragging = true
-			AudioManager.play_sound_takingobject()
+			#AudioManager.play_sound_takingobject()
 		else: 
 			if Game.current_palabra == "Get your life together": #si suelto la palabra sobre cualquiera de los objetos
 				padre.getyourlifetogether()
