@@ -1,14 +1,12 @@
-[gd_scene load_steps=19 format=3 uid="uid://cyqs5x0wc0prh"]
+[gd_scene load_steps=17 format=3 uid="uid://cyqs5x0wc0prh"]
 
 [ext_resource type="Script" path="res://scenes/Lvl ale/RecogerHope.gd" id="1_rougu"]
-[ext_resource type="Texture2D" uid="uid://cw01lvdfq6xd" path="res://assets/whiteCircle.png" id="3_4k76d"]
+[ext_resource type="Texture2D" uid="uid://b25cl5fn4kko8" path="res://assets/mesita.png" id="2_qe5bd"]
 [ext_resource type="AudioStream" uid="uid://beac6s038w7qs" path="res://assets/music/Canciones propias/Inexpresiva.wav" id="3_ce1i3"]
-[ext_resource type="Script" path="res://scenes/Lvl ale/whiteCircle.gd" id="4_f8d73"]
-[ext_resource type="Texture2D" uid="uid://thiha28tsny3" path="res://assets/books.png" id="7_hmfgy"]
-[ext_resource type="PackedScene" uid="uid://ctghvosvhtgwc" path="res://scenes/palabra.tscn" id="8_kgj24"]
-[ext_resource type="Script" path="res://scenes/Lvl ale/Camera2D.gd" id="9_gqklh"]
-[ext_resource type="Script" path="res://scenes/Dictionary_slide.gd" id="10_bjs8d"]
-[ext_resource type="PackedScene" uid="uid://ca6ulc0jbl1kj" path="res://scenes/ui_palabra.tscn" id="11_tmelx"]
+[ext_resource type="Texture2D" uid="uid://dip1kgp0mqm7u" path="res://assets/diario.png" id="4_ybvvv"]
+[ext_resource type="PackedScene" uid="uid://ctghvosvhtgwc" path="res://scenes/Lvl ale/palabra.tscn" id="8_kgj24"]
+[ext_resource type="Script" path="res://scenes/ui/Dictionary_slide.gd" id="10_bjs8d"]
+[ext_resource type="PackedScene" uid="uid://ca6ulc0jbl1kj" path="res://scenes/Lvl ale/ui_palabra.tscn" id="11_tmelx"]
 [ext_resource type="Texture2D" uid="uid://dxnok5mya3fam" path="res://assets/diccionario.png" id="12_h6lwp"]
 [ext_resource type="PackedScene" uid="uid://rl28wrp7sgkh" path="res://scenes/ui/pause_menu.tscn" id="13_73xe7"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/Button.gd" id="13_fuxf5"]
@@ -58,81 +56,36 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1n31q"]
 size = Vector2(877, 423)
 
-[node name="Light" type="Node2D"]
+[node name="RecogerHope" type="Node2D"]
 script = ExtResource("1_rougu")
 
 [node name="Background" type="Sprite2D" parent="."]
-scale = Vector2(100, 100)
-texture = ExtResource("14_ybv00")
+position = Vector2(644, 359)
+scale = Vector2(2.30859, 2.28472)
+texture = ExtResource("2_qe5bd")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ce1i3")
 autoplay = true
 
-[node name="BackgMovement" type="CanvasLayer" parent="."]
-layer = 3
-
-[node name="MoveLeft" type="TextureRect" parent="BackgMovement"]
-anchors_preset = -1
-anchor_right = 0.187
-anchor_bottom = 1.0
-offset_left = -87.0
-offset_right = -86.36
-offset_bottom = -1.0
-
-[node name="MoveRight" type="TextureRect" parent="BackgMovement"]
-anchors_preset = -1
-anchor_left = 0.798
-anchor_right = 1.002
-anchor_bottom = 1.0
-offset_left = 135.56
-offset_top = 4.0
-offset_right = 135.44
-offset_bottom = -4.0
-size_flags_horizontal = 8
-
-[node name="whiteCircle" type="Sprite2D" parent="BackgMovement"]
-modulate = Color(1, 0.894118, 0.662745, 0.682353)
-show_behind_parent = true
-texture_filter = 1
-position = Vector2(747, 798)
-scale = Vector2(7, 7)
-texture = ExtResource("3_4k76d")
-script = ExtResource("4_f8d73")
-
-[node name="TherapyButton" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="Dic_button" type="Button" parent="TherapyButton"]
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 103.0
-offset_bottom = 93.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="TherapyButton/Dic_button"]
-position = Vector2(34.256, 30.588)
-scale = Vector2(1.406, 1.30883)
-texture = ExtResource("7_hmfgy")
-hframes = 3
-vframes = 2
-frame = 1
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Libro abierto" type="Sprite2D" parent="."]
+position = Vector2(641, 329)
+scale = Vector2(10, 11.473)
+texture = ExtResource("4_ybvvv")
 
 [node name="Raiz_Palabras" type="Node2D" parent="."]
 
 [node name="Palabra2" parent="Raiz_Palabras" instance=ExtResource("8_kgj24")]
-position = Vector2(457, 403)
+position = Vector2(441, 422)
 palabra = "Hope"
 
 [node name="Palabra3" parent="Raiz_Palabras" instance=ExtResource("8_kgj24")]
-position = Vector2(223, 393)
+visible = false
+position = Vector2(282, 426)
 palabra = "Get your life together"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(640, 360)
-script = ExtResource("9_gqklh")
 
 [node name="Dictionary" type="Node2D" parent="Camera2D"]
 unique_name_in_owner = true
@@ -179,26 +132,19 @@ theme_override_constants/v_separation = 55
 columns = 2
 
 [node name="Button" type="Button" parent="."]
-offset_left = 189.0
-offset_top = 40.0
-offset_right = 301.0
-offset_bottom = 146.0
+offset_left = 53.0
+offset_top = 18.0
+offset_right = 165.0
+offset_bottom = 124.0
 script = ExtResource("13_fuxf5")
 
-[node name="Sprite2D" type="Sprite2D" parent="Button"]
-position = Vector2(57, 53)
+[node name="boton sala mental" type="Sprite2D" parent="Button"]
+position = Vector2(56, 53)
 scale = Vector2(0.796875, 0.804688)
 texture = ExtResource("14_ybv00")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 370.0
-offset_top = 11.0
-offset_right = 858.0
-offset_bottom = 51.0
-theme_override_font_sizes/font_size = 26
-text = "Añade todas las palabras al diccionario"
-
 [node name="PauseMenu" parent="." instance=ExtResource("13_73xe7")]
+visible = false
 
 [connection signal="input_event" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_entered"]
