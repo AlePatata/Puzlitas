@@ -1,4 +1,4 @@
-extends MarginContainer
+extends CanvasLayer
 @onready var resume: Button  = $PanelContainer/MarginContainer/VBoxContainer/Resume
 @onready var main: Button  = $PanelContainer/MarginContainer/VBoxContainer/Main
 @onready var levels: Button  = $PanelContainer/MarginContainer/VBoxContainer/Levels
@@ -18,21 +18,23 @@ func _input(event: InputEvent) -> void:
 		
 
 func _on_resume_pressed():
-	await AudioManager.play_sound_button()
 	get_tree().paused = false
+	await AudioManager.play_sound_button()
 	hide()
 	
+	
 func _on_quit_pressed():
+	get_tree().paused = false
 	await AudioManager.play_sound_button()
 	get_tree().quit()
 	
 func _on_main_pressed():
-	await AudioManager.play_sound_button()
 	get_tree().paused = false
+	await AudioManager.play_sound_button()
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
 	
 func _on_lvl_selector_pressed():
-	await AudioManager.play_sound_button()
 	get_tree().paused = false
+	await AudioManager.play_sound_button()
 	get_tree().change_scene_to_file("res://scenes/Lvl_selector.tscn")
 

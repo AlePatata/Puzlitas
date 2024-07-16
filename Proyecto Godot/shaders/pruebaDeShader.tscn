@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cgdaw8prnl6f2"]
+[gd_scene load_steps=7 format=3 uid="uid://cgdaw8prnl6f2"]
 
-[ext_resource type="Texture2D" uid="uid://bn7qcw3oupa8k" path="res://assets/ranita.jpeg" id="1_6sv6c"]
 [ext_resource type="Script" path="res://shaders/pruebaDeShader.gd" id="1_js5un"]
-[ext_resource type="PackedScene" uid="uid://bp0y16jxkxypq" path="res://scenes/Lvl ale/progressBar.tscn" id="2_ih7id"]
+[ext_resource type="PackedScene" uid="uid://yfs3bnfkb6ou" path="res://scenes/Lvl ale/progressBar.tscn" id="2_ih7id"]
 [ext_resource type="Shader" path="res://shaders/pruebaDeShader.gdshader" id="4_aplm5"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_albsx"]
@@ -17,18 +16,14 @@ shader_parameter/health = null
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_3dwg1")
 
 [node name="Node2D" type="Node2D"]
+z_as_relative = false
 script = ExtResource("1_js5un")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(791, 379)
-texture = ExtResource("1_6sv6c")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+process_priority = -1
 material = SubResource("ShaderMaterial_dff3i")
 use_parent_material = true
 anchors_preset = -1
@@ -36,15 +31,20 @@ anchor_left = -0.498
 anchor_top = -0.497
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 636.44
-offset_top = 359.84
-offset_right = -8.0
-offset_bottom = -1.0
+offset_left = 623.44
+offset_top = 336.84
+offset_right = 15.0
+offset_bottom = 4.0
+mouse_filter = 2
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 0
 
 [node name="Control" parent="CanvasLayer2" instance=ExtResource("2_ih7id")]
-offset_left = 325.0
-offset_top = -185.0
-offset_right = 325.0
-offset_bottom = -185.0
+light_mask = 4
+visibility_layer = 4
+z_as_relative = false
+offset_left = -3.20001
+offset_top = -3.75998
+offset_right = -3.20001
+offset_bottom = -3.75999
