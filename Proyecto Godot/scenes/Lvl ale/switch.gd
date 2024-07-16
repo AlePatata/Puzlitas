@@ -15,11 +15,11 @@ func _ready():
 	position = Vector2(400, 200)
 	set_sprite("res://assets/switch off.png")
 	connect("input_event", _on_area_2d_input_event)
-	if Globals.switch_state:
+	if Globals.switch_on:
 		luz_encendida()
 	else: 
+		luz_apagada()
 		hide()
-
 
 
 func _physics_process(delta):
@@ -28,22 +28,28 @@ func _physics_process(delta):
 	if a and white_circle.visible or dejar_encendida:
 		show()
 	else:
-		if not Globals.switch_state:
+		if not dejar_encendida:
 			hide()
+	if Globals.switch_on:
+		luz_encendida()
+	else: luz_apagada()
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if modulate == original_texture:
-			dejar_encendida = true 
-			Globals.switch_state = true
+			if event.pressed: #prende y apaga el interruptor
+				Globals.switch_on = !Globals.switch_on
 			apagar_mouse.emit() #desactiva la luz del mouse
 			hope_usado.emit("Hope") #envía la señal para que la palabra se elimine
 			luz_encendida()
-		#if event.pressed:
-			
 
 func luz_encendida():
+	dejar_encendida = true 
 	hope.emit()
 	set_sprite("res://assets/switch on.png")
 	Game.current_palabra = null
 	show()
+	
+func luz_apagada():
+	set_sprite("res://assets/switch off.png")
+	

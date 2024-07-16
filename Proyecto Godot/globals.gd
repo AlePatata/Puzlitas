@@ -3,8 +3,9 @@ extends Node
 # Diccionarios para guardar las posiciones de los objetos
 var objects_positions = {}
 var words_positions = {}
-var switch_state = false
+var switch_on = false
 var cama_hecha = false
+var light_dialog_started = false
 
 func _ready():
 	pass
