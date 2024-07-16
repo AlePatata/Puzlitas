@@ -16,16 +16,15 @@ signal ocultar_whiteCircle
 
 func _ready():
 	dictionary.inventario_conectar_ui_palabra.connect(conectar_para_agregar_nodo)
-	objects.TodosJuntos.connect(_emitir_RecibeTodosJuntos)
-	#raiz_palabras.ordenar_objeto_raiz.connect(_ordenar_objeto)
 	objects.palabra_usada.connect(eliminar_palabra_usada)
 	switch.apagar_mouse.connect(ocultar_luz)
 	switch.hope_usado.connect(eliminar_palabra_usada)
-	Game.update()
-	print(Game.inventory.palabras)
-	#background.apagar_mouse.connect(ocultar_luz)
+	Game.update() #importante para que funcione el diccionario correctamente
 	
-	_start_dialog()
+	if not Globals.light_dialog_started:
+		_start_dialog()
+		Globals.light_dialog_started = true #para decir que ya se reprodujo una vez
+	
 	var shader = _shader.instantiate()
 	add_child(shader)
 	shader.set_process_input(false)
@@ -43,15 +42,7 @@ func agregar_nodo_palabra(nodo_hijo):
 
 func conectar_para_agregar_nodo(ui_palabra):
 	ui_palabra.me_tomaron.connect(agregar_nodo_palabra)
-	
-func mostrar_victoria():
-	label.visible = true
-	audio_player.stream = nuevo_stream
-	audio_player.play()
 
-func _emitir_RecibeTodosJuntos():
-	RecibeTodosJuntos.emit()
-	
 func eliminar_palabra_usada(palabra):
 	eliminar_palabra.emit(palabra)
 

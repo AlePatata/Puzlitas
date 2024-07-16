@@ -13,7 +13,7 @@ func _ready():
 
 
 func set_light():
-	if Globals.switch_state:
+	if Globals.switch_on:
 		modulate = Color("ffffff")
 	else: 
 		modulate = Color("733bdb")
