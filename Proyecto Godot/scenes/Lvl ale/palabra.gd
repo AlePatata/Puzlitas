@@ -4,6 +4,7 @@ var dragging = false
 signal palabra_tomada
 signal ordenar_objeto
 @onready var light = $"../.."
+var new_position
 
 
 #para que el label siempre sea el correspondiente a la palabra
@@ -18,8 +19,15 @@ signal ordenar_objeto
 #Hace que la palabra sea igual a su valor al iniciar la escena 
 func _ready():
 	self.palabra = palabra
-	if Game.current_palabra == "Get your life together": 
-		light.RecibeTodosJuntos.connect(_ordenar)
+	#el siguiente codigo es para que se conecte a la señal de light ssi está en la escena de light.
+	var parent = get_parent()
+	if parent:
+		var grandparent = parent.get_parent()
+		if grandparent and grandparent.name == "Light":
+			light.eliminar_palabra.connect(quit_self)
+	if not Globals.words_positions.has(self.name):
+		Globals.save_word_position(name, position)
+	position = Globals.get_word_position(self.name)
 
 
 func _physics_process(delta): 
@@ -29,7 +37,7 @@ func _physics_process(delta):
 		z_index = 10
 	else:
 		z_index = 0
-
+	
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	#si hice click sobre mi palabra u objeto
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -43,10 +51,17 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 		else:
 			dragging = false
 			z_index = 0
+			new_position = self.position
+			Globals.words_positions[self.name] = new_position
+			
 	
-func _ordenar():
-	print("hola0")
-	ordenar_objeto.emit()
+#func _ordenar():
+#	print("hola0") #este sí se printea
+#	ordenar_objeto.emit() #esta señal sí se emite porque se printea el hola
+
+func quit_self(palabra):
+	if self.palabra == palabra:
+		self.queue_free()
 	
 	
 	
