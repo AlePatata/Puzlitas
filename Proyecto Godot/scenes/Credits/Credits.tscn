@@ -1,9 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://bv352g8803euh"]
+[gd_scene load_steps=7 format=3 uid="uid://bv352g8803euh"]
 
 [ext_resource type="Script" path="res://scenes/Credits/Credits.gd" id="1_1cw2j"]
 [ext_resource type="FontFile" uid="uid://cgxedj7ice014" path="res://assets/fonts/DotGothic16/DotGothic16-Regular.ttf" id="1_u4ybr"]
 [ext_resource type="Texture2D" uid="uid://cx2ln1dmm8r3t" path="res://assets/credits background.png" id="2_5bh5q"]
 [ext_resource type="AudioStream" uid="uid://beac6s038w7qs" path="res://assets/music/Canciones propias/Inexpresiva.wav" id="3_5sedp"]
+
+[sub_resource type="Animation" id="Animation_8ivbp"]
+resource_name = "scroll"
+length = 20.0
+step = 222.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("background/Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 18.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1200), Vector2(0, -360)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6dmf0"]
+_data = {
+"scroll": SubResource("Animation_8ivbp")
+}
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -18,23 +40,25 @@ script = ExtResource("1_1cw2j")
 position = Vector2(640, 360)
 texture = ExtResource("2_5bh5q")
 
-[node name="margin" type="MarginContainer" parent="background"]
-custom_minimum_size = Vector2(1000, 600)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -1140.0
-offset_top = -763.0
-offset_right = -140.0
-offset_bottom = 43.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+[node name="Node2D" type="Node2D" parent="background"]
+position = Vector2(0, 1109.64)
 
-[node name="text_credits" type="RichTextLabel" parent="background/margin"]
+[node name="margin" type="MarginContainer" parent="background/Node2D"]
+custom_minimum_size = Vector2(1000, 600)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = -1426.0
+offset_right = 500.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="text_credits" type="RichTextLabel" parent="background/Node2D/margin"]
 custom_minimum_size = Vector2(1000, 600)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -43,16 +67,26 @@ theme_override_fonts/normal_font = ExtResource("1_u4ybr")
 theme_override_font_sizes/normal_font_size = 42
 bbcode_enabled = true
 text = "[center]
-[color=yellow]CREDITS
-[/color]
+CREDITS
+
 -.PUZLITAS TEAM.-
-[color=green]Sofía Araya
+[color=pink]Sofía Araya
 Alejandra Campos
 Paula Jorquera
 Tomás Nazar[/color]
 
+-.Music.-
+Tomás Nazar
+
+-.Developers.-
+Paula Jorquera
+Alejandra Campos
+
+-.Assets.-
+Sofía Araya, @Shiroze, @srtoasty
+
 -.Special thanks to.-
-[color=green]Elías Zelada
+[color=purple]Elías Zelada
 Nadia Decar
 [/color]
 [/center]"
@@ -69,5 +103,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6dmf0")
+}
 
 [connection signal="pressed" from="Back_to_main" to="." method="_on_back_to_main_pressed"]

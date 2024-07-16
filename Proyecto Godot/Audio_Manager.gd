@@ -1,5 +1,6 @@
 extends Node
 @export var button_sound: AudioStream
+@export var button_sound1: AudioStream
 @export var bedmaking_sound: AudioStream
 @export var meow_sound: AudioStream
 @export var pencilwriting_sound: AudioStream
@@ -24,6 +25,9 @@ func play(sound_path):
 
 func play_sound_button():
 	await _play_sound(button_sound)
+	
+func play_sound_button1():
+	await _play_sound(button_sound1)
 	
 func play_sound_meow():
 	await _play_sound(meow_sound)
