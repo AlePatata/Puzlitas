@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://1yfky7gx0pjq"]
 
 [ext_resource type="Script" path="res://Audio_Manager.gd" id="1_cb4u2"]
-[ext_resource type="AudioStream" uid="uid://uti7ycsfe5lv" path="res://assets/Sounds/Button.wav" id="2_3bno5"]
+[ext_resource type="AudioStream" uid="uid://bk3tap4cxacck" path="res://assets/Sounds/ShortButton.wav" id="2_bwmb6"]
 [ext_resource type="AudioStream" uid="uid://b7agyabbr72k3" path="res://assets/Sounds/Arropado de cama.wav" id="3_w3ulu"]
 [ext_resource type="AudioStream" uid="uid://c4h0f2nqq3ivm" path="res://assets/Sounds/Meow.wav" id="4_y0shl"]
 [ext_resource type="AudioStream" uid="uid://c3nhr4mtn02nb" path="res://assets/Sounds/Lapiz escribiendo.wav" id="5_60yr8"]
@@ -11,7 +11,7 @@
 
 [node name="Audio_Manager" type="Node"]
 script = ExtResource("1_cb4u2")
-button_sound = ExtResource("2_3bno5")
+button_sound = ExtResource("2_bwmb6")
 bedmaking_sound = ExtResource("3_w3ulu")
 meow_sound = ExtResource("4_y0shl")
 pencilwriting_sound = ExtResource("5_60yr8")
