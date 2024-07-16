@@ -8,6 +8,8 @@ extends Node2D
 @onready var switch = $Objects/Switch
 @onready var background = $Background
 
+@onready var _shader = preload("res://shaders/pruebaDeShader.tscn")
+
 signal eliminar_palabra
 signal RecibeTodosJuntos
 signal ocultar_whiteCircle
@@ -15,6 +17,7 @@ signal ocultar_whiteCircle
 func _ready():
 	dictionary.inventario_conectar_ui_palabra.connect(conectar_para_agregar_nodo)
 	objects.TodosJuntos.connect(_emitir_RecibeTodosJuntos)
+	#raiz_palabras.ordenar_objeto_raiz.connect(_ordenar_objeto)
 	objects.palabra_usada.connect(eliminar_palabra_usada)
 	switch.apagar_mouse.connect(ocultar_luz)
 	switch.hope_usado.connect(eliminar_palabra_usada)
@@ -23,6 +26,9 @@ func _ready():
 	#background.apagar_mouse.connect(ocultar_luz)
 	
 	_start_dialog()
+	var shader = _shader.instantiate()
+	add_child(shader)
+	shader.set_process_input(false)
 	
 func _start_dialog():
 	Dialogic.timeline_ended.connect(_on_timeline_ended)

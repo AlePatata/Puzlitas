@@ -221,3 +221,4 @@ visible = false
 [connection signal="mouse_entered" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_exited"]
 [connection signal="input_event" from="CanvasLayer/Sprite2D/Area2D" to="CanvasLayer/Sprite2D/Area2D/CollisionShape2D" method="_on_area_2d_input_event"]
+
