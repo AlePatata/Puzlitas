@@ -1,8 +1,9 @@
 extends Node2D
 @onready var object = preload("res://scenes/Lvl ale/object.tscn")
-var bed
-var pillow
-var blanket
+@onready var bed = $Bed
+@onready var pillow = $Pillow
+@onready var blanket = $Blanket
+
 signal TodosJuntos
 var objetos = {}
 var usando_getyourlifetogether = false
@@ -14,6 +15,8 @@ func _ready():
 	_inicializar_objetos()
 	_actualizar_posiciones()
 	#start_dialog()
+	if Globals.cama_hecha:
+		hacerlacama()
 
 func _physics_process(_delta):
 	if len(objetos.values()) == 3:
@@ -31,42 +34,33 @@ func _on_timeline_ended():
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
 
 func _inicializar_objetos():
-	bed = object.instantiate()
-	add_child(bed)
 	bed.set_sprite("res://assets/cama deshecha.png")
-	bed.position = Vector2(switch.position.x + 300, switch.position.y + 200)
 	
-	pillow = object.instantiate()
-	add_child(pillow)
 	pillow.set_sprite("res://assets/almohadas (1).png")
-	pillow.position = Vector2(bed.position.x + 300, bed.position.y + 100)
 	
-	blanket = object.instantiate()
-	add_child(blanket)
 	blanket.set_sprite("res://assets/manta.png")
-	blanket.position = Vector2(pillow.position.x + 300, pillow.position.y - 100)
 	for i in get_children():
 		i.set_padre(self) #declaro al padre
 		i.juntos.connect(_Verifica.bind(i, true)) 
 		i.separados.connect(_Verifica.bind(i, false)) 
 		
 func _actualizar_posiciones():
-	print(Game.objects)
-	#bed.position = Globals.get_object_position("Object")
-	#pillow.position = Globals.get_object_position("@Area2D@6")
-	#blanket.position = Globals.get_object_position("@Area2D@7")
+	print(Globals.objects_positions)	
+	if not Globals.objects_positions.is_empty():
+		bed.position = Globals.get_object_position("Bed")
+		pillow.position = Globals.get_object_position("Pillow")
+		blanket.position = Globals.get_object_position("Blanket")
 	
 func _Verifica(objeto, estan_juntos):
-	#print("se añadió el objeto: ", objeto.name)
 	objetos[objeto] = estan_juntos
 	
 func getyourlifetogether():
 	if estamos_juntos:
 		usando_getyourlifetogether = true 
-	
 
 func hacerlacama():
 	bed.set_sprite("res://assets/cama hecha.png")
 	pillow.queue_free()
 	blanket.queue_free()
 	palabra_usada.emit("Get your life together")
+	Globals.cama_hecha = true

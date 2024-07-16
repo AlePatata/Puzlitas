@@ -25,8 +25,9 @@ func _ready():
 		var grandparent = parent.get_parent()
 		if grandparent and grandparent.name == "Light":
 			light.eliminar_palabra.connect(quit_self)
-			print("la señal de eliminar desde light llegó a la palabra")
-			
+	if not Globals.words_positions.has(self.name):
+		Globals.save_word_position(name, position)
+	position = Globals.get_word_position(self.name)
 
 
 func _physics_process(delta): 
@@ -37,10 +38,6 @@ func _physics_process(delta):
 	else:
 		z_index = 0
 	
-	
-	
-			
-
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	#si hice click sobre mi palabra u objeto
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -55,7 +52,8 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 			dragging = false
 			z_index = 0
 			new_position = self.position
-			Globals.save_word_position(self.name, new_position)
+			Globals.words_positions[self.name] = new_position
+			
 	
 #func _ordenar():
 #	print("hola0") #este sí se printea

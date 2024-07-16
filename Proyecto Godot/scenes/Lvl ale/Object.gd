@@ -13,6 +13,8 @@ func _ready():
 	connect("area_entered", _on_Area2D_body_entered)
 	connect("area_exited", _on_Area2D_body_exited)
 	connect("input_event", _on_area_2d_input_event)
+	if not Globals.objects_positions.has(self.name):
+		Globals.save_object_position(name, position)
 	
 func _physics_process(delta): 
 	var mouse = get_global_mouse_position()
@@ -72,8 +74,7 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 				padre.getyourlifetogether()
 			dragging = false
 			new_position = self.position
-			print(self.name)
-			Globals.save_object_position(self.name, new_position)
+			Globals.objects_positions[self.name] = new_position
 			
 
 func _on_Area2D_body_entered(area):

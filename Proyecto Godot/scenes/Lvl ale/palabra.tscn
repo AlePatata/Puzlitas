@@ -13,7 +13,6 @@ script = ExtResource("2_wv21s")
 palabra = "Valor"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(2.00003, 2.64001)
 scale = Vector2(1, 0.385)
 texture = ExtResource("1_fkagf")

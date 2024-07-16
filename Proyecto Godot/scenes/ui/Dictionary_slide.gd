@@ -43,10 +43,11 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 		if not event.pressed:
 			if Game.current_palabra:
 				Game.add_palabra(Game.current_palabra)
-				Game.nodoporeliminar.queue_free()
+				print("ultimo print:", Game.current_palabra)
+				if is_instance_valid(Game.nodoporeliminar):
+					Game.nodoporeliminar.queue_free()
 				if Game.current_palabra == "Hope":
 					apagar_luz.emit(self)#apagar la luz cuando guardamos la palabra
-					print("apagar luz") 
 				Game.current_palabra = null
 				Game.nodoporeliminar = null
 				

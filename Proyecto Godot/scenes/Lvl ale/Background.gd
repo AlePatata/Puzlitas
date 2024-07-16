@@ -13,7 +13,9 @@ func _ready():
 
 
 func set_light():
-	print("Se prendió la luz")
-	modulate = Color("ffffff")
+	if Globals.switch_state:
+		modulate = Color("ffffff")
+	else: 
+		modulate = Color("733bdb")
 	apagar_mouse.emit()
 	#Dialogic.start("Tutorial3") #ta entero desordenao papito

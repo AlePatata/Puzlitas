@@ -19,6 +19,7 @@ func _ready():
 	switch.apagar_mouse.connect(ocultar_luz)
 	switch.hope_usado.connect(eliminar_palabra_usada)
 	Game.update()
+	print(Game.inventory.palabras)
 	#background.apagar_mouse.connect(ocultar_luz)
 	
 	_start_dialog()
@@ -35,7 +36,6 @@ func agregar_nodo_palabra(nodo_hijo):
 	raiz_palabras.add_child(nodo_hijo)
 
 func conectar_para_agregar_nodo(ui_palabra):
-	print("señal recibida por light")
 	ui_palabra.me_tomaron.connect(agregar_nodo_palabra)
 	
 func mostrar_victoria():
@@ -45,10 +45,8 @@ func mostrar_victoria():
 
 func _emitir_RecibeTodosJuntos():
 	RecibeTodosJuntos.emit()
-	print("se emitio RecibeTodosJuntos")
 	
 func eliminar_palabra_usada(palabra):
-	print("la señal de eliminar se envió desde light")
 	eliminar_palabra.emit(palabra)
 
 	
