@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://660dh6t2ip5u"]
+[gd_scene load_steps=26 format=3 uid="uid://660dh6t2ip5u"]
 
 [ext_resource type="Script" path="res://scenes/Lvl ale/Light.gd" id="1_0fovx"]
 [ext_resource type="Texture2D" uid="uid://b1jvl84sojx1q" path="res://assets/Pieza fondo.png" id="2_ktfo6"]
@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://dxnok5mya3fam" path="res://assets/diccionario.png" id="12_x8m1o"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/dicbutton.gd" id="17_ufa5u"]
 [ext_resource type="PackedScene" uid="uid://rl28wrp7sgkh" path="res://scenes/ui/pause_menu.tscn" id="18_x6clr"]
-[ext_resource type="PackedScene" uid="uid://bp0y16jxkxypq" path="res://scenes/Lvl ale/progressBar.tscn" id="19_5ml6d"]
 
 [sub_resource type="Animation" id="Animation_tmahn"]
 length = 0.001
@@ -69,11 +68,14 @@ size = Vector2(877, 423)
 size = Vector2(44.808, 46.6065)
 
 [node name="Light" type="Node2D"]
+z_index = 1
 script = ExtResource("1_0fovx")
 
 [node name="Background" type="Sprite2D" parent="."]
 light_mask = 2
 visibility_layer = 2
+z_index = -2
+z_as_relative = false
 position = Vector2(1540, 359)
 scale = Vector2(1.613, 1.775)
 texture = ExtResource("2_ktfo6")
@@ -81,13 +83,6 @@ script = ExtResource("3_26dda")
 
 [node name="BackgMovement" type="CanvasLayer" parent="."]
 layer = 3
-
-[node name="Control" parent="BackgMovement" instance=ExtResource("19_5ml6d")]
-offset_left = 367.0
-offset_top = -199.0
-offset_right = 85.0
-offset_bottom = -570.0
-mouse_filter = 2
 
 [node name="MoveLeft" type="TextureRect" parent="BackgMovement"]
 anchors_preset = -1
@@ -118,6 +113,7 @@ texture = ExtResource("4_qqb3p")
 script = ExtResource("5_egv65")
 
 [node name="Objects" type="Node2D" parent="."]
+process_priority = 1
 script = ExtResource("7_21vkm")
 
 [node name="Switch" parent="Objects" groups=["switch"] instance=ExtResource("10_illft")]
@@ -169,10 +165,10 @@ shape = SubResource("RectangleShape2D_1n31q")
 
 [node name="MarginContainer" type="MarginContainer" parent="Camera2D/Dictionary/Node2D"]
 custom_minimum_size = Vector2(0.47, 0)
-offset_left = -306.0
-offset_top = -205.0
-offset_right = 553.0
-offset_bottom = 192.0
+offset_left = -442.0
+offset_top = -228.0
+offset_right = 417.0
+offset_bottom = 169.0
 theme_override_constants/margin_top = 52
 
 [node name="PalabraContainer" type="GridContainer" parent="Camera2D/Dictionary/Node2D/MarginContainer"]
@@ -218,14 +214,8 @@ visible = false
 stream = ExtResource("3_7esru")
 autoplay = true
 
-[node name="Menu de Pausa" type="Node2D" parent="."]
+[node name="PauseMenu" parent="." instance=ExtResource("18_x6clr")]
 visible = false
-
-[node name="PauseMenu" parent="Menu de Pausa" instance=ExtResource("18_x6clr")]
-offset_left = 203.0
-offset_top = 160.0
-offset_right = 1043.0
-offset_bottom = 528.0
 
 [connection signal="input_event" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_entered"]
