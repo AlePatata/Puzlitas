@@ -2,8 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://b4e1fmdbmqdbq" path="res://resources/theme.tres" id="1_is5we"]
 [ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="2_kvx6y"]
-[ext_resource type="Texture2D" uid="uid://voo7evsiktog" path="res://assets/icon.svg" id="3_h45rh"]
 [ext_resource type="Texture2D" uid="uid://thiha28tsny3" path="res://assets/books.png" id="3_hg8uk"]
+[ext_resource type="Texture2D" uid="uid://b25cl5fn4kko8" path="res://assets/mesita.png" id="3_ilkvh"]
 [ext_resource type="AudioStream" uid="uid://dqrnne8eaa8jm" path="res://assets/music/Canciones propias/Alegre.wav" id="4_nqnx1"]
 
 [node name="MainMenu" type="MarginContainer"]
@@ -13,9 +13,9 @@ theme = ExtResource("1_is5we")
 script = ExtResource("2_kvx6y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(639.5, 358)
-scale = Vector2(10.0391, 5.59375)
-texture = ExtResource("3_h45rh")
+position = Vector2(620, 361.5)
+scale = Vector2(2.19922, 2.46875)
+texture = ExtResource("3_ilkvh")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 2
@@ -23,8 +23,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="PanelContainer"]
-position = Vector2(202, 179)
-scale = Vector2(14.999, 13.902)
+position = Vector2(205, 200)
+scale = Vector2(13.0828, 11.9718)
 texture = ExtResource("3_hg8uk")
 hframes = 3
 vframes = 2

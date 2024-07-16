@@ -6,6 +6,7 @@ var words_positions = {}
 var switch_on = false
 var cama_hecha = false
 var light_dialog_started = false
+var health = 1.0 #de la barra de salud mental
 
 func _ready():
 	pass

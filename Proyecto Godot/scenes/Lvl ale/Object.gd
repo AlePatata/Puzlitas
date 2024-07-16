@@ -42,7 +42,6 @@ func set_sprite(ruta = "res://assets/icon.svg"): #Godot por defecto
 		else: standardize_sprite_size(Vector2(150, 150))
 		update_collision_shape()
 
-			
 		
 func standardize_sprite_size(size: Vector2):
 	if sprite.texture:
@@ -53,14 +52,7 @@ func standardize_sprite_size(size: Vector2):
 func update_collision_shape():
 	if sprite.texture:
 		var texture_size = sprite.texture.get_size() * sprite.scale
-		if collision_shape.shape is RectangleShape2D:
-			collision_shape.shape.extents = texture_size / 2
-		elif collision_shape.shape is CapsuleShape2D:
-			var radius = min(texture_size.x, texture_size.y) / 2
-			collision_shape.shape.radius = radius
-			collision_shape.shape.height = texture_size.y - 2 * radius
-		elif collision_shape.shape is CircleShape2D:
-			collision_shape.shape.radius = min(texture_size.x, texture_size.y) / 2
+		collision_shape.shape.extents = texture_size
    
 #func _move_object():
 #	$AnimationPlayer.play("Move")
