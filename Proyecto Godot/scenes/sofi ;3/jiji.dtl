@@ -3,7 +3,7 @@ join "gatito terapeuta" 2 [animation="Fade In Out" length="1" wait="true"]
 - Hi, I'm sorry for being late, I got caught up in traffic.
 "gatito terapeuta": Hi, you're good, don't worry about it, traffic's been pretty bad lately around here.
 "gatito terapeuta": Let's begin with introductions, my name is gatsby and i will be your therapist from now on. Tell me, what's your name?
-set {cat_name} = "gatsby"
+set {cat_name} = "Gatsby"
 [text_input text="What's your name?" var="username"]
 "gatito terapeuta": That's a pretty name! So, tell me {username}, why did you decide to come here?
 user: My memories don't feel quite right. When i try to remember certain things, it feels like something's blocking me.
@@ -23,4 +23,4 @@ user: I don't know. Is this even gonna work? I'm so tired all the time...
 	[signal arg="mental_room"]
 - No hope. [if {HOPE} == false]
 	set {HOPE} = false
-"gatito terapeuta" (default): No hope? Don't worry, you can talk to me again whenever you like. Mean while, try remembering what you feel.
+"gatito terapeuta" (default): No hope? Don't worry, you can talk to me again whenever you like. Meanwhile, try remembering what you feel.
