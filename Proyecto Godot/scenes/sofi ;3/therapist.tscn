@@ -33,6 +33,4 @@ position = Vector2(-2.00001, 1.00001)
 scale = Vector2(1.02734, 0.488281)
 texture = ExtResource("5_aby72")
 
-[node name="Menu de Pausa" type="Node2D" parent="."]
-
-[node name="PauseMenu" parent="Menu de Pausa" instance=ExtResource("6_2bomx")]
+[node name="PauseMenu" parent="." instance=ExtResource("6_2bomx")]
