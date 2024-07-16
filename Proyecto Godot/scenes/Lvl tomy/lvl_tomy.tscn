@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b4jm2pbc85vlm" path="res://scenes/Lvl tomy/Classroom_alegre.jpeg" id="1_aj13p"]
 [ext_resource type="AudioStream" uid="uid://li0to1xojj4d" path="res://assets/music/Canciones propias/Tensa.wav" id="2_doxwl"]
 [ext_resource type="Texture2D" uid="uid://d0o4feqquvo1y" path="res://scenes/Lvl tomy/Exit.jpeg" id="4_md0so"]
-[ext_resource type="Script" path="res://scenes/dic_button_gameplay.gd" id="5_66o5q"]
+[ext_resource type="Script" path="res://scenes/Lvl tomy/dic_button_gameplay.gd" id="5_66o5q"]
 [ext_resource type="Texture2D" uid="uid://thiha28tsny3" path="res://assets/books.png" id="6_0crqv"]
 
 [node name="LvlTomy" type="Control"]
