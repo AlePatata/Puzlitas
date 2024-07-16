@@ -7,6 +7,7 @@ signal separados
 @onready var collision_shape = $CollisionShape2D
 signal señal_al_padre
 var dragging = false
+var  new_position
 
 func _ready():
 	connect("area_entered", _on_Area2D_body_entered)
@@ -70,6 +71,10 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 			if Game.current_palabra == "Get your life together": #si suelto la palabra sobre cualquiera de los objetos
 				padre.getyourlifetogether()
 			dragging = false
+			new_position = self.position
+			print(self.name)
+			Globals.save_object_position(self.name, new_position)
+			
 
 func _on_Area2D_body_entered(area):
 	if area.is_in_group("objetos"): # Puedes usar grupos para filtrar objetos

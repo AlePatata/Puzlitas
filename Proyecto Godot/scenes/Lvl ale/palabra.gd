@@ -4,6 +4,7 @@ var dragging = false
 signal palabra_tomada
 signal ordenar_objeto
 @onready var light = $"../.."
+var new_position
 
 
 #para que el label siempre sea el correspondiente a la palabra
@@ -53,6 +54,8 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 		else:
 			dragging = false
 			z_index = 0
+			new_position = self.position
+			Globals.save_word_position(self.name, new_position)
 	
 #func _ordenar():
 #	print("hola0") #este sí se printea

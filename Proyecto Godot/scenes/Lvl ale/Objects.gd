@@ -12,6 +12,7 @@ signal palabra_usada
 
 func _ready():
 	_inicializar_objetos()
+	_actualizar_posiciones()
 	#start_dialog()
 
 func _physics_process(_delta):
@@ -48,6 +49,12 @@ func _inicializar_objetos():
 		i.set_padre(self) #declaro al padre
 		i.juntos.connect(_Verifica.bind(i, true)) 
 		i.separados.connect(_Verifica.bind(i, false)) 
+		
+func _actualizar_posiciones():
+	print(Game.objects)
+	#bed.position = Globals.get_object_position("Object")
+	#pillow.position = Globals.get_object_position("@Area2D@6")
+	#blanket.position = Globals.get_object_position("@Area2D@7")
 	
 func _Verifica(objeto, estan_juntos):
 	#print("se añadió el objeto: ", objeto.name)
