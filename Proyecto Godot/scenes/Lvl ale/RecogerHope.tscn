@@ -5,10 +5,10 @@
 [ext_resource type="AudioStream" uid="uid://beac6s038w7qs" path="res://assets/music/Canciones propias/Inexpresiva.wav" id="3_ce1i3"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/whiteCircle.gd" id="4_f8d73"]
 [ext_resource type="Texture2D" uid="uid://thiha28tsny3" path="res://assets/books.png" id="7_hmfgy"]
-[ext_resource type="PackedScene" uid="uid://ctghvosvhtgwc" path="res://scenes/palabra.tscn" id="8_kgj24"]
+[ext_resource type="PackedScene" uid="uid://ctghvosvhtgwc" path="res://scenes/Lvl ale/palabra.tscn" id="8_kgj24"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/Camera2D.gd" id="9_gqklh"]
-[ext_resource type="Script" path="res://scenes/Dictionary_slide.gd" id="10_bjs8d"]
-[ext_resource type="PackedScene" uid="uid://ca6ulc0jbl1kj" path="res://scenes/ui_palabra.tscn" id="11_tmelx"]
+[ext_resource type="Script" path="res://scenes/ui/Dictionary_slide.gd" id="10_bjs8d"]
+[ext_resource type="PackedScene" uid="uid://ca6ulc0jbl1kj" path="res://scenes/Lvl ale/ui_palabra.tscn" id="11_tmelx"]
 [ext_resource type="Texture2D" uid="uid://dxnok5mya3fam" path="res://assets/diccionario.png" id="12_h6lwp"]
 [ext_resource type="PackedScene" uid="uid://rl28wrp7sgkh" path="res://scenes/ui/pause_menu.tscn" id="13_73xe7"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/Button.gd" id="13_fuxf5"]
@@ -58,7 +58,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1n31q"]
 size = Vector2(877, 423)
 
-[node name="Light" type="Node2D"]
+[node name="RecogerHope" type="Node2D"]
 script = ExtResource("1_rougu")
 
 [node name="Background" type="Sprite2D" parent="."]
