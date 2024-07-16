@@ -46,7 +46,6 @@ func conectar_para_agregar_nodo(ui_palabra):
 func eliminar_palabra_usada(palabra):
 	eliminar_palabra.emit(palabra)
 
-	
 func ocultar_luz():
 	ocultar_whiteCircle.emit(self)
 	

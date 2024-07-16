@@ -10,17 +10,8 @@ user: My memories don't feel quite right. When i try to remember certain things,
 "gatito terapeuta": Oh, my. That sounds hard. When did you begin to feel this way?
 user: About a month ago. It's like I'm stuck in a room in my mind where all my memories are in picture frames, but they all look... off.
 "gatito terapeuta": That's an interesting way to put it. Do you want to talk about it?
-user: I don't know. Is this even gonna work? I'm so tired all the time...
-"gatito terapeuta": Well, we can try and see. The important thing is that we don't loose *hope*.
-- Hope? [if {HOPE} == false]
-	set {HOPE} = true
-	do Game.add_palabra("Hope")
-	"gatito terapeuta": Yeah, that's right. Tell me more about this mental room of yours...
-	user: It's... well, it looks exactly like my childhood bedroom. Except there's no windows and all the walls are bare except for the pictures.
-	leave "gatito terapeuta"
-	user: I look sad in moments where I know for *sure* I was happy, and everything looks grim.
-	[end_timeline]
-	[signal arg="mental_room"]
-- No hope. [if {HOPE} == false]
-	set {HOPE} = false
-"gatito terapeuta" (default): No hope? Don't worry, you can talk to me again whenever you like. Meanwhile, try remembering what you feel.
+user: It's... well, it looks exactly like my childhood bedroom. Except there's no windows and all the walls are bare except for the pictures.
+leave "gatito terapeuta"
+user: I look sad in moments where I know for *sure* I was happy, and everything looks grim.
+[end_timeline]
+[signal arg="mental_room"]
