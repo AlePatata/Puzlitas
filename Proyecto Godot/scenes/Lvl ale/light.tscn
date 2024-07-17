@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bbbb3fynp4krm" path="res://scenes/Lvl ale/object.tscn" id="10_illft"]
 [ext_resource type="PackedScene" uid="uid://ca6ulc0jbl1kj" path="res://scenes/Lvl ale/ui_palabra.tscn" id="11_43f16"]
 [ext_resource type="Texture2D" uid="uid://dxnok5mya3fam" path="res://assets/diccionario.png" id="12_x8m1o"]
-[ext_resource type="Texture2D" uid="uid://dr5cbe0t6v7lg" path="res://assets/boton terapia.png" id="13_0bmpi"]
+[ext_resource type="Texture2D" uid="uid://shelwrbvn0um" path="res://assets/gatoboton.png" id="13_c6wie"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/dicbutton.gd" id="17_ufa5u"]
 [ext_resource type="PackedScene" uid="uid://rl28wrp7sgkh" path="res://scenes/ui/pause_menu.tscn" id="18_x6clr"]
 
@@ -65,7 +65,7 @@ size = Vector2(877, 423)
 /fonts/VICTORIA = null
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oyrse"]
-size = Vector2(244.053, 270.701)
+size = Vector2(473.603, 518.703)
 
 [node name="Light" type="Node2D"]
 z_index = 1
@@ -76,7 +76,7 @@ light_mask = 2
 visibility_layer = 2
 z_index = -2
 z_as_relative = false
-position = Vector2(1540, 359)
+position = Vector2(1555, 367)
 scale = Vector2(1.613, 1.775)
 texture = ExtResource("2_ktfo6")
 script = ExtResource("3_26dda")
@@ -117,7 +117,8 @@ process_priority = 1
 script = ExtResource("7_21vkm")
 
 [node name="Switch" parent="Objects" groups=["switch"] instance=ExtResource("10_illft")]
-position = Vector2(303, 182)
+position = Vector2(310, 180)
+scale = Vector2(2.5, 1.75)
 script = ExtResource("9_yvejc")
 
 [node name="Bed" parent="Objects" instance=ExtResource("10_illft")]
@@ -193,14 +194,14 @@ text = "VICTORIA"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(61.871, 65.4739)
-scale = Vector2(0.291016, 0.249014)
-texture = ExtResource("13_0bmpi")
+position = Vector2(60, 62)
+scale = Vector2(0.201452, 0.184477)
+texture = ExtResource("13_c6wie")
 
 [node name="Area2D" type="Area2D" parent="CanvasLayer/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/Sprite2D/Area2D"]
-position = Vector2(27.9332, 2.11275)
+position = Vector2(4.96397, 2.09808e-05)
 shape = SubResource("RectangleShape2D_oyrse")
 script = ExtResource("17_ufa5u")
 
