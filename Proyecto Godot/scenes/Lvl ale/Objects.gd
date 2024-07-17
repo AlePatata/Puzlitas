@@ -19,6 +19,7 @@ func _ready():
 	if Globals.cama_hecha:
 		hacerlacama()
 	
+	
 
 func _physics_process(_delta):
 	if len(objetos.values()) == 3:
@@ -40,10 +41,11 @@ func _on_timeline_ended():
 
 func _inicializar_objetos():
 	bed.set_sprite("res://assets/cama deshecha.png")
-	
+	print(bed.sprite.texture.get_size())
 	pillow.set_sprite("res://assets/almohadas (1).png")
-	
+	print(pillow.sprite.texture.get_size())
 	blanket.set_sprite("res://assets/manta.png")
+	print(blanket.sprite.texture.get_size())
 	for i in get_children():
 		i.set_padre(self) #declaro al padre
 		i.juntos.connect(_Verifica.bind(i, true)) 

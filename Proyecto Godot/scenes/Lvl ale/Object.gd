@@ -8,6 +8,7 @@ signal separados
 signal señal_al_padre
 var dragging = false
 var  new_position
+var is_la_palabra = false
 
 func _ready():
 	connect("area_entered", _on_Area2D_body_entered)
@@ -61,9 +62,11 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			dragging = true
+			if Game.current_palabra == "Get your life together":
+				is_la_palabra = true
 			#AudioManager.play_sound_takingobject()
 		else: 
-			if Game.current_palabra == "Get your life together": #si suelto la palabra sobre cualquiera de los objetos
+			if is_la_palabra:#si suelto la palabra sobre cualquiera de los objetos
 				padre.getyourlifetogether()
 			dragging = false
 			new_position = self.position
@@ -73,12 +76,12 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 func _on_Area2D_body_entered(area):
 	if area.is_in_group("objetos"): # Puedes usar grupos para filtrar objetos
 		juntos.emit()
-		#print("se emitió juntos")
+		print("se emitió juntos")
 		
 
 # Función que se llama cuando un cuerpo sale del área
 func _on_Area2D_body_exited(area):
 	if area.is_in_group("objetos"):
-		#print("se emitió separados")
+		print("se emitió separados")
 		separados.emit()
 

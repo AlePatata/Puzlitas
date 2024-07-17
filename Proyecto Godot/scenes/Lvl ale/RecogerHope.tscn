@@ -88,6 +88,7 @@ scale = Vector2(10, 11.473)
 texture = ExtResource("12_h6lwp")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." groups=["page1"]]
+visible = false
 offset_left = 228.0
 offset_top = 93.0
 offset_right = 553.0
@@ -108,6 +109,7 @@ drag_and_drop_selection_enabled = false
 script = ExtResource("13_fvp57")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="." groups=["page1"]]
+visible = false
 offset_left = 728.0
 offset_top = 94.0
 offset_right = 1085.0
@@ -120,6 +122,7 @@ text = "[color=saddlebrown][b]You:[/b] It’s my childhood room… but it’s so
 script = ExtResource("13_fvp57")
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="." groups=["page1"]]
+visible = false
 offset_left = 728.0
 offset_top = 156.0
 offset_right = 1087.0
@@ -132,6 +135,7 @@ text = "[color=black][b]Therapist:[/b] Nice! You found Hope! Let’s see if we c
 script = ExtResource("8_a3few")
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="." groups=["page1"]]
+visible = false
 offset_left = 726.0
 offset_top = 231.0
 offset_right = 1085.0
@@ -149,34 +153,48 @@ anymore, but my mind’s still a mess, just like this room.
 "
 script = ExtResource("10_8melj")
 
-[node name="RichTextLabel5" type="RichTextLabel" parent="." groups=["page2"]]
-offset_left = 216.0
-offset_top = 70.0
-offset_right = 576.0
-offset_bottom = 391.0
+[node name="RichTextLabel7" type="RichTextLabel" parent="." groups=["page2"]]
+offset_left = 228.0
+offset_top = 67.0
+offset_right = 581.0
+offset_bottom = 511.0
 theme_override_fonts/normal_font = ExtResource("11_3npb4")
 theme_override_fonts/bold_font = ExtResource("12_qkq1e")
 theme_override_font_sizes/normal_font_size = 21
 bbcode_enabled = true
 text = "[color=black]
-[b]Therapist:[/b] Well you came here to [color=darkred][url][hint=Click to save word!][b]get your life together[/b][/hint][/url][/color], right? Don’t expect to have it done so quickly! You have to take it one step at a time ^^ [/color]
+[b]Therapist:[/b] Well you came here to [color=darkred][hint=Click to save word!][b][url]get your life together[/url][/b][/hint][/color], right? Don’t expect to have it done so quickly! You have to take it one step at a time ^^ [/color]
 
 [color=saddlebrown][b]You:[/b] Hah, I guess you’re right… Hmm, one step at a time? Well, the first thing I would like to do is clean my room. If I have to start small, I’ll start by making my bed. [/color]"
+context_menu_enabled = true
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
 script = ExtResource("10_ancye")
 
 [node name="RichTextLabel6" type="RichTextLabel" parent="." groups=["page2"]]
-offset_left = 216.0
-offset_top = 70.0
-offset_right = 576.0
-offset_bottom = 391.0
+offset_left = 232.0
+offset_top = 394.0
+offset_right = 592.0
+offset_bottom = 458.0
 theme_override_fonts/normal_font = ExtResource("11_3npb4")
 theme_override_fonts/bold_font = ExtResource("12_qkq1e")
 theme_override_font_sizes/normal_font_size = 21
 bbcode_enabled = true
-text = "[color=black]
-[b]Therapist:[/b] Well you came here to [color=darkred][url][hint=Click to save word!][b]get your life together[/b][/hint][/url][/color], right? Don’t expect to have it done so quickly! You have to take it one step at a time ^^ [/color]
+text = "[color=saddlebrown][b]You:[/b] It’s a small change but it already feels much better. [/color]"
+script = ExtResource("10_ancye")
 
-[color=saddlebrown][b]You:[/b] Hah, I guess you’re right… Hmm, one step at a time? Well, the first thing I would like to do is clean my room. If I have to start small, I’ll start by making my bed. [/color]"
+[node name="RichTextLabel8" type="RichTextLabel" parent="." groups=["page2"]]
+offset_left = 726.0
+offset_top = 92.0
+offset_right = 1086.0
+offset_bottom = 247.0
+theme_override_fonts/normal_font = ExtResource("11_3npb4")
+theme_override_fonts/bold_font = ExtResource("12_qkq1e")
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "[color=black][b]Therapist:[/b] That’s great! And look, your mental health has gone up, if only by a little. But that’s
+okay, our goal isn’t to fill it up, it’s to keep it steady ^^[/color]
+"
 script = ExtResource("10_ancye")
 
 [node name="Raiz_Palabras" type="Node2D" parent="."]
@@ -279,7 +297,7 @@ icon = ExtResource("18_gdhps")
 script = ExtResource("18_kdo72")
 
 [connection signal="meta_clicked" from="RichTextLabel" to="Raiz_Palabras/Palabra2" method="_on_rich_text_label_meta_clicked"]
-[connection signal="meta_clicked" from="RichTextLabel5" to="Raiz_Palabras/Palabra3" method="_on_rich_text_label_5_meta_clicked"]
+[connection signal="meta_clicked" from="RichTextLabel7" to="Raiz_Palabras/Palabra3" method="_on_rich_text_label_7_meta_clicked"]
 [connection signal="input_event" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_exited"]

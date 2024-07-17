@@ -117,7 +117,7 @@ process_priority = 1
 script = ExtResource("7_21vkm")
 
 [node name="Switch" parent="Objects" groups=["switch"] instance=ExtResource("10_illft")]
-position = Vector2(311, 198)
+position = Vector2(1913, 199)
 scale = Vector2(2.5, 1.75)
 script = ExtResource("9_yvejc")
 
@@ -125,11 +125,11 @@ script = ExtResource("9_yvejc")
 position = Vector2(799, 353)
 scale = Vector2(2.25, 2.25)
 
-[node name="Pillow" parent="Objects" instance=ExtResource("10_illft")]
-position = Vector2(329, 392)
-
 [node name="Blanket" parent="Objects" instance=ExtResource("10_illft")]
-position = Vector2(1514, 351)
+position = Vector2(2352, 160)
+
+[node name="Pillow" parent="Objects" instance=ExtResource("10_illft")]
+position = Vector2(1191, 69)
 
 [node name="Raiz_Palabras" type="Node2D" parent="."]
 

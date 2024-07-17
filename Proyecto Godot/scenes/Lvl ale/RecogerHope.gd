@@ -11,6 +11,7 @@ signal get_recoger
 func _ready():
 	dictionary.inventario_conectar_ui_palabra.connect(conectar_para_agregar_nodo)
 	#print(Dialogic.simple_history_content())
+	print(Game.current_palabra)
 
 func agregar_nodo_palabra(nodo_hijo):
 	raiz_palabras.add_child(nodo_hijo)
