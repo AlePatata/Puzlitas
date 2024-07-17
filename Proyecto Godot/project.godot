@@ -45,6 +45,7 @@ variables={
 "dialog1": "false",
 "dialog2": "false",
 "dialog3": "false",
+"dialog4": "false",
 "username": "???"
 }
 extensions_folder="res://addons/dialogic_additions"

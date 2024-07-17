@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cyqs5x0wc0prh"]
+[gd_scene load_steps=28 format=3 uid="uid://cyqs5x0wc0prh"]
 
 [ext_resource type="Script" path="res://scenes/Lvl ale/RecogerHope.gd" id="1_rougu"]
 [ext_resource type="Texture2D" uid="uid://cjckell70qn3w" path="res://assets/mesa.png" id="2_75wug"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scenes/Lvl ale/dialogic2.gd" id="8_a3few"]
 [ext_resource type="PackedScene" uid="uid://ctghvosvhtgwc" path="res://scenes/Lvl ale/palabra.tscn" id="8_kgj24"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/dialogic4.gd" id="10_8melj"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/page2.gd" id="10_ancye"]
 [ext_resource type="Script" path="res://scenes/ui/Dictionary_slide.gd" id="10_bjs8d"]
 [ext_resource type="FontFile" uid="uid://dxvgvvaibbhev" path="res://assets/fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="11_3npb4"]
 [ext_resource type="PackedScene" uid="uid://ca6ulc0jbl1kj" path="res://scenes/Lvl ale/ui_palabra.tscn" id="11_tmelx"]
@@ -148,6 +149,36 @@ anymore, but my mind’s still a mess, just like this room.
 "
 script = ExtResource("10_8melj")
 
+[node name="RichTextLabel5" type="RichTextLabel" parent="." groups=["page2"]]
+offset_left = 216.0
+offset_top = 70.0
+offset_right = 576.0
+offset_bottom = 391.0
+theme_override_fonts/normal_font = ExtResource("11_3npb4")
+theme_override_fonts/bold_font = ExtResource("12_qkq1e")
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "[color=black]
+[b]Therapist:[/b] Well you came here to [color=darkred][url][hint=Click to save word!][b]get your life together[/b][/hint][/url][/color], right? Don’t expect to have it done so quickly! You have to take it one step at a time ^^ [/color]
+
+[color=saddlebrown][b]You:[/b] Hah, I guess you’re right… Hmm, one step at a time? Well, the first thing I would like to do is clean my room. If I have to start small, I’ll start by making my bed. [/color]"
+script = ExtResource("10_ancye")
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="." groups=["page2"]]
+offset_left = 216.0
+offset_top = 70.0
+offset_right = 576.0
+offset_bottom = 391.0
+theme_override_fonts/normal_font = ExtResource("11_3npb4")
+theme_override_fonts/bold_font = ExtResource("12_qkq1e")
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "[color=black]
+[b]Therapist:[/b] Well you came here to [color=darkred][url][hint=Click to save word!][b]get your life together[/b][/hint][/url][/color], right? Don’t expect to have it done so quickly! You have to take it one step at a time ^^ [/color]
+
+[color=saddlebrown][b]You:[/b] Hah, I guess you’re right… Hmm, one step at a time? Well, the first thing I would like to do is clean my room. If I have to start small, I’ll start by making my bed. [/color]"
+script = ExtResource("10_ancye")
+
 [node name="Raiz_Palabras" type="Node2D" parent="."]
 
 [node name="Palabra2" parent="Raiz_Palabras" instance=ExtResource("8_kgj24")]
@@ -157,7 +188,7 @@ palabra = "Hope"
 
 [node name="Palabra3" parent="Raiz_Palabras" instance=ExtResource("8_kgj24")]
 visible = false
-position = Vector2(228, 483)
+position = Vector2(296, 133)
 palabra = "Get your life together"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -248,6 +279,7 @@ icon = ExtResource("18_gdhps")
 script = ExtResource("18_kdo72")
 
 [connection signal="meta_clicked" from="RichTextLabel" to="Raiz_Palabras/Palabra2" method="_on_rich_text_label_meta_clicked"]
+[connection signal="meta_clicked" from="RichTextLabel5" to="Raiz_Palabras/Palabra3" method="_on_rich_text_label_5_meta_clicked"]
 [connection signal="input_event" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_exited"]

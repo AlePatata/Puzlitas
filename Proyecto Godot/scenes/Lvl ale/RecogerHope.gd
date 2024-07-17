@@ -6,6 +6,7 @@ extends Node2D
 
 
 signal ocultar_whiteCircle
+signal get_recoger
 
 func _ready():
 	dictionary.inventario_conectar_ui_palabra.connect(conectar_para_agregar_nodo)
@@ -22,14 +23,26 @@ func ocultar_luz():
 
 		
 func _on_area_2d_pressed(): #flecha_der_pressed
+	page_2()
+	
+func page_2():
 	for object in get_tree().get_nodes_in_group("page1"):
-		hide()
+		object.hide()
+	for object in get_tree().get_nodes_in_group("page2"):
+		object.show()
 	flecha_izq.show()
 	flecha_der.hide()
-
+	Globals.page_1 = false
 
 func _on_flecha_izq_pressed():
+	page_1()
+
+func page_1():	
 	for object in get_tree().get_nodes_in_group("page2"):
-		hide()
+		object.hide()
+	for object in get_tree().get_nodes_in_group("page1"):
+		object.show()
 	flecha_der.show()
 	flecha_izq.hide()
+	Globals.page_1 = true
+

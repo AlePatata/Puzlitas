@@ -8,7 +8,9 @@ func _ready():
 			hide()
 		else: show() # Replace with function body.
 	if name == "flecha_izq":
-		hide()
+		if Globals.page_1:
+			hide()
+		else: show()
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

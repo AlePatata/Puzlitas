@@ -63,8 +63,15 @@ func quit_self(palabra):
 	if self.palabra == palabra:
 		self.queue_free()
 
-func _on_rich_text_label_meta_clicked(meta):
+func _on_rich_text_label_meta_clicked(meta): #cuando recoge del diálogo la primera palabra
 	if palabra == "Hope":
 		show()
 		dragging = true
 		Game.current_palabra = palabra
+
+
+func _on_rich_text_label_5_meta_clicked(meta): #cuando recoge del diálogo la segunda palabra
+	print("presionado")
+	show()
+	dragging = true
+	Game.current_palabra = palabra 
