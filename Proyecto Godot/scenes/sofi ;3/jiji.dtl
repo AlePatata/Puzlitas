@@ -1,3 +1,4 @@
+[style name="estilodetodo"]
 join user 1
 join "gatito terapeuta" (neutro) 2 [animation="Fade In Out" length="1" wait="true"]
 user: Hi, I'm sorry for being late, I got caught up in traffic.
