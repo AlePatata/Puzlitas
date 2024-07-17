@@ -13,7 +13,6 @@ func start_dialog():
 	
 func _on_timeline_ended():
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
-	print("terminó")
 	marco_instance_1.desbloquear()
 	audio_stream_player_2d.stop()
 	await AudioManager.play_sound_button1()
@@ -28,9 +27,9 @@ func _inicializar_marcos():
 	var marco_instance_2 = marco_scene.instantiate()
 	marco_instance_2.position = Vector2(marco_instance_1.position.x + 400, marco_instance_1.position.y + 200)
 	add_child(marco_instance_2)
-	marco_instance_2.set_marco("res://assets/Frame17.png")
+	marco_instance_2.set_marco("res://assets/fotos/Frame18.png")
 	
 	var marco_instance_3 = marco_scene.instantiate()
 	marco_instance_3.position = Vector2(marco_instance_1.position.x + 800, marco_instance_1.position.y)
 	add_child(marco_instance_3)
-	marco_instance_3.set_marco("res://assets/Frame17.png")
+	marco_instance_3.set_marco("res://assets/fotos/Frame23.png")

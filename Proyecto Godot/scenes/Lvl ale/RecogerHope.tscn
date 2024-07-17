@@ -1,9 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://cyqs5x0wc0prh"]
+[gd_scene load_steps=27 format=3 uid="uid://cyqs5x0wc0prh"]
 
 [ext_resource type="Script" path="res://scenes/Lvl ale/RecogerHope.gd" id="1_rougu"]
 [ext_resource type="Texture2D" uid="uid://cjckell70qn3w" path="res://assets/mesa.png" id="2_75wug"]
 [ext_resource type="AudioStream" uid="uid://beac6s038w7qs" path="res://assets/music/Canciones propias/Inexpresiva.wav" id="3_ce1i3"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/dialogic2.gd" id="8_a3few"]
 [ext_resource type="PackedScene" uid="uid://ctghvosvhtgwc" path="res://scenes/Lvl ale/palabra.tscn" id="8_kgj24"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/dialogic4.gd" id="10_8melj"]
 [ext_resource type="Script" path="res://scenes/ui/Dictionary_slide.gd" id="10_bjs8d"]
 [ext_resource type="FontFile" uid="uid://dxvgvvaibbhev" path="res://assets/fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="11_3npb4"]
 [ext_resource type="PackedScene" uid="uid://ca6ulc0jbl1kj" path="res://scenes/Lvl ale/ui_palabra.tscn" id="11_tmelx"]
@@ -11,8 +13,11 @@
 [ext_resource type="FontFile" uid="uid://pws3fdh1afvc" path="res://assets/fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="12_qkq1e"]
 [ext_resource type="PackedScene" uid="uid://rl28wrp7sgkh" path="res://scenes/ui/pause_menu.tscn" id="13_73xe7"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/Button.gd" id="13_fuxf5"]
-[ext_resource type="Script" path="res://scenes/Lvl ale/dialogos_diario.gd" id="13_fvp57"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/dialogic1.gd" id="13_fvp57"]
 [ext_resource type="Texture2D" uid="uid://voo7evsiktog" path="res://assets/icon.svg" id="14_ybv00"]
+[ext_resource type="Texture2D" uid="uid://d14kewvjuueba" path="res://assets/flecha.png" id="17_bildk"]
+[ext_resource type="Texture2D" uid="uid://ddubee12fr58b" path="res://assets/flecha2.png" id="18_gdhps"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/Flecha.gd" id="18_kdo72"]
 
 [sub_resource type="Animation" id="Animation_tmahn"]
 length = 0.001
@@ -58,6 +63,12 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1n31q"]
 size = Vector2(877, 423)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_evm3h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sbcx1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5t8x1"]
+
 [node name="RecogerHope" type="Node2D"]
 script = ExtResource("1_rougu")
 
@@ -75,11 +86,11 @@ position = Vector2(641, 329)
 scale = Vector2(10, 11.473)
 texture = ExtResource("12_h6lwp")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 225.0
-offset_top = 108.0
-offset_right = 550.0
-offset_bottom = 556.0
+[node name="RichTextLabel" type="RichTextLabel" parent="." groups=["page1"]]
+offset_left = 228.0
+offset_top = 93.0
+offset_right = 553.0
+offset_bottom = 541.0
 theme_override_fonts/normal_font = ExtResource("11_3npb4")
 theme_override_fonts/bold_font = ExtResource("12_qkq1e")
 theme_override_font_sizes/normal_font_size = 21
@@ -94,6 +105,48 @@ context_menu_enabled = true
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 script = ExtResource("13_fvp57")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." groups=["page1"]]
+offset_left = 728.0
+offset_top = 94.0
+offset_right = 1085.0
+offset_bottom = 158.0
+theme_override_fonts/normal_font = ExtResource("11_3npb4")
+theme_override_fonts/bold_font = ExtResource("12_qkq1e")
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "[color=saddlebrown][b]You:[/b] It’s my childhood room… but it’s so dark… [/color]"
+script = ExtResource("13_fvp57")
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="." groups=["page1"]]
+offset_left = 728.0
+offset_top = 156.0
+offset_right = 1087.0
+offset_bottom = 325.0
+theme_override_fonts/normal_font = ExtResource("11_3npb4")
+theme_override_fonts/bold_font = ExtResource("12_qkq1e")
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "[color=black][b]Therapist:[/b] Nice! You found Hope! Let’s see if we can use it, it’s looking pretty dark in there![/color]"
+script = ExtResource("8_a3few")
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="." groups=["page1"]]
+offset_left = 726.0
+offset_top = 231.0
+offset_right = 1085.0
+offset_bottom = 569.0
+theme_override_fonts/normal_font = ExtResource("11_3npb4")
+theme_override_fonts/bold_font = ExtResource("12_qkq1e")
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "[color=black]
+[b]Therapist:[/b] That’s better! Though I didn’t take you for a messy person…
+[/color]
+[color=saddlebrown][b]You:[/b] You’re right, I’m not. Now that I’ve chosen hope, everything doesn’t look as dark
+anymore, but my mind’s still a mess, just like this room.
+[/color]
+"
+script = ExtResource("10_8melj")
 
 [node name="Raiz_Palabras" type="Node2D" parent="."]
 
@@ -159,6 +212,7 @@ offset_left = 53.0
 offset_top = 18.0
 offset_right = 165.0
 offset_bottom = 124.0
+icon = ExtResource("17_bildk")
 script = ExtResource("13_fuxf5")
 
 [node name="boton sala mental" type="Sprite2D" parent="Button"]
@@ -169,7 +223,33 @@ texture = ExtResource("14_ybv00")
 [node name="PauseMenu" parent="." instance=ExtResource("13_73xe7")]
 visible = false
 
+[node name="flecha_der" type="Button" parent="."]
+offset_left = 1034.0
+offset_top = 461.0
+offset_right = 1063.0
+offset_bottom = 490.0
+scale = Vector2(2.64286, 2.64286)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_evm3h")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sbcx1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5t8x1")
+icon = ExtResource("17_bildk")
+script = ExtResource("18_kdo72")
+
+[node name="flecha_izq" type="Button" parent="."]
+offset_left = 202.0
+offset_top = 472.0
+offset_right = 231.0
+offset_bottom = 501.0
+scale = Vector2(2.64286, 2.64286)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_evm3h")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sbcx1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5t8x1")
+icon = ExtResource("18_gdhps")
+script = ExtResource("18_kdo72")
+
 [connection signal="meta_clicked" from="RichTextLabel" to="Raiz_Palabras/Palabra2" method="_on_rich_text_label_meta_clicked"]
 [connection signal="input_event" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_exited"]
+[connection signal="pressed" from="flecha_der" to="." method="_on_area_2d_pressed"]
+[connection signal="pressed" from="flecha_izq" to="." method="_on_flecha_izq_pressed"]

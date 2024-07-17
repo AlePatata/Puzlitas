@@ -1,7 +1,8 @@
 join voice_over 1
 join user 1
 voice_over: That’s better! Though I didn’t take you for a messy person…
-user: That’s ‘cause I wasn’t! I was actually a pretty clean kid, made my bed every morning, never had stuff lying around - My room was spotless!
+user: You’re right, I’m not. Now that I’ve chosen hope, everything doesn’t look as dark\
+anymore, but my mind’s still a mess, just like this room.
 voice_over: Well it’s good you’ve identified the anomaly! Maybe you could somehow try to clean up?
 leave voice_over
 [end_timeline]

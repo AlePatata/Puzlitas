@@ -3,7 +3,7 @@ join "gatito terapeuta" (neutro) 2 [animation="Fade In Out" length="1" wait="tru
 user: Hi, I'm sorry for being late, I got caught up in traffic.
 "gatito terapeuta" (paz): That's okay! Traffic's been really bad around here lately.
 "gatito terapeuta" (feliz): Let's start with introductions, my name is gatsby and I will be your therapist from now on! Tell me, what's your name?
-set {cat_name} = "gatsby"
+set {cat_name} = "Gatsby"
 [text_input text="My name is:" var="username"]
 "gatito terapeuta" (feliz): That's a pretty name! So, tell me {username}, why did you decide to come here?
 user: My memories don't feel quite right. When i try to remember certain things, it feels like something's blocking me.
@@ -12,14 +12,10 @@ user: About a month ago. It's like I'm stuck in a room in my mind where all my m
 "gatito terapeuta" (neutro): That's an interesting way to put it. Do you want to talk about it?
 user: I don't know. Is this even gonna work? I'm so tired all the time...
 "gatito terapeuta": Well, we can try and see. The important thing is that we don't lose [color=yellow]hope[/color].
-- Hope? [if {HOPE} == false]
-	set {HOPE} = true
-	do Game.add_palabra("Hope")
-	"gatito terapeuta" (neutro): Yeah, that's right. So, tell me more about this mental room of yours...
-	user: It's... well, it looks exactly like my childhood bedroom. Except there's no windows and all the walls are bare except for the pictures.
-	leave "gatito terapeuta" [animation="Fade In Out"]
-	user: I look sad in moments where I know for *sure* I was happy, and everything looks grim.
-	[end_timeline]
-	[signal arg="mental_room"]
-set {HOPE} = false
-"gatito terapeuta" (default): No hope? Don't worry, you can talk to me again whenever you like. Meanwhile, try remembering what you feel.
+- Hope?
+"gatito terapeuta" (neutro): Yeah, that's right. So, tell me more about this mental room of yours...
+user: It's... well, it looks exactly like my childhood bedroom. Except there's no windows and all the walls are bare except for the pictures.
+leave "gatito terapeuta" [animation="Fade In Out"]
+user: I look sad in moments where I know for *sure* I was happy, and everything looks grim.
+[end_timeline]
+[signal arg="mental_room"]
