@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bey0pyn8ndu6t"
-path="res://.godot/imported/terapia.png-cd09264cc09797fbe770328ce184a1d1.ctex"
+uid="uid://l7rysssb4s4v"
+path="res://.godot/imported/cerebrobro.png-69b6dcec19f8595592675c4f07c02dcc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/sofi ;3/terapia.png"
-dest_files=["res://.godot/imported/terapia.png-cd09264cc09797fbe770328ce184a1d1.ctex"]
+source_file="res://assets/cerebrobro.png"
+dest_files=["res://.godot/imported/cerebrobro.png-69b6dcec19f8595592675c4f07c02dcc.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://cyqs5x0wc0prh"]
 
 [ext_resource type="Script" path="res://scenes/Lvl ale/RecogerHope.gd" id="1_rougu"]
-[ext_resource type="Texture2D" uid="uid://b25cl5fn4kko8" path="res://assets/mesita.png" id="2_qe5bd"]
+[ext_resource type="Texture2D" uid="uid://cjckell70qn3w" path="res://assets/mesa.png" id="2_75wug"]
 [ext_resource type="AudioStream" uid="uid://beac6s038w7qs" path="res://assets/music/Canciones propias/Inexpresiva.wav" id="3_ce1i3"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/dialogic2.gd" id="8_a3few"]
 [ext_resource type="PackedScene" uid="uid://ctghvosvhtgwc" path="res://scenes/Lvl ale/palabra.tscn" id="8_kgj24"]
@@ -73,9 +73,9 @@ size = Vector2(877, 423)
 script = ExtResource("1_rougu")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(644, 359)
-scale = Vector2(2.30859, 2.28472)
-texture = ExtResource("2_qe5bd")
+position = Vector2(640, 470)
+scale = Vector2(6.555, 5.191)
+texture = ExtResource("2_75wug")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ce1i3")

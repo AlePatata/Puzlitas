@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bey0pyn8ndu6t"
-path="res://.godot/imported/terapia.png-cd09264cc09797fbe770328ce184a1d1.ctex"
+uid="uid://bgx3aggowbp04"
+path="res://.godot/imported/terapia.png-3bb9d65913065cf3fcf21a2471f8ba43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/sofi ;3/terapia.png"
-dest_files=["res://.godot/imported/terapia.png-cd09264cc09797fbe770328ce184a1d1.ctex"]
+source_file="res://scenes/terapia.png"
+dest_files=["res://.godot/imported/terapia.png-3bb9d65913065cf3fcf21a2471f8ba43.ctex"]
 
 [params]
 

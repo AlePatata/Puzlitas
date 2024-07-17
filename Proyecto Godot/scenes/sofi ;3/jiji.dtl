@@ -2,7 +2,7 @@
 join "gatito terapeuta" (neutro) 2 [animation="Fade In Out" length="1" wait="true"]
 user: Hi, I'm sorry for being late, I got caught up in traffic.
 "gatito terapeuta" (paz): That's okay! Traffic's been really bad around here lately.
-"gatito terapeuta": Let's start with introductions, my name is gatsby and I will be your therapist from now on! Tell me, what's your name?
+"gatito terapeuta" (feliz): Let's start with introductions, my name is gatsby and I will be your therapist from now on! Tell me, what's your name?
 set {cat_name} = "Gatsby"
 [text_input text="My name is:" var="username"]
 "gatito terapeuta" (feliz): That's a pretty name! So, tell me {username}, why did you decide to come here?

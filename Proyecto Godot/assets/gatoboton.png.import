@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bey0pyn8ndu6t"
-path="res://.godot/imported/terapia.png-cd09264cc09797fbe770328ce184a1d1.ctex"
+uid="uid://shelwrbvn0um"
+path="res://.godot/imported/gatoboton.png-272f0ece3d61e21ceae68e11013d6ade.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/sofi ;3/terapia.png"
-dest_files=["res://.godot/imported/terapia.png-cd09264cc09797fbe770328ce184a1d1.ctex"]
+source_file="res://assets/gatoboton.png"
+dest_files=["res://.godot/imported/gatoboton.png-272f0ece3d61e21ceae68e11013d6ade.ctex"]
 
 [params]
 
