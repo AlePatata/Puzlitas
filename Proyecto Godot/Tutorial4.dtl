@@ -1,0 +1,5 @@
+join user 1
+join "gatito terapeuta" (neutro) 2 [animation="Fade In Out" length="1" wait="true"]
+"gatito terapeuta" (paz): Well, you came here to [color=yellow]get your life together[/color], right? Don't expect to have it done so quickly!
+[sound path="Meow.wav" volume="0.0"]
+"gatito terapeuta" (feliz): You have to take it one step at a time ^^
