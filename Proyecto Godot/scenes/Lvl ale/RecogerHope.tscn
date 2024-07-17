@@ -80,7 +80,6 @@ position = Vector2(441, 422)
 palabra = "Hope"
 
 [node name="Palabra3" parent="Raiz_Palabras" instance=ExtResource("8_kgj24")]
-visible = false
 position = Vector2(282, 426)
 palabra = "Get your life together"
 

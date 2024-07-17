@@ -13,8 +13,8 @@ theme = ExtResource("1_is5we")
 script = ExtResource("2_kvx6y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(620, 361.5)
-scale = Vector2(2.19922, 2.46875)
+position = Vector2(640, 358)
+scale = Vector2(2.49219, 2.49306)
 texture = ExtResource("3_ilkvh")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]

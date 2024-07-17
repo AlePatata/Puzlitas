@@ -6,6 +6,7 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Dialogic.process_mode = Node.PROCESS_MODE_ALWAYS
 	resume.pressed.connect(_on_resume_pressed)
 	quit.pressed.connect(_on_quit_pressed)
 	main.pressed.connect(_on_main_pressed)
@@ -13,6 +14,7 @@ func _ready() -> void:
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
+		Dialogic.paused = !Dialogic.paused
 		get_tree().paused = !get_tree().paused
 		visible = get_tree().paused
 		
@@ -30,6 +32,7 @@ func _on_quit_pressed():
 	
 func _on_main_pressed():
 	get_tree().paused = false
+	Dialogic.end_timeline()
 	await AudioManager.play_sound_button()
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
 	
