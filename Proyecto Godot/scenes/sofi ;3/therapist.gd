@@ -6,7 +6,6 @@ extends Node2D
 func _ready():
 	start_dialog()
 	
-	
 func start_dialog():
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	Dialogic.start("jiji")

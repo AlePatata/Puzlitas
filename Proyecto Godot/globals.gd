@@ -8,6 +8,9 @@ var cama_hecha = false
 var light_dialog_started = false
 var health = 1.0 #de la barra de salud mental
 
+var hope_guardado = false
+var luz_primera_vez = true
+
 func _ready():
 	pass
 

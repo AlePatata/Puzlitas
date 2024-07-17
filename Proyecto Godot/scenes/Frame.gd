@@ -23,6 +23,7 @@ func _physics_process(delta):
 		reflejo_1.show()
 	elif !mostrar and desbloqueado:
 		reflejo_1.hide()
+		await AudioManager.play_sound_button1()
 		
 func set_marco(ruta = "res://assets/Frame17.png"):
 	Marco.texture = load(ruta)
