@@ -69,3 +69,4 @@ func hacerlacama():
 	blanket.queue_free()
 	palabra_usada.emit("Get your life together")
 	Globals.cama_hecha = true
+	AudioManager.play_sound_bedmaking()

@@ -8,7 +8,10 @@ extends Node2D
 @onready var switch = $Objects/Switch
 @onready var background = $Background
 
+
 @onready var _shader = preload("res://shaders/pruebaDeShader.tscn")
+
+var shader
 
 signal eliminar_palabra
 signal RecibeTodosJuntos
@@ -19,20 +22,25 @@ func _ready():
 	objects.palabra_usada.connect(eliminar_palabra_usada)
 	switch.apagar_mouse.connect(ocultar_luz)
 	switch.hope_usado.connect(eliminar_palabra_usada)
+	switch.mental_health_increase.connect(increase_progress_bar)
+	
 	Game.update() #importante para que funcione el diccionario correctamente
 	
 	if not Globals.light_dialog_started:
 		_start_dialog()
 		Globals.light_dialog_started = true #para decir que ya se reprodujo una vez
 	
-	var shader = _shader.instantiate()
+	shader = _shader.instantiate()
 	add_child(shader)
 	shader.set_process_input(false)
+	
+func increase_progress_bar():
+	if shader:
+		shader.increase(10)	
 	
 func _start_dialog():
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	Dialogic.start("Tutorial")
-	Dialogic.VAR.set("HOPE", false)
 
 func _on_timeline_ended():
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)

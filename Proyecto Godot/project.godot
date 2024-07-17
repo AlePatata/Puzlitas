@@ -29,15 +29,23 @@ directories/dch_directory={
 "voice_over": "res://scenes/Lvl ale/voice_over.dch"
 }
 directories/dtl_directory={
+"CamaHecha": "res://scenes/Lvl ale/CamaHecha.dtl",
 "LvlSelector": "res://scenes/LvlSelector.dtl",
+"MensajeFinal": "res://scenes/Lvl ale/MensajeFinal.dtl",
+"Pensando": "res://scenes/Lvl ale/Pensando.dtl",
 "Tutorial": "res://scenes/Lvl ale/Tutorial.dtl",
 "Tutorial2": "res://scenes/Lvl ale/Tutorial2.dtl",
 "Tutorial3": "res://scenes/Lvl ale/Tutorial3.dtl",
+"Tutorial4": "res://Tutorial4.dtl",
+"UnPasoALaVez": "res://assets/UnPasoALaVez.dtl",
 "jiji": "res://scenes/sofi ;3/jiji.dtl"
 }
 variables={
-"HOPE": false,
 "cat_name": "therapist",
+"dialog1": "false",
+"dialog2": "false",
+"dialog3": "false",
+"dialog4": "false",
 "username": "???"
 }
 extensions_folder="res://addons/dialogic_additions"
@@ -59,7 +67,7 @@ choices/reveal_delay=0
 choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
-history/simple_history_enabled=true
+history/simple_history_enabled=false
 text/autocolor_names=false
 text/autopauses={}
 glossary/default_case_sensitive=true
