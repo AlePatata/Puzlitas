@@ -7,7 +7,7 @@ extends DialogicEvent
 
 ### Settings
 
-## The promt to be shown.
+## The prompt to be shown.
 var text: String = "Please enter some text:"
 ## The name/path of the variable to set.
 var variable: String = ""
