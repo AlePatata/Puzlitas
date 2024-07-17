@@ -117,7 +117,7 @@ process_priority = 1
 script = ExtResource("7_21vkm")
 
 [node name="Switch" parent="Objects" groups=["switch"] instance=ExtResource("10_illft")]
-position = Vector2(310, 180)
+position = Vector2(311, 198)
 scale = Vector2(2.5, 1.75)
 script = ExtResource("9_yvejc")
 
