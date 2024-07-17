@@ -62,9 +62,9 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 func quit_self(palabra):
 	if self.palabra == palabra:
 		self.queue_free()
-	
-	
-	
-	
-	
-	
+
+func _on_rich_text_label_meta_clicked(meta):
+	if palabra == "Hope":
+		show()
+		dragging = true
+		Game.current_palabra = palabra
