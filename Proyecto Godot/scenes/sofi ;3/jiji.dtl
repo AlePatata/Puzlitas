@@ -21,6 +21,5 @@ user: I don't know. Is this even gonna work? I'm so tired all the time...
 	user: I look sad in moments where I know for *sure* I was happy, and everything looks grim.
 	[end_timeline]
 	[signal arg="mental_room"]
-- No hope. [if {HOPE} == false]
-	set {HOPE} = false
+set {HOPE} = false
 "gatito terapeuta" (default): No hope? Don't worry, you can talk to me again whenever you like. Meanwhile, try remembering what you feel.

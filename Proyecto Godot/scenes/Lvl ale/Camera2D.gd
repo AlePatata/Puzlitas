@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 	if _moving_left and camera_2d.global_position.x >  0:
 		camera_2d.global_position.x -= camera_speed * delta
 	
-	if _moving_right and camera_2d.global_position.x < (background.position.x)/2:
+	if _moving_right and camera_2d.global_position.x < (background.position.x):
 		camera_2d.global_position.x += camera_speed * delta
 	
 	

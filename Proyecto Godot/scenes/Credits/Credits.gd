@@ -3,6 +3,7 @@ extends Control
 
 func _ready() -> void:
 	back_to_main.pressed.connect(_on_back_to_main_pressed)
+	$AnimationPlayer.play("scroll")
 	
 func _on_back_to_main_pressed():
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")

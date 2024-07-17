@@ -1,5 +1,6 @@
 extends Node2D
 @onready var marco_scene = preload("res://scenes/Frame.tscn")
+@onready var audio_stream_player_2d = $AudioStreamPlayer2D
 var marco_instance_1
 
 func _ready():
@@ -14,6 +15,11 @@ func _on_timeline_ended():
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
 	print("terminó")
 	marco_instance_1.desbloquear()
+	audio_stream_player_2d.stop()
+	await AudioManager.play_sound_button1()
+	
+	audio_stream_player_2d.play()
+	
 
 func _inicializar_marcos():
 	marco_instance_1 = marco_scene.instantiate()
