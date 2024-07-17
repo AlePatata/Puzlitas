@@ -57,7 +57,8 @@ overrides = {}
 script = ExtResource("10_1nkur")
 name = "estilotuto2"
 base_overrides = {
-"global_font_color": "Color(0.127494, 0.671875, 0.0813599, 1)"
+"global_font": "\"res://assets/fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf\"",
+"global_font_color": "Color(0.857146, 0.574036, 0.859375, 1)"
 }
 layers = Array[ExtResource("2_cw2tl")]([SubResource("Resource_7j01c"), SubResource("Resource_v6pcl"), SubResource("Resource_ka634"), SubResource("Resource_ff3qh"), SubResource("Resource_gfdch"), SubResource("Resource_nx4ox"), SubResource("Resource_hhaep"), SubResource("Resource_otanx")])
 metadata/_latest_layer = -1

@@ -54,6 +54,8 @@ overrides = {}
 [resource]
 script = ExtResource("10_qvjkm")
 name = "estilodefault"
-base_overrides = {}
+base_overrides = {
+"global_font": "\"res://assets/fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf\""
+}
 layers = Array[ExtResource("2_xao4x")]([SubResource("Resource_qnn4w"), SubResource("Resource_jnvwk"), SubResource("Resource_bskie"), SubResource("Resource_foqyr"), SubResource("Resource_vkpv8"), SubResource("Resource_arwso"), SubResource("Resource_8y0q8"), SubResource("Resource_l3o1u")])
-metadata/_latest_layer = -1
+metadata/_latest_layer = 2
