@@ -1,15 +1,17 @@
-[gd_scene load_steps=17 format=3 uid="uid://cyqs5x0wc0prh"]
+[gd_scene load_steps=19 format=3 uid="uid://cyqs5x0wc0prh"]
 
 [ext_resource type="Script" path="res://scenes/Lvl ale/RecogerHope.gd" id="1_rougu"]
 [ext_resource type="Texture2D" uid="uid://b25cl5fn4kko8" path="res://assets/mesita.png" id="2_qe5bd"]
 [ext_resource type="AudioStream" uid="uid://beac6s038w7qs" path="res://assets/music/Canciones propias/Inexpresiva.wav" id="3_ce1i3"]
-[ext_resource type="Texture2D" uid="uid://dip1kgp0mqm7u" path="res://assets/diario.png" id="4_ybvvv"]
 [ext_resource type="PackedScene" uid="uid://ctghvosvhtgwc" path="res://scenes/Lvl ale/palabra.tscn" id="8_kgj24"]
 [ext_resource type="Script" path="res://scenes/ui/Dictionary_slide.gd" id="10_bjs8d"]
+[ext_resource type="FontFile" uid="uid://dxvgvvaibbhev" path="res://assets/fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="11_3npb4"]
 [ext_resource type="PackedScene" uid="uid://ca6ulc0jbl1kj" path="res://scenes/Lvl ale/ui_palabra.tscn" id="11_tmelx"]
 [ext_resource type="Texture2D" uid="uid://dxnok5mya3fam" path="res://assets/diccionario.png" id="12_h6lwp"]
+[ext_resource type="FontFile" uid="uid://pws3fdh1afvc" path="res://assets/fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="12_qkq1e"]
 [ext_resource type="PackedScene" uid="uid://rl28wrp7sgkh" path="res://scenes/ui/pause_menu.tscn" id="13_73xe7"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/Button.gd" id="13_fuxf5"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/dialogos_diario.gd" id="13_fvp57"]
 [ext_resource type="Texture2D" uid="uid://voo7evsiktog" path="res://assets/icon.svg" id="14_ybv00"]
 
 [sub_resource type="Animation" id="Animation_tmahn"]
@@ -71,16 +73,38 @@ autoplay = true
 [node name="Libro abierto" type="Sprite2D" parent="."]
 position = Vector2(641, 329)
 scale = Vector2(10, 11.473)
-texture = ExtResource("4_ybvvv")
+texture = ExtResource("12_h6lwp")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 225.0
+offset_top = 108.0
+offset_right = 550.0
+offset_bottom = 556.0
+theme_override_fonts/normal_font = ExtResource("11_3npb4")
+theme_override_fonts/bold_font = ExtResource("12_qkq1e")
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "[color=black][b]Therapist:[/b] Let’s start at the beginning! 
+The picture frames in front of you are the levels!
+
+[b]Therapist: [/b] Ooh, looks like the first one’s unlocked! Let’s see if you can click on it ^^
+
+[b]Therapist: [/b] Welcome to your room! Looks familiar right? Well, not much to look at since it’s so dark! Let’s see if we can find anything that can help us get some light in here, perhaps a ray of [b][hint=Click to save the word!][color=darkred][url]hope[/url]?[/color][/hint][/b][/color]"
+context_menu_enabled = true
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+script = ExtResource("13_fvp57")
 
 [node name="Raiz_Palabras" type="Node2D" parent="."]
 
 [node name="Palabra2" parent="Raiz_Palabras" instance=ExtResource("8_kgj24")]
-position = Vector2(441, 422)
+visible = false
+position = Vector2(323, 509)
 palabra = "Hope"
 
 [node name="Palabra3" parent="Raiz_Palabras" instance=ExtResource("8_kgj24")]
-position = Vector2(282, 426)
+visible = false
+position = Vector2(228, 483)
 palabra = "Get your life together"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -145,6 +169,7 @@ texture = ExtResource("14_ybv00")
 [node name="PauseMenu" parent="." instance=ExtResource("13_73xe7")]
 visible = false
 
+[connection signal="meta_clicked" from="RichTextLabel" to="Raiz_Palabras/Palabra2" method="_on_rich_text_label_meta_clicked"]
 [connection signal="input_event" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_exited"]
