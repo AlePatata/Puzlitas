@@ -37,12 +37,14 @@ directories/dtl_directory={
 "Tutorial2": "res://scenes/Lvl ale/Tutorial2.dtl",
 "Tutorial3": "res://scenes/Lvl ale/Tutorial3.dtl",
 "Tutorial4": "res://Tutorial4.dtl",
-"UnPasoALaVez": "res://assets/fonts/Pixelify_Sans/UnPasoALaVez.dtl",
+"UnPasoALaVez": "res://assets/UnPasoALaVez.dtl",
 "jiji": "res://scenes/sofi ;3/jiji.dtl"
 }
 variables={
-"HOPE": false,
 "cat_name": "therapist",
+"dialog1": "false",
+"dialog2": "false",
+"dialog3": "false",
 "username": "???"
 }
 extensions_folder="res://addons/dialogic_additions"

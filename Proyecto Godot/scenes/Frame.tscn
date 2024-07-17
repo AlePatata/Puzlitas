@@ -5,25 +5,26 @@
 [ext_resource type="Texture2D" uid="uid://dbofx8mapw6ot" path="res://assets/fotos/GlareFrame1.png" id="2_51wfj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_soa5c"]
-size = Vector2(24.93, 128)
+size = Vector2(33.9659, 173)
 
 [node name="marco 1" type="Area2D"]
 position = Vector2(643, 663)
 scale = Vector2(5.35833, 1)
 script = ExtResource("1_0b2p5")
+metadata/_edit_group_ = true
 
 [node name="Marco" type="Sprite2D" parent="."]
-position = Vector2(-80.9953, -475)
-scale = Vector2(0.186625, 1)
+position = Vector2(-85.1011, -496)
+scale = Vector2(0.247005, 1.30882)
 texture = ExtResource("1_unqqa")
 
 [node name="reflejo" type="Sprite2D" parent="."]
-position = Vector2(-81.3685, -477)
-scale = Vector2(0.186625, 1)
+position = Vector2(-85.1011, -494.25)
+scale = Vector2(0.241516, 1.2482)
 texture = ExtResource("2_51wfj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-80.9564, -474)
+position = Vector2(-85.4743, -496.5)
 shape = SubResource("RectangleShape2D_soa5c")
 
 [connection signal="input_event" from="." to="CollisionShape2D" method="_on_marco_1_input_event"]

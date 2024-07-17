@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci4dee2n4m1xm"]
+
+[ext_resource type="Texture2D" uid="uid://ddr818b8djao8" path="res://assets/terapia.png" id="1_eoke6"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Terapia" type="Sprite2D" parent="."]
+position = Vector2(1541, 362)
+scale = Vector2(4.17228, 4.63461)
+texture = ExtResource("1_eoke6")
