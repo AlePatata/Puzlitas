@@ -1,11 +1,14 @@
-extends Objeto
+extends Area2D
 
 signal hope
 signal apagar_mouse
 signal hope_usado
 signal mental_health_increase
 var dejar_encendida = false
+var switchon #sprite
+var switchoff #sprite
 @onready var white_circle = $"../../BackgMovement/whiteCircle"
+@onready var sprite = $"../Switch/Sprite2D"
 
 
 
@@ -13,9 +16,8 @@ var original_texture = modulate
 var DA = Vector2(200, 200)  
 
 func _ready():
-	position = Vector2(400, 200)
-	set_sprite("res://assets/switch off.png")
 	connect("input_event", _on_area_2d_input_event)
+	
 	if Globals.switch_on:
 		luz_encendida()
 	else: 
@@ -24,9 +26,9 @@ func _ready():
 
 
 func _physics_process(delta):
-	dragging = false
-	var a = white_circle.position < position + DA and white_circle.position > position - DA
-	if a and white_circle.visible or dejar_encendida:
+	var switch_coords = Vector2(839,188)
+	var a = white_circle.position < switch_coords + DA and white_circle.position > switch_coords - DA
+	if (a and white_circle.visible) or dejar_encendida:
 		show()
 	else:
 		if not dejar_encendida:
@@ -52,10 +54,14 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 func luz_encendida():
 	dejar_encendida = true 
 	hope.emit()
-	set_sprite("res://assets/switch on.png")
+	switchon = load("res://assets/switch on.png")
+	if switchon:
+		sprite.texture = switchon
 	Game.current_palabra = null
 	show()
 	
 func luz_apagada():
-	set_sprite("res://assets/switch off.png")
+	switchoff = load("res://assets/switch off.png")
+	if switchoff:
+		sprite.texture = switchoff
 	

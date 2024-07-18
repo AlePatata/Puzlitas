@@ -5,13 +5,14 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_r0o1a"]
 font = ExtResource("1_menoo")
+font_size = 24
 font_color = Color(0, 0, 0, 1)
 
 [node name="UIPalabra" type="Label"]
-offset_left = 19.0
-offset_top = 6.0
-offset_right = 131.0
-offset_bottom = 51.0
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 145.0
+offset_bottom = 55.0
 mouse_filter = 0
 text = "ui_palabra"
 label_settings = SubResource("LabelSettings_r0o1a")

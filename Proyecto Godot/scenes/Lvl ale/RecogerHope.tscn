@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cyqs5x0wc0prh"]
+[gd_scene load_steps=32 format=3 uid="uid://cyqs5x0wc0prh"]
 
 [ext_resource type="Script" path="res://scenes/Lvl ale/RecogerHope.gd" id="1_rougu"]
 [ext_resource type="Texture2D" uid="uid://cjckell70qn3w" path="res://assets/mesa.png" id="2_75wug"]
@@ -15,10 +15,16 @@
 [ext_resource type="PackedScene" uid="uid://rl28wrp7sgkh" path="res://scenes/ui/pause_menu.tscn" id="13_73xe7"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/Button.gd" id="13_fuxf5"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/dialogic1.gd" id="13_fvp57"]
-[ext_resource type="Texture2D" uid="uid://voo7evsiktog" path="res://assets/icon.svg" id="14_ybv00"]
 [ext_resource type="Texture2D" uid="uid://d14kewvjuueba" path="res://assets/flecha.png" id="17_bildk"]
 [ext_resource type="Texture2D" uid="uid://ddubee12fr58b" path="res://assets/flecha2.png" id="18_gdhps"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/Flecha.gd" id="18_kdo72"]
+[ext_resource type="Texture2D" uid="uid://c2vfrpgahhodw" path="res://assets/cerebrito.png" id="18_m01hl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_evm3h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sbcx1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5t8x1"]
 
 [sub_resource type="Animation" id="Animation_tmahn"]
 length = 0.001
@@ -64,11 +70,13 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1n31q"]
 size = Vector2(877, 423)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_evm3h"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d6iyf"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sbcx1"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ojp5j"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5t8x1"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4rmed"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lasfg"]
 
 [node name="RecogerHope" type="Node2D"]
 script = ExtResource("1_rougu")
@@ -209,6 +217,30 @@ visible = false
 position = Vector2(296, 133)
 palabra = "Get your life together"
 
+[node name="flecha_der" type="Button" parent="."]
+offset_left = 1034.0
+offset_top = 461.0
+offset_right = 1063.0
+offset_bottom = 490.0
+scale = Vector2(2.64286, 2.64286)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_evm3h")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sbcx1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5t8x1")
+icon = ExtResource("17_bildk")
+script = ExtResource("18_kdo72")
+
+[node name="flecha_izq" type="Button" parent="."]
+offset_left = 202.0
+offset_top = 472.0
+offset_right = 231.0
+offset_bottom = 501.0
+scale = Vector2(2.64286, 2.64286)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_evm3h")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sbcx1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5t8x1")
+icon = ExtResource("18_gdhps")
+script = ExtResource("18_kdo72")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(640, 360)
 
@@ -261,45 +293,28 @@ offset_left = 53.0
 offset_top = 18.0
 offset_right = 165.0
 offset_bottom = 124.0
-icon = ExtResource("17_bildk")
+theme_override_colors/font_color = Color(0.862745, 0.890196, 0.964706, 0)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/font_hover_color = Color(0.976471, 0.976471, 0.976471, 0)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d6iyf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ojp5j")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4rmed")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_lasfg")
 script = ExtResource("13_fuxf5")
 
 [node name="boton sala mental" type="Sprite2D" parent="Button"]
-position = Vector2(56, 53)
-scale = Vector2(0.796875, 0.804688)
-texture = ExtResource("14_ybv00")
+position = Vector2(60, 67)
+scale = Vector2(3.2, 2.7)
+texture = ExtResource("18_m01hl")
 
 [node name="PauseMenu" parent="." instance=ExtResource("13_73xe7")]
 visible = false
 
-[node name="flecha_der" type="Button" parent="."]
-offset_left = 1034.0
-offset_top = 461.0
-offset_right = 1063.0
-offset_bottom = 490.0
-scale = Vector2(2.64286, 2.64286)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_evm3h")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_sbcx1")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_5t8x1")
-icon = ExtResource("17_bildk")
-script = ExtResource("18_kdo72")
-
-[node name="flecha_izq" type="Button" parent="."]
-offset_left = 202.0
-offset_top = 472.0
-offset_right = 231.0
-offset_bottom = 501.0
-scale = Vector2(2.64286, 2.64286)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_evm3h")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_sbcx1")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_5t8x1")
-icon = ExtResource("18_gdhps")
-script = ExtResource("18_kdo72")
-
 [connection signal="meta_clicked" from="RichTextLabel" to="Raiz_Palabras/Palabra2" method="_on_rich_text_label_meta_clicked"]
 [connection signal="meta_clicked" from="RichTextLabel7" to="Raiz_Palabras/Palabra3" method="_on_rich_text_label_7_meta_clicked"]
+[connection signal="pressed" from="flecha_der" to="." method="_on_area_2d_pressed"]
+[connection signal="pressed" from="flecha_izq" to="." method="_on_flecha_izq_pressed"]
 [connection signal="input_event" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_exited"]
-[connection signal="pressed" from="flecha_der" to="." method="_on_area_2d_pressed"]
-[connection signal="pressed" from="flecha_izq" to="." method="_on_flecha_izq_pressed"]

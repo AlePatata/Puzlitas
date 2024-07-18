@@ -31,7 +31,7 @@ func tomar_palabra(): #tomarla del diccionario
 	# Elimina la palabra del diccionario
 	Game.remove_palabra(text)
 	self.queue_free()
-	print("me eliminé")
+	#print("me eliminé")
 	Game.nodoporeliminar = nodo_hijo
 
 	
