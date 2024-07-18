@@ -7,6 +7,8 @@ extends Node2D
 @onready var objects = $Objects
 @onready var switch = $Objects/Switch
 @onready var background = $Background
+@onready var node_2d_2 = $Node2D2
+@onready var node_2d = $Node2D
 
 
 @onready var _shader = preload("res://shaders/pruebaDeShader.tscn")
@@ -18,6 +20,8 @@ signal RecibeTodosJuntos
 signal ocultar_whiteCircle
 
 func _ready():
+	node_2d.hide()
+	node_2d_2.hide()
 	dictionary.inventario_conectar_ui_palabra.connect(conectar_para_agregar_nodo)
 	objects.palabra_usada.connect(eliminar_palabra_usada)
 	switch.apagar_mouse.connect(ocultar_luz)
@@ -33,6 +37,10 @@ func _ready():
 	shader = _shader.instantiate()
 	add_child(shader)
 	shader.set_process_input(false)
+	
+func _process(delta):
+	if Globals.fin:
+		shader.hide()
 	
 func increase_progress_bar():
 	if shader:
@@ -56,7 +64,3 @@ func eliminar_palabra_usada(palabra):
 
 func ocultar_luz():
 	ocultar_whiteCircle.emit(self)
-	
-
-
-

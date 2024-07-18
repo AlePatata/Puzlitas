@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://660dh6t2ip5u"]
+[gd_scene load_steps=41 format=3 uid="uid://660dh6t2ip5u"]
 
 [ext_resource type="Script" path="res://scenes/Lvl ale/Light.gd" id="1_0fovx"]
 [ext_resource type="Texture2D" uid="uid://b1jvl84sojx1q" path="res://assets/Pieza fondo.png" id="2_ktfo6"]
@@ -20,6 +20,12 @@
 [ext_resource type="Texture2D" uid="uid://shelwrbvn0um" path="res://assets/gatoboton.png" id="13_c6wie"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/dicbutton.gd" id="17_ufa5u"]
 [ext_resource type="PackedScene" uid="uid://rl28wrp7sgkh" path="res://scenes/ui/pause_menu.tscn" id="18_x6clr"]
+[ext_resource type="Texture2D" uid="uid://bey0pyn8ndu6t" path="res://scenes/sofi ;3/terapia.png" id="21_nj5ys"]
+[ext_resource type="Texture2D" uid="uid://byu3debw52tgs" path="res://assets/relojito.png" id="22_2lfop"]
+[ext_resource type="Script" path="res://Relojito.gd" id="23_megs3"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/pensando.gd" id="24_6sa58"]
+[ext_resource type="Texture2D" uid="uid://c8k6pvq5jqys7" path="res://assets/Lffk1n.jpg" id="24_s1ywx"]
+[ext_resource type="FontFile" uid="uid://pws3fdh1afvc" path="res://assets/fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="25_hgeyr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cu6om"]
 size = Vector2(46, 90)
@@ -83,6 +89,43 @@ size = Vector2(877, 423)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oyrse"]
 size = Vector2(473.603, 518.703)
+
+[sub_resource type="Animation" id="Animation_dy84b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_e8d8m"]
+resource_name = "timepassing"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6vujo"]
+_data = {
+"RESET": SubResource("Animation_dy84b"),
+"timepassing": SubResource("Animation_e8d8m")
+}
 
 [node name="Light" type="Node2D"]
 z_index = 1
@@ -276,9 +319,63 @@ one_shot = true
 [node name="Timer2" type="Timer" parent="."]
 one_shot = true
 
+[node name="Node2D" type="Node2D" parent="."]
+visible = false
+
+[node name="Terapia" type="Sprite2D" parent="Node2D"]
+modulate = Color(0.643981, 0.643981, 0.643981, 1)
+position = Vector2(643.111, 360)
+scale = Vector2(0.664815, 0.664815)
+texture = ExtResource("21_nj5ys")
+
+[node name="Relojito" type="Sprite2D" parent="Node2D"]
+position = Vector2(613, 343)
+scale = Vector2(0.248438, 0.287963)
+texture = ExtResource("22_2lfop")
+script = ExtResource("23_megs3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
+root_node = NodePath("../Relojito")
+libraries = {
+"": SubResource("AnimationLibrary_6vujo")
+}
+
+[node name="Timer" type="Timer" parent="Node2D"]
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="Node2D"]
+one_shot = true
+
+[node name="Node2D2" type="Node2D" parent="."]
+visible = false
+script = ExtResource("24_6sa58")
+
+[node name="Lffk1n" type="Sprite2D" parent="Node2D2"]
+position = Vector2(643, 364.5)
+scale = Vector2(0.742222, 0.749167)
+texture = ExtResource("24_s1ywx")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D2"]
+offset_left = 160.0
+offset_top = 249.0
+offset_right = 1116.0
+offset_bottom = 555.0
+theme_override_fonts/normal_font = ExtResource("25_hgeyr")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center] You have now completed the tutorial! 
+This is also the demo. 
+[color=yellow]Thank you for playing! [/color] [/center]"
+
+[node name="Timer" type="Timer" parent="Node2D2"]
+wait_time = 3.0
+
+[node name="Timer2" type="Timer" parent="Node2D2"]
+
 [connection signal="input_event" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_exited"]
 [connection signal="input_event" from="CanvasLayer/Sprite2D/Area2D" to="CanvasLayer/Sprite2D/Area2D/CollisionShape2D" method="_on_area_2d_input_event"]
 [connection signal="timeout" from="Timer" to="Objects" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="Objects" method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Node2D/Timer2" to="Node2D/Relojito" method="_on_timer_2_timeout"]

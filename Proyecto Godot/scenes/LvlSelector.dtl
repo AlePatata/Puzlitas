@@ -1,5 +1,5 @@
 join voice_over 1
-voice_over: Let’s start at the beginning! The picture frames in front of you are the levels! 
+voice_over: Let’s start at the beginning! The picture frames in front of you are the levels!
 [signal arg="Desbloquear"]
 voice_over: Ooh! Looks like the first one is unlocked! Let's see if you can click on it \:)
 [end_timeline]

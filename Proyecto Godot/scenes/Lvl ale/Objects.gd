@@ -3,9 +3,11 @@ extends Node2D
 @onready var bed = $Bed
 @onready var pillow = $Pillow
 @onready var blanket = $Blanket
-@onready var audio_player = $AudioStreamPlayer
 @onready var timer = $"../Timer"
 @onready var timer2 = $"../Timer2"
+@onready var node_final = $"../Node2D"
+@onready var dictionary = %Dictionary
+@onready var camera_2d = $"../Camera2D"
 
 
 
@@ -83,4 +85,12 @@ func _on_timer_timeout():
 	timer2.start(10)
 
 func _on_timer_2_timeout():
+	
 	get_tree().change_scene_to_file("res://scenes/Lvl ale/timepassing.tscn")
+	#camera_2d.position = Vector2(640,360)
+	#node_final.show()
+	#dictionary.hide()
+	#$"../Background".hide()
+	#$"../BackgMovement".hide()
+	#Globals.fin = true
+	#$"../Node2D/Timer"

@@ -14,6 +14,8 @@ var dialog1 = false
 var dialog2 = false
 var page_1 = true
 
+var fin = false
+
 func _ready():
 	pass
 
