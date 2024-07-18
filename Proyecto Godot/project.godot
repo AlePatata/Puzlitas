@@ -32,6 +32,7 @@ directories/dtl_directory={
 "CamaHecha": "res://scenes/Lvl ale/CamaHecha.dtl",
 "LvlSelector": "res://scenes/LvlSelector.dtl",
 "MensajeFinal": "res://scenes/Lvl ale/MensajeFinal.dtl",
+"MensajecasiFinal": "res://MensajecasiFinal.dtl",
 "Pensando": "res://scenes/Lvl ale/Pensando.dtl",
 "Tutorial": "res://scenes/Lvl ale/Tutorial.dtl",
 "Tutorial2": "res://scenes/Lvl ale/Tutorial2.dtl",

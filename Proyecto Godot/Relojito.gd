@@ -13,10 +13,11 @@ func _ready():
 func _on_animation_player_animation_finished(anim_name):
 	hide()
 	terapia.modulate = "ffffff"
-	await Dialogic.start_timeline("MensajeFinal") # Replace with function body.
+	Dialogic.start_timeline("MensajeFinal") # Replace with function body.
 	timer.start(5)
 	
 
 
 func _on_timer_timeout():
-	get_tree().change_scene_to_file("res://scenes/Lvl ale/pensando.tscn") # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/Lvl ale/pensando.tscn")
+	
