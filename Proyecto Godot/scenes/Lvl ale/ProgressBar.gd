@@ -54,7 +54,7 @@ func sonido():
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		clicks_counter += 1
-		print(clicks_counter)
+		#print(clicks_counter)
 		inactivity_timer = 0.0  # Resetear el temporizador de inactividad
 
 

@@ -10,7 +10,6 @@ signal get_recoger
 
 func _ready():
 	dictionary.inventario_conectar_ui_palabra.connect(conectar_para_agregar_nodo)
-	#print(Dialogic.simple_history_content())
 
 func agregar_nodo_palabra(nodo_hijo):
 	raiz_palabras.add_child(nodo_hijo)
@@ -23,6 +22,7 @@ func ocultar_luz():
 
 		
 func _on_area_2d_pressed(): #flecha_der_pressed
+	AudioManager.play_sound_takingobject()
 	page_2()
 	
 func page_2():
@@ -35,6 +35,7 @@ func page_2():
 	Globals.page_1 = false
 
 func _on_flecha_izq_pressed():
+	AudioManager.play_sound_takingobject()
 	page_1()
 
 func page_1():	

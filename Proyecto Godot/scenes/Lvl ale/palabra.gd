@@ -5,6 +5,7 @@ signal palabra_tomada
 signal ordenar_objeto
 @onready var light = $"../.."
 var new_position
+@onready var rich_text_label_7 = $"../../RichTextLabel7"
 
 
 #para que el label siempre sea el correspondiente a la palabra
@@ -70,8 +71,7 @@ func _on_rich_text_label_meta_clicked(meta): #cuando recoge del diálogo la prim
 		Game.current_palabra = palabra
 
 
-func _on_rich_text_label_5_meta_clicked(meta): #cuando recoge del diálogo la segunda palabra
-	print("presionado")
+func _on_rich_text_label_7_meta_clicked(meta):
 	show()
 	dragging = true
 	Game.current_palabra = palabra 

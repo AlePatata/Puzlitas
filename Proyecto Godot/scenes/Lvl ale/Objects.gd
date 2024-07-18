@@ -3,6 +3,11 @@ extends Node2D
 @onready var bed = $Bed
 @onready var pillow = $Pillow
 @onready var blanket = $Blanket
+@onready var audio_player = $AudioStreamPlayer
+@onready var timer = $"../Timer"
+@onready var timer2 = $"../Timer2"
+
+
 
 signal TodosJuntos
 var objetos = {}
@@ -18,6 +23,7 @@ func _ready():
 	#start_dialog()
 	if Globals.cama_hecha:
 		hacerlacama()
+	
 	
 
 func _physics_process(_delta):
@@ -39,15 +45,14 @@ func _on_timeline_ended():
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
 
 func _inicializar_objetos():
-	bed.set_sprite("res://assets/cama deshecha.png")
-	
-	pillow.set_sprite("res://assets/almohadas (1).png")
-	
-	blanket.set_sprite("res://assets/manta.png")
+	#bed.set_sprite("res://assets/cama deshecha.png")
+	#pillow.set_sprite("res://assets/almohadas (1).png")
+	#blanket.set_sprite("res://assets/manta.png")
 	for i in get_children():
-		i.set_padre(self) #declaro al padre
-		i.juntos.connect(_Verifica.bind(i, true)) 
-		i.separados.connect(_Verifica.bind(i, false)) 
+		if i.name != "Switch":
+			i.set_padre(self) #declaro al padre
+			i.juntos.connect(_Verifica.bind(i, true)) 
+			i.separados.connect(_Verifica.bind(i, false)) 
 		
 		
 func _actualizar_posiciones():
@@ -70,3 +75,12 @@ func hacerlacama():
 	palabra_usada.emit("Get your life together")
 	Globals.cama_hecha = true
 	AudioManager.play_sound_bedmaking()
+	timer.start(3)
+
+
+func _on_timer_timeout():
+	Dialogic.start_timeline("CamaHecha")
+	timer2.start(10)
+
+func _on_timer_2_timeout():
+	get_tree().change_scene_to_file("res://scenes/Lvl ale/timepassing.tscn")

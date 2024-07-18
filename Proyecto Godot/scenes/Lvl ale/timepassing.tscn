@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4ecpenegf6ym"]
+
+[ext_resource type="Texture2D" uid="uid://bey0pyn8ndu6t" path="res://scenes/sofi ;3/terapia.png" id="1_1ymac"]
+[ext_resource type="Texture2D" uid="uid://byu3debw52tgs" path="res://assets/relojito.png" id="2_ai728"]
+[ext_resource type="Script" path="res://Relojito.gd" id="3_qew3n"]
+
+[sub_resource type="Animation" id="Animation_e8d8m"]
+resource_name = "timepassing"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_dy84b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6vujo"]
+_data = {
+"RESET": SubResource("Animation_dy84b"),
+"timepassing": SubResource("Animation_e8d8m")
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Terapia" type="Sprite2D" parent="."]
+modulate = Color(0.643981, 0.643981, 0.643981, 1)
+position = Vector2(643.111, 360)
+scale = Vector2(0.664815, 0.664815)
+texture = ExtResource("1_1ymac")
+
+[node name="Relojito" type="Sprite2D" parent="."]
+position = Vector2(613, 343)
+scale = Vector2(0.248438, 0.287963)
+texture = ExtResource("2_ai728")
+script = ExtResource("3_qew3n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Relojito")
+libraries = {
+"": SubResource("AnimationLibrary_6vujo")
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="Relojito" method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="Timer" to="Relojito" method="_on_timer_timeout"]

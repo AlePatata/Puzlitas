@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbbb3fynp4krm"]
+[gd_scene load_steps=5 format=3 uid="uid://bbbb3fynp4krm"]
 
-[ext_resource type="Script" path="res://scenes/Lvl ale/Object.gd" id="1_fscwb"]
 [ext_resource type="Texture2D" uid="uid://voo7evsiktog" path="res://assets/icon.svg" id="2_euekb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dard4"]
@@ -29,7 +28,6 @@ _data = {
 [node name="Object" type="Area2D" groups=["objetos"]]
 position = Vector2(-1, 0)
 scale = Vector2(1.5, 1.5)
-script = ExtResource("1_fscwb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.515625, 0.604167)
