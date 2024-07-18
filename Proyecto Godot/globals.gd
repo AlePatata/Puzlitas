@@ -10,6 +10,9 @@ var health = 1.0 #de la barra de salud mental
 
 var hope_guardado = false
 var luz_primera_vez = true
+var dialog1 = false
+var dialog2 = false
+var page_1 = true
 
 func _ready():
 	pass

@@ -41,7 +41,6 @@ func increase_progress_bar():
 func _start_dialog():
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	Dialogic.start("Tutorial")
-	Dialogic.VAR.set("HOPE", false)
 
 func _on_timeline_ended():
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)

@@ -11,7 +11,7 @@ func _ready():
 	dic_button.pressed.connect(_on_dic_button_pressed)
 
 func _on_dic_button_pressed():
-	print("Hola")
+	#print("Hola")
 	get_tree().change_scene("res://scenes/Lvl ale/RecogerHope.tscn")
 
 

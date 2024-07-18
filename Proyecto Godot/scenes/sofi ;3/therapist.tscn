@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://brhlw81qrggvp"]
 
 [ext_resource type="Script" path="res://scenes/sofi ;3/therapist.gd" id="1_7dv1a"]
-[ext_resource type="Texture2D" uid="uid://bgx3aggowbp04" path="res://scenes/terapia.png" id="2_0gmti"]
+[ext_resource type="Texture2D" uid="uid://bey0pyn8ndu6t" path="res://scenes/sofi ;3/terapia.png" id="2_yri1p"]
 [ext_resource type="AudioStream" uid="uid://beac6s038w7qs" path="res://assets/music/Canciones propias/Inexpresiva.wav" id="3_n75vd"]
 [ext_resource type="Script" path="res://scenes/sofi ;3/MentalRoomButton.gd" id="4_dsb3q"]
 [ext_resource type="Texture2D" uid="uid://c2vfrpgahhodw" path="res://assets/cerebrito.png" id="5_46mcc"]
@@ -14,9 +14,9 @@ size = Vector2(117.25, 122.5)
 script = ExtResource("1_7dv1a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1705, 361)
-scale = Vector2(4.6, 4.6)
-texture = ExtResource("2_0gmti")
+position = Vector2(640.889, 348)
+scale = Vector2(0.672222, 0.672222)
+texture = ExtResource("2_yri1p")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_n75vd")
@@ -25,11 +25,11 @@ stream = ExtResource("3_n75vd")
 script = ExtResource("4_dsb3q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MentalRoomButton"]
-position = Vector2(107, 107)
+position = Vector2(62, 57)
 shape = SubResource("RectangleShape2D_2nb85")
 
 [node name="Sprite2D" type="Sprite2D" parent="MentalRoomButton/CollisionShape2D"]
-position = Vector2(0, 33)
+position = Vector2(-4, 26)
 scale = Vector2(4.394, 4.094)
 texture = ExtResource("5_46mcc")
 

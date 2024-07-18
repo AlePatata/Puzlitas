@@ -50,11 +50,13 @@ text = "START"
 [node name="Options" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
+disabled = true
 text = "OPTIONS"
 
 [node name="lvlselector" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
+disabled = true
 text = "LEVELS"
 
 [node name="Credits" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
