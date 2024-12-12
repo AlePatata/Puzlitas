@@ -1,4 +1,9 @@
+join user 1
 join voice_over 1
-voice_over: lol2
+[sound path="res://assets/Sounds/Meow.wav" volume="0.0"]
+voice_over: Welcome to your room! Looks familiar right? Well, not much to look at since it’s so dark! Let’s see if we can find anything that can help us get some light in here, perhaps a ray of [color=yellow][b]hope[/b][/color]?
+set {dialog1} = "true"
+user: It’s my childhood room… but it’s so dark…
 leave voice_over
+leave user
 [end_timeline]

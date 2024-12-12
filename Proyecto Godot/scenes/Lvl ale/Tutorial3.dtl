@@ -1,4 +1,8 @@
 join voice_over 1
-voice_over: Ta entero desordenao papito
+join user 1
+voice_over: That’s better! Though I didn’t take you for a messy person…
+user: You’re right, I’m not. Now that I’ve chosen hope, everything doesn’t look as dark\
+anymore, but my mind’s still a mess, just like this room.
 leave voice_over
-[end_timeline]
+jump Tutorial4/
+[style name="estilodefault"]

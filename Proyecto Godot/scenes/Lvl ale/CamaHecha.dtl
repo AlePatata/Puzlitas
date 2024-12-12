@@ -1,0 +1,7 @@
+join user 1
+join voice_over 1
+user: It's a small change, but it already feels much better.
+voice_over: That's great! And look, your mental health has gone up, if only by a little. But that's okay, our goal isn't to fill it up, it's to keep it steady ^^
+leave user
+leave voice_over
+[end_timeline]

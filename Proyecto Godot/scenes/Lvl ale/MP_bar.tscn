@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bm3mo85t30ckf"]
+[gd_scene load_steps=5 format=3 uid="uid://bm3mo85t30ckf"]
 
 [ext_resource type="Theme" uid="uid://cbq4mlyad031" path="res://resources/progressBar.tres" id="1_yy3hu"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/ProgressBar.gd" id="2_00kr5"]
-[ext_resource type="Texture2D" uid="uid://voo7evsiktog" path="res://assets/icon.svg" id="3_yl11s"]
+[ext_resource type="Texture2D" uid="uid://w7uwafhskgjt" path="res://assets/barra.png" id="3_o0ld4"]
+[ext_resource type="Texture2D" uid="uid://bdxou2n5kqm3f" path="res://assets/salud.png" id="4_mc8v2"]
 
 [node name="ProgressBar" type="ProgressBar"]
 theme = ExtResource("1_yy3hu")
@@ -11,12 +12,12 @@ value = 50.0
 script = ExtResource("2_00kr5")
 
 [node name="Icon" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.227451)
-position = Vector2(133, 12.5)
-scale = Vector2(3.15625, 0.507813)
-texture = ExtResource("3_yl11s")
+modulate = Color(1, 1, 1, 0.235294)
+position = Vector2(116, 12.5)
+scale = Vector2(1.108, 1.1)
+texture = ExtResource("3_o0ld4")
 
 [node name="HP" type="Sprite2D" parent="."]
-position = Vector2(-27, 12)
-scale = Vector2(0.277344, 0.25)
-texture = ExtResource("3_yl11s")
+position = Vector2(-30, 13)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_mc8v2")

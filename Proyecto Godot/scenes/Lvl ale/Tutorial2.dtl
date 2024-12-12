@@ -1,4 +1,5 @@
 join voice_over 1
-voice_over: wena encontraste hope mi waxin
+voice_over: Nice! You found Hope! Let’s see if we can use it, it’s looking pretty dark in there!
+set {dialog2} = "true"
 leave voice_over
 [end_timeline]

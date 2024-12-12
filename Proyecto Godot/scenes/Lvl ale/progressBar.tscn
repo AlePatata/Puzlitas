@@ -31,4 +31,4 @@ theme = ExtResource("1_luaf3")
 
 [node name="ProgressBar" parent="MarginContainer" instance=ExtResource("2_hnjjm")]
 layout_mode = 2
-value = 52.11
+value = 53.2

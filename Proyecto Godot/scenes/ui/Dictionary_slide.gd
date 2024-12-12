@@ -43,12 +43,13 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 		if not event.pressed:
 			if Game.current_palabra:
 				Game.add_palabra(Game.current_palabra)
-				print("ultimo print:", Game.current_palabra)
+				AudioManager.play_sound_pencilwriting()
 				if is_instance_valid(Game.nodoporeliminar):
 					Game.nodoporeliminar.queue_free()
 				if Game.current_palabra == "Hope":
+					if not Globals.hope_guardado:
+						Globals.hope_guardado = true
+						Dialogic.start_timeline("Tutorial2")
 					apagar_luz.emit(self)#apagar la luz cuando guardamos la palabra
 				Game.current_palabra = null
 				Game.nodoporeliminar = null
-				
-

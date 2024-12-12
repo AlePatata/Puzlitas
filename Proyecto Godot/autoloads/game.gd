@@ -18,7 +18,6 @@ func add_palabra(palabra: String):
 		return
 	inventory.palabras.push_back(palabra)
 	palabras_updated.emit()
-	print(palabra)
 	
 #para eliminar una palabra
 func remove_palabra(palabra: String):

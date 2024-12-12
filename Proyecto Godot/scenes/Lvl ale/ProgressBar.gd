@@ -3,8 +3,8 @@ extends ProgressBar
 
 
 const EXCESSIVE_CLICKS_THRESHOLD = 5
-const INACTIVITY_THRESHOLD = 3.0
-const TIME_INTERVAL = 2.0 
+const INACTIVITY_THRESHOLD = 5.0
+const TIME_INTERVAL = 10.0 
 const INCREASE = 0.01
 
 
@@ -14,6 +14,7 @@ var inactivity_timer : float = 0.0
 var last_mouse_position : Vector2
 var timer : float = 0.0
 
+var subiendo = false
 
 func _ready():
 	value = 50
@@ -44,17 +45,22 @@ func _mentalPeace(delta):
 	
 	if clicks_counter >= EXCESSIVE_CLICKS_THRESHOLD:
 		on_excessive_mouse_activity()
-	
+
+func sonido():
+	if subiendo:
+		await AudioManager.play_sound_mentalbar()
+		subiendo = false
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		clicks_counter += 1
-		print(clicks_counter)
+		#print(clicks_counter)
 		inactivity_timer = 0.0  # Resetear el temporizador de inactividad
 
 
 func on_mouse_inactivity():
 	increase(INCREASE)
+	sonido()
 	
 func on_excessive_mouse_activity():
 	increase(-INCREASE)

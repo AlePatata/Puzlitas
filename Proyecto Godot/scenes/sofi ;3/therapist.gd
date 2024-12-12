@@ -6,7 +6,6 @@ extends Node2D
 func _ready():
 	start_dialog()
 	
-	
 func start_dialog():
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	Dialogic.start("jiji")
@@ -14,7 +13,7 @@ func start_dialog():
 	
 func _on_timeline_ended():
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
-	mental_room_button._go_to_mental_room()
+	get_tree().change_scene_to_file("res://scenes/Lvl_selector.tscn")
  
 func _input(event: InputEvent):
 	#if Dialogic.current_timeline != null:

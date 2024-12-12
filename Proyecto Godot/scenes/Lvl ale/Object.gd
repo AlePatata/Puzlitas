@@ -1,13 +1,13 @@
-extends Node2D
+extends Area2D
 
-class_name Objeto 
 signal juntos
 signal separados
-@onready var sprite = $Sprite2D
-@onready var collision_shape = $CollisionShape2D
 signal señal_al_padre
+
 var dragging = false
 var  new_position
+var is_la_palabra = false
+var padre
 
 func _ready():
 	connect("area_entered", _on_Area2D_body_entered)
@@ -18,59 +18,30 @@ func _ready():
 	
 func _physics_process(delta): 
 	var mouse = get_global_mouse_position()
-	if mouse.y < 300:
-		dragging = false
+	#if mouse.y < 300:
+		#dragging = false
 	if dragging:
-		global_position = lerp(position, mouse, 30 * delta) 
-	else: dragging = false
-
-var padre
+		global_position = lerp(global_position, get_global_mouse_position(), 30 * delta)
 
 func set_padre(padre_node):
 	padre = padre_node
+	print(padre)
 	
 func set_sprite(ruta = "res://assets/icon.svg"): #Godot por defecto
-	sprite.texture = load(ruta)
-	if sprite.texture:
-		var texture_name = sprite.texture.resource_path.get_file()
-		if texture_name == "cama deshecha.png" or texture_name == "cama hecha.png":
-			standardize_sprite_size(Vector2(200, 200))
-		elif texture_name == "almohadas (1).png":
-			standardize_sprite_size(Vector2(100, 100))
-		elif texture_name == "switch on.png" or texture_name == "switch off.png":
-			standardize_sprite_size(Vector2(25, 70))
-		else: standardize_sprite_size(Vector2(150, 150))
-		update_collision_shape()
-
-			
-		
-func standardize_sprite_size(size: Vector2):
-	if sprite.texture:
-		var texture_size = sprite.texture.get_size()
-		var scale = size / texture_size
-		sprite.scale = scale
-
-func update_collision_shape():
-	if sprite.texture:
-		var texture_size = sprite.texture.get_size() * sprite.scale
-		if collision_shape.shape is RectangleShape2D:
-			collision_shape.shape.extents = texture_size / 2
-		elif collision_shape.shape is CapsuleShape2D:
-			var radius = min(texture_size.x, texture_size.y) / 2
-			collision_shape.shape.radius = radius
-			collision_shape.shape.height = texture_size.y - 2 * radius
-		elif collision_shape.shape is CircleShape2D:
-			collision_shape.shape.radius = min(texture_size.x, texture_size.y) / 2
+	for child in get_children():
+		if child is Sprite2D:
+			child.texture = load(ruta)
    
-#func _move_object():
-#	$AnimationPlayer.play("Move")
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			dragging = true
+			if Game.current_palabra == "Get your life together":
+				is_la_palabra = true
+			#AudioManager.play_sound_takingobject()
 		else: 
-			if Game.current_palabra == "Get your life together": #si suelto la palabra sobre cualquiera de los objetos
+			if is_la_palabra:#si suelto la palabra sobre cualquiera de los objetos
 				padre.getyourlifetogether()
 			dragging = false
 			new_position = self.position

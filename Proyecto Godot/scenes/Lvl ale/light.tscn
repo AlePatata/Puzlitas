@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://660dh6t2ip5u"]
+[gd_scene load_steps=41 format=3 uid="uid://660dh6t2ip5u"]
 
 [ext_resource type="Script" path="res://scenes/Lvl ale/Light.gd" id="1_0fovx"]
 [ext_resource type="Texture2D" uid="uid://b1jvl84sojx1q" path="res://assets/Pieza fondo.png" id="2_ktfo6"]
@@ -7,15 +7,38 @@
 [ext_resource type="Texture2D" uid="uid://cw01lvdfq6xd" path="res://assets/whiteCircle.png" id="4_qqb3p"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/whiteCircle.gd" id="5_egv65"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/Objects.gd" id="7_21vkm"]
-[ext_resource type="Texture2D" uid="uid://thiha28tsny3" path="res://assets/books.png" id="7_gur7d"]
+[ext_resource type="Texture2D" uid="uid://cg2nwuk8rqq77" path="res://assets/switch off.png" id="9_g03ow"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/Camera2D.gd" id="9_pum0y"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/switch.gd" id="9_yvejc"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/object.gd" id="10_g34ap"]
 [ext_resource type="Script" path="res://scenes/ui/Dictionary_slide.gd" id="10_ijxuc"]
-[ext_resource type="PackedScene" uid="uid://bbbb3fynp4krm" path="res://scenes/Lvl ale/object.tscn" id="10_illft"]
 [ext_resource type="PackedScene" uid="uid://ca6ulc0jbl1kj" path="res://scenes/Lvl ale/ui_palabra.tscn" id="11_43f16"]
+[ext_resource type="Texture2D" uid="uid://xotbdcbaegs2" path="res://assets/cama deshecha.png" id="11_67e7y"]
+[ext_resource type="Texture2D" uid="uid://dabfpjaf5djy1" path="res://assets/blanket.png" id="12_hhaek"]
 [ext_resource type="Texture2D" uid="uid://dxnok5mya3fam" path="res://assets/diccionario.png" id="12_x8m1o"]
+[ext_resource type="Texture2D" uid="uid://bl6qf42so0nyo" path="res://assets/pilow.png" id="13_ams8p"]
+[ext_resource type="Texture2D" uid="uid://shelwrbvn0um" path="res://assets/gatoboton.png" id="13_c6wie"]
 [ext_resource type="Script" path="res://scenes/Lvl ale/dicbutton.gd" id="17_ufa5u"]
 [ext_resource type="PackedScene" uid="uid://rl28wrp7sgkh" path="res://scenes/ui/pause_menu.tscn" id="18_x6clr"]
+[ext_resource type="Texture2D" uid="uid://bey0pyn8ndu6t" path="res://scenes/sofi ;3/terapia.png" id="21_nj5ys"]
+[ext_resource type="Texture2D" uid="uid://byu3debw52tgs" path="res://assets/relojito.png" id="22_2lfop"]
+[ext_resource type="Script" path="res://Relojito.gd" id="23_megs3"]
+[ext_resource type="Script" path="res://scenes/Lvl ale/pensando.gd" id="24_6sa58"]
+[ext_resource type="Texture2D" uid="uid://c8k6pvq5jqys7" path="res://assets/Lffk1n.jpg" id="24_s1ywx"]
+[ext_resource type="FontFile" uid="uid://pws3fdh1afvc" path="res://assets/fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="25_hgeyr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cu6om"]
+size = Vector2(46, 90)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gqxvp"]
+radius = 81.6674
+height = 256.99
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g57cc"]
+size = Vector2(78, 72.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t27rv"]
+size = Vector2(64, 63)
 
 [sub_resource type="Animation" id="Animation_tmahn"]
 length = 0.001
@@ -65,7 +88,44 @@ size = Vector2(877, 423)
 /fonts/VICTORIA = null
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oyrse"]
-size = Vector2(44.808, 46.6065)
+size = Vector2(473.603, 518.703)
+
+[sub_resource type="Animation" id="Animation_dy84b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_e8d8m"]
+resource_name = "timepassing"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6vujo"]
+_data = {
+"RESET": SubResource("Animation_dy84b"),
+"timepassing": SubResource("Animation_e8d8m")
+}
 
 [node name="Light" type="Node2D"]
 z_index = 1
@@ -76,7 +136,7 @@ light_mask = 2
 visibility_layer = 2
 z_index = -2
 z_as_relative = false
-position = Vector2(1540, 359)
+position = Vector2(1555, 367)
 scale = Vector2(1.613, 1.775)
 texture = ExtResource("2_ktfo6")
 script = ExtResource("3_26dda")
@@ -116,19 +176,58 @@ script = ExtResource("5_egv65")
 process_priority = 1
 script = ExtResource("7_21vkm")
 
-[node name="Switch" parent="Objects" groups=["switch"] instance=ExtResource("10_illft")]
-position = Vector2(292, 201)
+[node name="Switch" type="Area2D" parent="Objects" groups=["switch"]]
+position = Vector2(1925, 200)
 script = ExtResource("9_yvejc")
 
-[node name="Bed" parent="Objects" instance=ExtResource("10_illft")]
-position = Vector2(746, 306)
-scale = Vector2(2.25, 2.25)
+[node name="Sprite2D" type="Sprite2D" parent="Objects/Switch"]
+position = Vector2(0, -4)
+scale = Vector2(0.367188, 0.355469)
+texture = ExtResource("9_g03ow")
 
-[node name="Pillow" parent="Objects" instance=ExtResource("10_illft")]
-position = Vector2(329, 392)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Switch"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_cu6om")
 
-[node name="Blanket" parent="Objects" instance=ExtResource("10_illft")]
-position = Vector2(1514, 351)
+[node name="Bed" type="Area2D" parent="Objects" groups=["objetos"]]
+position = Vector2(800, 350)
+script = ExtResource("10_g34ap")
+
+[node name="Sprite2D" type="Sprite2D" parent="Objects/Bed"]
+position = Vector2(-2, -9)
+scale = Vector2(0.248, 0.235833)
+texture = ExtResource("11_67e7y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Bed"]
+position = Vector2(-5, -7.00002)
+rotation = -1.0472
+shape = SubResource("CapsuleShape2D_gqxvp")
+
+[node name="Blanket" type="Area2D" parent="Objects" groups=["objetos"]]
+position = Vector2(2350, 200)
+script = ExtResource("10_g34ap")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Blanket"]
+position = Vector2(-1, -16)
+shape = SubResource("RectangleShape2D_g57cc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Objects/Blanket"]
+position = Vector2(-1, -12)
+scale = Vector2(1.29688, 1.39091)
+texture = ExtResource("12_hhaek")
+
+[node name="Pillow" type="Area2D" parent="Objects" groups=["objetos"]]
+position = Vector2(1200, 60)
+script = ExtResource("10_g34ap")
+
+[node name="Sprite2D" type="Sprite2D" parent="Objects/Pillow"]
+position = Vector2(-2, 5.00001)
+scale = Vector2(1.12069, 1.26596)
+texture = ExtResource("13_ams8p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Pillow"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_t27rv")
 
 [node name="Raiz_Palabras" type="Node2D" parent="."]
 
@@ -165,10 +264,10 @@ shape = SubResource("RectangleShape2D_1n31q")
 
 [node name="MarginContainer" type="MarginContainer" parent="Camera2D/Dictionary/Node2D"]
 custom_minimum_size = Vector2(0.47, 0)
-offset_left = -442.0
-offset_top = -228.0
-offset_right = 417.0
-offset_bottom = 169.0
+offset_left = -382.0
+offset_top = -214.0
+offset_right = 477.0
+offset_bottom = 183.0
 theme_override_constants/margin_top = 52
 
 [node name="PalabraContainer" type="GridContainer" parent="Camera2D/Dictionary/Node2D/MarginContainer"]
@@ -193,17 +292,14 @@ text = "VICTORIA"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(55, 45)
-scale = Vector2(1.406, 1.30883)
-texture = ExtResource("7_gur7d")
-hframes = 3
-vframes = 2
-frame = 1
+position = Vector2(60, 62)
+scale = Vector2(0.201452, 0.184477)
+texture = ExtResource("13_c6wie")
 
 [node name="Area2D" type="Area2D" parent="CanvasLayer/Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/Sprite2D/Area2D"]
-position = Vector2(0.355621, 0.382019)
+position = Vector2(4.96397, 2.09808e-05)
 shape = SubResource("RectangleShape2D_oyrse")
 script = ExtResource("17_ufa5u")
 
@@ -217,8 +313,69 @@ autoplay = true
 [node name="PauseMenu" parent="." instance=ExtResource("18_x6clr")]
 visible = false
 
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+one_shot = true
+
+[node name="Node2D" type="Node2D" parent="."]
+visible = false
+
+[node name="Terapia" type="Sprite2D" parent="Node2D"]
+modulate = Color(0.643981, 0.643981, 0.643981, 1)
+position = Vector2(643.111, 360)
+scale = Vector2(0.664815, 0.664815)
+texture = ExtResource("21_nj5ys")
+
+[node name="Relojito" type="Sprite2D" parent="Node2D"]
+position = Vector2(613, 343)
+scale = Vector2(0.248438, 0.287963)
+texture = ExtResource("22_2lfop")
+script = ExtResource("23_megs3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
+root_node = NodePath("../Relojito")
+libraries = {
+"": SubResource("AnimationLibrary_6vujo")
+}
+
+[node name="Timer" type="Timer" parent="Node2D"]
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="Node2D"]
+one_shot = true
+
+[node name="Node2D2" type="Node2D" parent="."]
+visible = false
+script = ExtResource("24_6sa58")
+
+[node name="Lffk1n" type="Sprite2D" parent="Node2D2"]
+position = Vector2(643, 364.5)
+scale = Vector2(0.742222, 0.749167)
+texture = ExtResource("24_s1ywx")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D2"]
+offset_left = 160.0
+offset_top = 249.0
+offset_right = 1116.0
+offset_bottom = 555.0
+theme_override_fonts/normal_font = ExtResource("25_hgeyr")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center] You have now completed the tutorial! 
+This is also the demo. 
+[color=yellow]Thank you for playing! [/color] [/center]"
+
+[node name="Timer" type="Timer" parent="Node2D2"]
+wait_time = 3.0
+
+[node name="Timer2" type="Timer" parent="Node2D2"]
+
 [connection signal="input_event" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Dictionary/Node2D/Dictionary/Area2D" to="Camera2D/Dictionary" method="_on_area_2d_mouse_exited"]
 [connection signal="input_event" from="CanvasLayer/Sprite2D/Area2D" to="CanvasLayer/Sprite2D/Area2D/CollisionShape2D" method="_on_area_2d_input_event"]
-
+[connection signal="timeout" from="Timer" to="Objects" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="Objects" method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Node2D/Timer2" to="Node2D/Relojito" method="_on_timer_2_timeout"]
